@@ -1,4 +1,4 @@
 
 function babyfunc() {
-    console.log("Hello, world!");
+    document.getElementById("howdy").innerText = "Hello, you!";
   }
