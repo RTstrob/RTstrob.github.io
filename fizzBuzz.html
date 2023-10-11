@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> FizzBuzz </title>
+    </head>
+  <!-- My TRASH!!!
+  <script>
+    let int = 42
+    let firstn = ""
+    function fizzBuzz()
+    {
+        for (let i = 1; i <= int; i++)
+        {
+            if (i % 3 == 0){
+                console.log("Fizz");
+            }
+            if (i % 5 == 0){
+                console.log("Buzz");
+            }
+            else{
+                console.log(i)
+            }
+        }
+    }
+    fizzBuzz()
+    </script> -->
+    <script>
+        function fizzBuzz(n) 
+      {
+        let str = "" ;
+        for (let i = 1 ; i <= n ; i++)
+        {
+          str = i.toString() ;
+          if (!(i % 5 && i % 3))
+          {
+            str = "" ;
+            if (i % 3 == 0) { str += "Fizz" ; }
+            if (i % 5 == 0) { str += "Buzz" ; }
+          }
+          console.log(str) ;
+        }
+      }
+    </script>
+    <body onload="fizzBuzz(100)">
+    </body>
+  <!-- EXERCISE -->
+    
+</html>

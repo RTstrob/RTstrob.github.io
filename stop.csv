@@ -1,0 +1,26 @@
+Variable,Tier 1,Tier 2,Tier 3
+Traffic Stop,98.1%,97.6%,94.4%
+Race/Ethnicity,,,,
+Asian/PI,3.4%,2.7%,2.0%
+Black,5.2%,3.2%,2.0%
+Latinx,15.6%,14.1%,12.8%
+Middle Eastern,1.4%,0.9%,0.8%
+Native American,0.5%,0.3%,0.5%
+White,73.3%,78.7%,80.1%
+Gender,,,,
+Male,66.9%,63.6%,59.0%
+Female,32.9%,36.2%,31.4%
+Nonbinary,0.1%,0.2%,8.8%
+Age,,,,
+Under 21,10.9%,12.8%,12.3%
+21-29,24.2%,22.6%,21.8%
+30-39,25.8%,24.8%,23.7%
+40-49,16.9%,17.4%,17.1%
+50 and Older,22.2%,22.4%,25.1%
+Stop Disposition,,,,
+None,2.8%,7.6%,5.0%
+Warning,56.6%,59.8%,69.4%
+Citation,37.8%,30.1%,23.9%
+Juvenile Summons,0.0%,0.0%,0.0%
+Arrest,2.7%,1.9%,1.3%
+Search Conducted,2.2%,1.5%,0.9%

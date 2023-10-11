@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <p id="showEle">1</p>
+        <script>
+            let val = 1 ;
+            const showVar = document.getElementById("showEle");
+            function update()
+            {
+                val = 2 * val ;
+                showVar.innerText = val.toString() ;
+            }
+            // function downdate()
+            // {
+            //     val = 0.5 * val ;
+            //     showvar.innerText = val.toString() ;
+            // }
+            let myFunc = update ;
+            // update = downdate ;
+            // myFunc = alert("hello") ;
+            document.addEventListener('click', myFunc) ;
+        </script>
+    </body>
+</html>
