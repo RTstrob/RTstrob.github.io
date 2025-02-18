@@ -1,0 +1,132 @@
+---
+title: "Conditional Probability"
+author: "Ryan"
+date: "02/17/2025"
+
+format: 
+  html:  # You will quite likely want to change all but the last one, to taste
+    theme: superhero  
+    mainfont: monospace
+    highlight-style: github
+    title-block-banner: true
+    embed-resources: true
+---
+
+**Abstract:**
+
+This is a technical blog post of **both** an HTML file *and* [.qmd file](https://raw.githubusercontent.com/cd-public/D505/refs/heads/master/hws/src/cond.qmd) hosted on GitHub pages.
+
+# 0. Quarto Type-setting
+
+- This document is rendered with Quarto, and configured to embed an images using the `embed-resources` option in the header.
+- If you wish to use a similar header, here's is the format specification for this document:
+
+```email
+format: 
+  html:
+    embed-resources: true
+```
+
+# 1. Setup
+
+**Step Up Code:**
+
+```{r}
+sh <- suppressPackageStartupMessages
+sh(library(tidyverse))
+sh(library(caret))
+wine <- readRDS(gzcon(url("https://github.com/cd-public/D505/raw/master/dat/pinot.rds")))
+```
+
+# 2. Conditional Probability
+
+Calculate the probability that a Pinot comes from Burgundy given it has the word 'fruit' in the description.
+
+$$
+P({\rm Burgundy}~|~{\rm Fruit})
+$$
+
+```{r}
+fruity = wine %>% 
+  mutate(description = tolower(description)) %>%
+  mutate(fruity = str_detect(description,"fruit")) %>%
+  filter(fruity == TRUE)
+
+fruity %>%
+  mutate(province = as.factor(province)) %>%
+  group_by(province) %>%
+  summarize(count = n())
+
+print((1054/4824)*100)
+```
+A pinot with the word "fruit" in its description has a nearly 22% chance of being from Burgundy.
+
+# 3. Naive Bayes Algorithm
+
+We train a naive bayes algorithm to classify a wine's province using:
+1. An 80-20 train-test split.
+2. Three features engineered from the description
+3. 5-fold cross validation.
+
+We report Kappa after using the model to predict provinces in the holdout sample.
+
+```{r}
+wino = wine %>%
+  mutate(description = tolower(description)) %>%
+  mutate(yearf = as.factor(year)) %>%
+  mutate(tannin = str_detect(description,"tannin")) %>%
+  mutate(citrus = str_detect(description,"citrus")) %>%
+  mutate(valley = str_detect(description,"valley")) %>%
+  select(-description, -year)
+
+set.seed(887)
+wine_index <- createDataPartition(wino$province, p = 0.8, list = FALSE)
+train <- wino[ wine_index,]
+test <- wino[-wine_index,]
+
+fit <- train(province ~ .,
+             data = train, 
+             method = "naive_bayes",
+             metric = "Kappa",
+             trControl = trainControl(method = "cv", number = 5))
+fit
+```
+My model earned a kappa of 0.11 and one of 0.15! Those scores are objectively pretty abysmal, but considering how few features went in, I'll take it.
+
+# 4. Frequency Differences
+
+We find the three words that most distinguish New York Pinots from all other Pinots.
+
+```{r}
+library(tidytext)
+
+wineny <- wine
+wineny <- wineny %>%
+  unnest_tokens(word, description) %>% 
+  anti_join(stop_words) %>% 
+  filter(word != "wine") %>%
+  filter(word != "pinot") %>% 
+  count(id, word) %>% 
+  group_by(id) %>% 
+  mutate(freq = n/sum(n)) %>% 
+  mutate(exists = (n>0)) %>% 
+  ungroup() %>% 
+  group_by(word) %>% 
+  mutate(total = sum(n)) %>% 
+  left_join(select(wine, id, province), by = "id")
+
+wineny = wineny %>% 
+  mutate(NY = ifelse(province == "New_York", TRUE, FALSE)) %>%
+  filter(!(word %in% c("wine","pinot","drink","noir","vineyard","palate","notes","flavors","bottling","bottle","finish"))) %>% 
+  filter(total > 400) %>% 
+  group_by(province, word) %>%
+  count() %>% 
+  group_by(province) %>% 
+  mutate(proportion = n / sum(n)) %>% 
+  pivot_wider(id_cols = word, names_from = province, values_from = proportion) %>% 
+  mutate(proportion = New_York/(Burgundy + California + Casablanca_Valley + Marlborough + Oregon)) %>%
+  drop_na()
+
+wineny %>% arrange(proportion, desc=TRUE)
+```
+It doesn't allow me to arrange by the last column, but the most distinguishing words used in New York pinots are "concentrated", "bright", and "tannins".
