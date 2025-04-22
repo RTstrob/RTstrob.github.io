@@ -201,14 +201,14 @@ fastc = fast %>%
     # first_order_date = mdy(`First Order (from sales data)`),
     # yearMin = as.numeric(yearMin),
     # yearMax = as.numeric(yearMax),
-    # yearRange = yearMax - yearMin
+    # yearRange = yearMax - yearMin   #"Any" values make these tough to make numeric
     )
 
 fastc["profit"] <- fastc["Revenue 2019 to present"] - fastc["BOM Cost"] * fastc["Units Sold"]
 
 str(fastc)
 
-fastc %>% mutate(
+fastc = fastc %>% mutate(
   winter_sales = December + January + February,
   spring_sales = March + April + May,
   summer_sales = June + July + August,
@@ -280,6 +280,7 @@ rsq_val3 <- R2(preds3, test$profit)
 cat("Test RMSE:", rmse_val3, "\n")
 cat("Test R-squared:", rsq_val3, "\n")
 ```
+
 ```{r}
 model_data_r = fastc %>% drop_na()
 set.seed(3444)
@@ -301,7 +302,41 @@ rfe_result
 ```
 
 ```{r}
-write_rds(model_data2, file="group7_model.rds")
+model_data_r2 = model_data_r %>%
+  select(profit, retailPrice, `Product Type`, `Revenue 2019 to present`, `Listing Type`, margin, margin_pct, log_price, main_source, main_sale_type, log_units_sold)
+
+set.seed(887)
+
+split <- createDataPartition(model_data_r2$profit, p = 0.8, list = FALSE)
+train <- model_data_r2[split, ]
+test  <- model_data_r2[-split, ]
+
+control <- rfeControl(functions = rfFuncs, method = "cv", number = 5)
+
+final_modelr2 <- train(
+  profit ~ .,
+  data = train,
+  method = "rf",  
+  trControl = trainControl(method = "cv", number = 5),
+  metric = "RMSE")
+final_modelr2
+
+predsr2 <- predict(final_modelr2, newdata = test)
+rmse_valr2 <- RMSE(predsr2, test$profit)
+rsq_valr2 <- R2(predsr2, test$profit)
+
+cat("Test RMSE:", rmse_valr2, "\n")
+cat("Test R-squared:", rsq_valr2, "\n")
+
+
+```
+```{r}
+plot(varImp(final_modelr2, scale = TRUE), title = "")
+```
+
+
+```{r}
+write_rds(model_data_r2, file="group7_model.rds")
 ```
 
 

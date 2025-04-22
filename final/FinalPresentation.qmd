@@ -20,6 +20,9 @@ Fast dataset: 2349 observations * 46 variables
 - Sales Channel Percentages: Where the sales came from (company website, Amazon, etc.)
 - Seasonality (Month Indicators): January to December
 - Sales Mix Percentages: Types of sales (Direct order, drop shipment, etc.)
+
+## Overview (cont.)
+
 - Sales & Product Metrics: Units Sold, Revenue 2019 to present, 
 BOM Cost, retailPrice, Unit Weight (pounds)
 - Product Metadata: Base Product Sku, Listing Type, make, model, Number of Components
@@ -34,7 +37,7 @@ BOM Cost, retailPrice, Unit Weight (pounds)
 ## Explore Data
 
 1. Check correlation with "profit" 
-- Top 10 features most correlated (Revenue 2019 to present, Units Sold, modelMX-5 Miata, yearMax2021, pct_Orders for Stock, src_manual, src_www, `Main Component Finishing Process`Powder , pct_Direct Sales, makeMazda )
+- Top 5 features most correlated (Revenue 2019 to present, Units Sold, modelMX-5 Miata, yearMax2021, pct_Orders for Stock)
 
 2. Check Multicollinearity:
 - Uses "findCorrelation()" to identify highly correlated predictors (pairwise correlation > 0.9)
@@ -47,8 +50,6 @@ BOM Cost, retailPrice, Unit Weight (pounds)
 Use cross-validated Recursive Feature Elimination (RFE) to identify the top predictors of "profit", selecting the best subset of 10 variables based on predictive performance (RMSE) using Random Forest
 
 - Extract top 10 features:
-
-"Revenue 2019 to present", "Units Sold", "retailPrice", "src_manual", "Unit Weight (pounds)", "October", "Number of Components", "November", "September"
 
 - check VIF on the final 10 featutes to validate multicollinearity: all VIF < 5 → Generally acceptable
 
@@ -79,13 +80,13 @@ Model 1:
 
 Evaluate Model 1
 
-![](imagePLOT.jpg)
+![](model1pred.png)
 
 ## Model and Evaluate
 
 Evaluate Model 1
 
-![](imageLM.jpg)
+![](importance.png)
 
 ## Model and Evaluate
  
@@ -105,6 +106,33 @@ Model 3:
 
 - Model type: Extreme Gradient Boosting (XGBoost, via xgbTree) — an learning technique based on gradient boosting of decision trees
 - Outcome:  RMSE = 690.67/ R²= 0.9406
+
+## Final Model
+
+Model 4:
+
+- Model type: Random Forest
+- Uses mainly engineered features: margin, margin_pct, log_price, log_units_sold, main_source, main_sale_type
+- Additional features: Revenue 2019 to present, retailPrice, Product Type, Listing Type
+- Probably really overfit: Including all variables led to: RMSE = 218.9893, R²= 0.99
+
+## Model 4 Importance
+
+![](importance_modelr2_v1.png)
+
+## Model 4 Tweaks
+
+- Remove `Revenue 2019 to present`
+- RMSE: 332.2513, R²: 0.9676531 
+
+![](importance_modelr2_v2.png)
+
+## Model 4 without both
+
+- Remove log_units_sold
+- RMSE: 1561.679, R²: 0.2221639 
+
+![](importance_modelr2_v3.png)
 
 ## Takeaways
 
