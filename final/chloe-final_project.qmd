@@ -1,0 +1,328 @@
+---
+title: "Final Presentation"
+author: "Team 7"
+date: "04/21/2025"
+
+format: 
+  html:  # You will quite likely want to change all but the last one, to taste
+    theme: superhero  
+    mainfont: monospace
+    highlight-style: github
+    title-block-banner: true
+    embed-resources: true
+---
+
+# 1. Setup
+
+**Step Up Code:**
+
+```{r}
+sh <- suppressPackageStartupMessages
+sh(library(tidyverse))
+sh(library(caret))
+sh(library(fastDummies))
+sh(library(moderndive))
+sh(library(class))
+
+fast <- readRDS(gzcon(url("https://github.com/cd-public/D505/raw/refs/heads/master/dat/craven_train.rds")))
+```
+
+# 2. Featuring
+
+```{r}
+fast["profit"] <- fast["Revenue 2019 to present"] - fast["BOM Cost"] * fast["Units Sold"]
+```
+
+## Convert Percentage Strings to Numeric
+
+```{r}
+# Function to check if a character vector looks like percentages
+is_percent_column <- function(vec) {
+  is.character(vec) && any(grepl("^\\d+\\.?\\d*%$", vec[!is.na(vec)]))
+}
+
+# Identify all columns with percentage strings
+percent_cols <- names(fast)[sapply(fast, is_percent_column)]
+
+# Convert percentage strings to numeric (divide by 100)
+for (col in percent_cols) {
+  fast[[col]] <- as.numeric(gsub("%", "", fast[[col]])) / 100
+}
+
+```
+
+## CHECK NULL VALUE
+
+```{r}
+colSums(is.na(fast))
+```
+
+## Impute null value
+
+```{r}
+fast$`Product Type`[is.na(fast$`Product Type`)] <- "Unknown"
+fast$`Main Component Material`[is.na(fast$`Main Component Material`)] <- "Unknown"
+fast$`Main Component MFG Process`[is.na(fast$`Main Component MFG Process`)] <- "Unknown"
+fast$`Main Component Finishing Process`[is.na(fast$`Main Component Finishing Process`)] <- "Unknown"
+```
+
+
+## ENCODE CATEGORICAL VARIABLES
+
+```{r}
+# Remove rows with missing profit
+fast_clean <- fast %>% filter(!is.na(profit) & !is.na(`Revenue 2019 to present`))
+ #Identify categorical columns
+cat_vars <- fast_clean %>% select(where(is.character)) %>% names()
+
+# Remove identifiers or unnecessary columns
+cat_vars <- setdiff(cat_vars, c("lookupId", "Base Product Sku", "First Order (from sales data)"))
+
+# Step 3: Filter out character columns with only 1 unique value
+multi_level_vars <- cat_vars[sapply(fast_clean[, cat_vars], function(x) n_distinct(x) > 1)]
+
+# Step 4: Create dummy variables only for multi-level character columns
+dummies <- dummyVars(" ~ .", data = fast_clean[, multi_level_vars], fullRank = TRUE)
+
+# Step 5: Predict to generate dummy matrix
+cat_data <- predict(dummies, newdata = fast_clean[, multi_level_vars]) %>% as.data.frame()
+
+# Combine with numeric data
+numeric_data <- fast_clean %>% select(where(is.numeric))
+model_data <- bind_cols(numeric_data, cat_data)
+```
+
+## EXPLORE FEATURES
+
+```{r}
+#Check correlations with profit
+cor_matrix <- cor(model_data, use = "pairwise.complete.obs")
+cor_profit <- sort(cor_matrix[, "profit"], decreasing = TRUE)
+print(cor_profit[1:10])
+```
+## Check for multicollinearity
+
+```{r}
+# Step 1: Remove columns with zero variance
+nzv_cols <- nearZeroVar(model_data, saveMetrics = TRUE)
+model_data_filtered <- model_data[, !nzv_cols$zeroVar]
+
+# Step 2: Remove columns with NA values
+model_data_filtered <- model_data_filtered %>% select(where(~ all(!is.na(.))))
+
+# Step 3: Preserve target column
+target <- model_data_filtered$profit
+
+# Step 4: Only compute correlation on predictors
+predictors <- model_data_filtered %>% select(where(is.numeric), -profit)
+
+# Step 5: Compute correlation matrix
+cor_matrix <- cor(predictors, use = "complete.obs")
+
+# Step 4: Check for multicollinearity (correlation > 0.9)
+high_corr <- findCorrelation(cor_matrix, cutoff = 0.9)
+
+# Step 5: Remove highly correlated variables
+model_data2 <- predictors[, -high_corr]
+
+# Reattach the profit column
+model_data2$profit <- target
+```
+
+
+## FEATURE SELECTION — RFE WITH CROSS-VALIDATION
+
+```{r}
+model_data2 = model_data2 %>% drop_na()
+set.seed(505)
+split <- createDataPartition(model_data2$profit, p = 0.8, list = FALSE)
+train <- model_data2[split, ]
+test  <- model_data2[-split, ]
+
+control <- rfeControl(functions = rfFuncs, method = "cv", number = 5)
+
+rfe_result <- rfe(
+  x = train %>% select(-profit),
+  y = train$profit,
+  sizes = 10,
+  metric = "RMSE",
+  rfeControl = control)
+
+top_vars <- predictors(rfe_result)
+print(top_vars)
+
+```
+## TEST VIF and RUN MODEL LM
+
+```{r}
+# Wrap variable names in backticks to avoid syntax issues in formula
+safe_vars <- paste0("`", top_vars, "`")
+
+# Build the formula using sanitized variable names
+final_formula <- as.formula(paste("profit ~", paste(safe_vars, collapse = " + ")))
+
+# test VIF to validate mulcollinearity
+car::vif(lm(final_formula, data=train))
+
+# Train model using only top 10 features
+final_model <- train(
+  final_formula,
+  data = train,
+  method = "lm",  
+  trControl = trainControl(method = "cv", number = 5),
+  metric = "RMSE")
+
+# Predict and evaluate on test set
+preds <- predict(final_model, newdata = test)
+rmse_val <- RMSE(preds, test$profit)
+rsq_val <- R2(preds, test$profit)
+
+cat("Test RMSE:", rmse_val, "\n")
+cat("Test R-squared:", rsq_val, "\n")
+```
+## RYAN ALT FEATURES
+
+```{r}
+fast <- readRDS(gzcon(url("https://github.com/cd-public/D505/raw/refs/heads/master/dat/craven_train.rds")))
+
+fastc = fast %>% 
+  mutate(
+    across(c("Product Type", "Main Component Material", 
+             "Main Component MFG Process", "Main Component Finishing Process"), 
+           ~ replace_na(. , "Unknown")),
+    across(src_www:`pct_R&D Club`,  ~ as.numeric(str_remove_all(.x, pattern = "[$, +%]"))),
+    `Listing Type` = as.factor(`Listing Type`),
+    Designer = as.factor(tolower(Designer)),
+    `Sales Channel` = as.factor(`Sales Channel`),
+    `Product Type` = as.factor(`Product Type`),
+    `Main Component Material` = as.factor(`Main Component Material`),
+    `Main Component MFG Process` = as.factor(`Main Component MFG Process`),
+    `Main Component Finishing Process` = as.factor(`Main Component Finishing Process`)#,
+    # first_order_date = mdy(`First Order (from sales data)`),
+    # yearMin = as.numeric(yearMin),
+    # yearMax = as.numeric(yearMax),
+    # yearRange = yearMax - yearMin
+    )
+
+fastc["profit"] <- fastc["Revenue 2019 to present"] - fastc["BOM Cost"] * fastc["Units Sold"]
+
+str(fastc)
+
+fastc %>% mutate(
+  winter_sales = December + January + February,
+  spring_sales = March + April + May,
+  summer_sales = June + July + August,
+  fall_sales = September + October + November,
+  margin = retailPrice - `BOM Cost`,
+  margin_pct = margin / retailPrice,
+  log_price = log1p(retailPrice),
+  log_units_sold = log1p(`Units Sold`),
+  log_revenue = log1p(`Revenue 2019 to present`),
+  main_source = apply(select(., starts_with("src_")), 1, function(x) names(x)[which.max(x)]),
+  main_sale_type = apply(select(., starts_with("pct_")), 1, function(x) names(x)[which.max(x)])
+)
+
+str(fastc)
+```
+
+## PLOT
+
+```{r}
+plot(test$profit, preds,
+     xlab = "Actual Profit", ylab = "Predicted Profit",
+     main = "Actual vs Predicted Profit",
+     pch = 16, col = "steelblue")
+abline(0, 1, col = "red", lwd = 2)
+```
+
+## CHECK IMPORTANCE OF 10 VARIABLES
+
+```{r}
+plot(varImp(final_model, scale = TRUE))
+```
+
+
+## TEST WITH MODEL RF
+```{r}
+# Train model using only top 10 features
+final_model2 <- train(
+  final_formula,
+  data = train,
+  method = "rf",  
+  trControl = trainControl(method = "cv", number = 5),
+  metric = "RMSE")
+
+# Predict and evaluate on test set
+preds2 <- predict(final_model2, newdata = test)
+rmse_val2 <- RMSE(preds2, test$profit)
+rsq_val2 <- R2(preds2, test$profit)
+
+cat("Test RMSE:", rmse_val2, "\n")
+cat("Test R-squared:", rsq_val2, "\n")
+```
+## TEST WIT XBOOST
+
+```{r}
+# Train model using only top 10 features
+final_model3 <- train(
+  final_formula,
+  data = train,
+  method = "xgbTree",  
+  trControl = trainControl(method = "cv", number = 5),
+  metric = "RMSE"
+)
+
+# Predict and evaluate on test set
+preds3 <- predict(final_model3, newdata = test)
+rmse_val3 <- RMSE(preds3, test$profit)
+rsq_val3 <- R2(preds3, test$profit)
+
+cat("Test RMSE:", rmse_val3, "\n")
+cat("Test R-squared:", rsq_val3, "\n")
+```
+```{r}
+model_data_r = fastc %>% drop_na()
+set.seed(3444)
+
+model_data_r
+split <- createDataPartition(model_data_r$profit, p = 0.8, list = FALSE)
+train <- model_data_r[split, ]
+test  <- model_data_r[-split, ]
+
+control <- rfeControl(functions = rfFuncs, method = "cv", number = 5)
+
+rfe_result <- rfe(
+  x = train %>% select(-profit),
+  y = train$profit,
+  sizes = 10,
+  metric = "RMSE",
+  rfeControl = control)
+rfe_result
+```
+
+```{r}
+write_rds(model_data2, file="group7_model.rds")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

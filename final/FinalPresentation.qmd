@@ -1,0 +1,121 @@
+---
+title: "Final Presentation"
+author: "Team $M$ - Chloe Bui & Ryan Strobel"
+date: "04/21/2025"
+format: revealjs
+---
+
+## Table of Contents
+
+1. Dataset Overview
+2. Clean and Preprocess
+3. Explore Data
+4. Feature Selection
+5. Model and Evaluate
+
+## Dataset Overview
+Fast dataset: 2349 observations * 46 variables 
+
+- Identifiers and Dates: lookupId	, First Order (from sales data) 
+- Sales Channel Percentages: Where the sales came from (company website, Amazon, etc.)
+- Seasonality (Month Indicators): January to December
+- Sales Mix Percentages: Types of sales (Direct order, drop shipment, etc.)
+- Sales & Product Metrics: Units Sold, Revenue 2019 to present, 
+BOM Cost, retailPrice, Unit Weight (pounds)
+- Product Metadata: Base Product Sku, Listing Type, make, model, Number of Components
+- Categorical Descriptors: Product Type, Designer, Main Component Material, MFG Process, and Finishing Process
+
+## Clean and Preprocess
+
+1. Convert Percentage Strings to Numeric
+2. Replace Missing values with "Unknown"
+3. Create dummy variables for categorical columns
+
+## Explore Data
+
+1. Check correlation with "profit" 
+- Top 10 features most correlated (Revenue 2019 to present, Units Sold, modelMX-5 Miata, yearMax2021, pct_Orders for Stock, src_manual, src_www, `Main Component Finishing Process`Powder , pct_Direct Sales, makeMazda )
+
+2. Check Multicollinearity:
+- Uses "findCorrelation()" to identify highly correlated predictors (pairwise correlation > 0.9)
+- Removes the highly correlated variables: 637 -> 622 variables
+
+## Feature Selection
+
+- Technique
+
+Use cross-validated Recursive Feature Elimination (RFE) to identify the top predictors of "profit", selecting the best subset of 10 variables based on predictive performance (RMSE) using Random Forest
+
+- Extract top 10 features:
+
+"Revenue 2019 to present", "Units Sold", "retailPrice", "src_manual", "Unit Weight (pounds)", "October", "Number of Components", "November", "September"
+
+- check VIF on the final 10 featutes to validate multicollinearity: all VIF < 5 → Generally acceptable
+
+## Engineered Features
+
+- Winter/Spring/Summer/Fall Sales: Aggregate Sales % by Season
+
+- Margin/Margin %: Retail Price - BOM Cost
+
+- Log Transformed Price, Units Sold, Revenue (to account for extreme skew)
+
+- Main Source: src_ Column with highest value (iPhone, Android, www., etc.) 
+
+- Main Sale Type: pct_ Column with highest value (Direct Sale, Drop Shipment, etc.)
+
+## Model and Evaluate
+
+Model 1:
+
+- Model type: Ordinary Least Squares Linear Regression
+- Formula input: profit ~ var1 + var2 + ... + var10 
+- Training set: 80% of the cleaned and preprocessed data
+- Validation method: 5-fold cross-validation
+- Performance metric: Root Mean Squared Error (RMSE) — prioritizing models that minimize average prediction error in the same units as the target variable (profit)
+- Outcome: RMSE= 587.79 / R²= 0.958
+
+## Model and Evaluate
+
+Evaluate Model 1
+
+![](imagePLOT.jpg)
+
+## Model and Evaluate
+
+Evaluate Model 1
+
+![](imageLM.jpg)
+
+## Model and Evaluate
+ 
+- The model is heavily dominated by revenue 
+- Units Sold and Number of Components provide added depth — capturing cost variation
+- Seasonal and channel indicators add marginal but valid structure
+- Unit Weight (pounds) has zero importance, src_manual and src_ipad — have very weak impact and borderline significance => can be dropped
+
+## Test with other methods
+
+Model 2:
+
+- Model type: Random Forest (method = "rf"), a method based on decision trees and bootstrap aggregation (bagging)
+- Outcome: RMSE = 824.46/ R²= 0.9201
+ 
+Model 3:
+
+- Model type: Extreme Gradient Boosting (XGBoost, via xgbTree) — an learning technique based on gradient boosting of decision trees
+- Outcome:  RMSE = 690.67/ R²= 0.9406
+
+## Takeaways
+
+- Maximizing revenue remains the clearest path to higher profit
+
+- Higher volume (Unit solds) improves margins, likely due to cost efficiencies
+
+- Complex products reduce profit: More components correlate with lower profit. Simplify design where possible.
+
+- Channel or seasonal effects are minimal, suggesting channel profitability is relatively uniform across sources (e.g., src_ipad, src_manual)
+
+
+# THANK YOU
+
