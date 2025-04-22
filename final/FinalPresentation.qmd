@@ -114,7 +114,9 @@ Model 4:
 - Model type: Random Forest
 - Uses mainly engineered features: margin, margin_pct, log_price, log_units_sold, main_source, main_sale_type
 - Additional features: Revenue 2019 to present, retailPrice, Product Type, Listing Type
-- Probably really overfit: Including all variables led to: RMSE = 218.9893, R²= 0.99
+- Probably really overfit: Including all variables led to: 
+- Random Forest: RMSE = 218.9893, R²= 0.99
+- Linear Regression: RMSE = 391.489, R²= 0.9704986
 
 ## Model 4 Importance
 
