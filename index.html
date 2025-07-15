@@ -15,7 +15,7 @@
             content="Ryan Strobel, Ryan Thomas Strobel, rtstrob, 
             Ryan Strobel Willamette, Ryan Strobel WU, Ryan Strobel 
             Willamette University, Ryan Strobel SCRP, Ryan Strobel Murdoch,
-            Ryan Strobel Website"
+            Ryan Strobel Website, Ryan Strobel Website as on the Internet"
         />
         <!-- favicon-->
         <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -23,18 +23,77 @@
          <title>Ryan Thomas Strobel</title>
 
          <!-- import CSS stylesheet-->
-        <link rel="stylesheet" href="./assets/css/index.css" />
+        <link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 
     <body>
         <div id="particles-js">
+            <!-- Header-->
             <div class="header">
                 <h1>
                     <span class="site-title">RYAN THOMAS STROBEL</span>
-                    <span class="site-description">DATA SCIENTIST • BIOLOGIST • WEB DEVELOPER</span>
+                    <span class="site-description">DATA SCIENTIST • BIOLOGIST</span>
                 </h1>
                 <div class="header-icons">
+                    <a aria-label="My LinkedIn Profile" target="_blank" href="https://www.linkedin.com/in/ryan-strobel-15228a338/">
+                        <i class="icon fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a aria-label="My GitHub Profile" target="_blank" href="https://github.com/RTstrob">
+                        <i class="icon fa fa-github-alt" aria-hidden="true"></i>
+                    </a>
+                    <a aria-label="My Résumé" target="_blank" href="https://rtstrobel.xyz/resume.html">
+                        <i class="icon fa fa fa-file-pdf-o" aria-hidden="true"></i>
+                    </a>
+                    <a aria-label="Send Email" target="_blank" href="mailto:rtstrobel@willamette.edu">
+                        <i class="icon fa fa-envelope" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="header-links">
+                    <a class="link" href="#about" data-scroll> About Me</a>
+                    <a class="link" href="#projects" data-scroll> Projects</a>
+                </div>
+            </div>
+            <a class="down" href="about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
         </div>
+
+        <!-- About Me Section-->
+        <section id="about">
+            <!-- Introduction-->
+            <div class="user-details">
+                <h1>My Story</h1>
+                <picture>
+                    <img
+                        src="./assets/img/Profile-Photo.jpg"
+                        alt="Me"
+                        width="20%"
+                        style="border-radius: 50%"
+                    />
+                </picture>
+                <p>
+                    I am a current graduate student at the School of Computing & Information Sciences at Willamette 
+                    University, pursuing a master's degree in data science. I earned my B.S. in Data Science with a 
+                    minor in Biology in 2024, and I'm continuing to apply the computational techniques I learn to
+                    insect taxonomy, my primary area of passion and interest. Since 2022, I have conducted research
+                    on Oregon's native bees in Briana Lindh's bee lab. By blending traditional methods of biological
+                    surveys and analysis with new technologies, I hope to streamline future research efforts for our 
+                    lab. I am currently applying computer vision, bioinformatics, database engineering, and species 
+                    distribution mapping to the data we've gathered over the years, driven by the goal of improving
+                    our understanding of Oregon's vital, yet easily overlooked pollinator ecologies.
+                </p>
+            </div>
+
+            <!-- User Specifics-->
+            <div class="user">
+                <div class="tech">
+                    <h2>Languages</h2>
+                    <i class="devicon-python-plain-wordmark"></i>
+                    <img src="https://devicon-website.vercel.app/api/r/plain.svg"></img>
+                    <p>The languages I use for data analysis.</p>
+                </div>
+
+            </div>
+
+        </section>
     
 
 
