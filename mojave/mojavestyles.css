@@ -1,0 +1,18 @@
+.navbar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    list-style-type: none;
+}
+
+.headline {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.subhead {
+    font-size: 1.2em;
+    font-weight: normal;
+}
