@@ -1,3 +1,4 @@
+/* Didn't wind up finding a place to use this... */
 var partNum = 750;
 //particle number - change it!
 
