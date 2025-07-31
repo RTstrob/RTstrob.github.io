@@ -102,55 +102,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Pollinators play a vital role in maintaining healthy ecosystems and ensuring plant reproduction. However, the phrase “Save the Bees” has shifted the focus of pollinator protection towards European honeybees, which are non-native and often irresponsibly farmed, but the most urgent pollinators to research and protect are native bees that have existed in local ecosystems long before anthropocentric intervention and disruption.</p>
-<p>Among these native bees, <em>Melissodes</em> bees (commonly known as long-horned bees) are key specialists in pollinating plants of the Aster family, which includes many plants that are native to Oregon like the Common Sunflower (<em>Helianthus annuus</em>) and plants that are endemic to the Pacific Northwest like the Columbia River Daisy (<em>Columbiadoria hallii</em>) &amp; the Puget Sound Gumweed (<em>Grindelia integrifolia)</em>.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Pollinators play a vital role in maintaining healthy ecosystems and ensuring plant reproduction. However, the phrase “Save the Bees” has shifted the focus of pollinator protection towards non-native European honeybees, which are often irresponsibly farmed or escape and start feral populations. In fact, the most urgent pollinators to research and protect are the native bees that have existed in local ecosystems and specifically adapted to pollinate native flowers, long before anthropocentric intervention and disruption.</p>
+<p>Among these native bees, <em>Melissodes</em> bees (commonly known as summer long-horned bees) are key specialists in pollinating plants of the Aster family, which includes many plants that are native to Oregon like the Common Sunflower (<em>Helianthus annuus</em>) and plants that are endemic to the Pacific Northwest like the Columbia River Daisy (<em>Columbiadoria hallii</em>) &amp; the Puget Sound Gumweed (<em>Grindelia integrifolia)</em>.</p>
 </section>
-<section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background</h2>
+<section id="background" class="level1">
+<h1>Background</h1>
 <p>There is a deep importance to study species that have co-evolved with native plants and ecosystems for thousands of years. However, studying these bees presents challenges, particularly when it comes to correctly identifying species. Traditionally, scientists have relied on morphological identification, which is sorting similar bees by physical features like the color or shape of different anatomy. More recently, genetic (phylogenetic) identification has provided a new way to classify species. These two methods work in a feedback loop: physical descriptions help guide genetic research, while DNA analysis can reveal errors or hidden diversity in older classification systems. Despite overall advancements in the field of science, research on <em>Melissodes</em> bees has lagged in some regions. Even though the West Coast (including Oregon) has more <em>Melissodes</em> species than the East Coast, fewer studies have been conducted here, leaving gaps in our knowledge.</p>
 <p>This project seeks to make <em>Melissodes</em> research faster and more accessible by evaluating different identification methods and creating new tools. A major obstacle has been the outdated LaBerge Key to <em>Eumelissodes</em> (1961), the primary guide for identifying these bees. To modernize this process, we developed Bee-Search, which is an R Shiny app to simplify species identification and provide an a straightforward and accessible user interface.</p>
 <p>As we collect and analyze these data, we are ensuring that specimen collection and genetic research follow best practices for conservation and scientific integrity. By improving these foundational research steps, we hope to support better conservation strategies for Oregon’s native pollinators.</p>
 </section>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
-<p><u><em>Data Engineering</em></u></p>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<section id="data-engineering" class="level2">
+<h2 class="anchored" data-anchor-id="data-engineering">Data Engineering</h2>
 <p>This project has benefitted tremendously from our lab’s prior affiliation with the Oregon Bee Atlas, a project based at Oregon State University in Corvallis that aims to describe the diversity of all bees across the state. Collection efforts for this project began in earnest in 2018, and our lab has access to all of their records for <em>Melissodes</em> specimens from 2018-2020. This covers about 1700 individual bees, and includes information such as the collector, the time, date, and location of the collection event, and the type of plant that bee was gathering pollen or nectar from. Given the aforementioned difficulty of identification, only a small fraction of these bees are identified to the species level.</p>
 <p>Using host plant data from the OBA, we compiled a list of known <em>Melissodes</em> hosts. Then, with the export tool on the community science website iNaturalist, we extracted a dataset of nearly 100,000 sightings of these plants across the state of Oregon. This contains information such as time and date, latitude and longitude, and whether the plant was wild or cultivated. We are also using the iNaturalist API to retrieve new sightings as they are uploaded, which should allow us to gain a solid understanding of the distribution of these plants throughout the state, and in turn, the distribution of the bees that rely on them. Additionally, there are several species, such as <em>M. rivalis</em> and <em>M. clarkiae</em>, which rely completely on one type of plant (thistles and clarkias, respectively). While this data could prove particularly useful to target specialist pollinators like these, it could also be used to find areas with high densities of relevant flowering plants anywhere in the state. Our OBA survey dataset and our iNaturalist observations are both hosted on a postgres database with Railway.</p>
-<p><u><em>Data Organization</em></u></p>
+</section>
+<section id="data-organization" class="level2">
+<h2 class="anchored" data-anchor-id="data-organization">Data Organization</h2>
 <p>The Lindh Lab has done quite a bit of research on <em>Melissodes</em> in prior years, and thanks to the Oregon Bee Atlas, we have well over 1,000 specimens available for morphological, genetic, and spatial analyses of all kinds. However, the nature of all these disparate inquiries means there are countless different ways to sort our physical specimens, and even the ones that have been processed in some way are prone to being moved around haphazardly. To address all of the chaos, we are creating a centralized specimen tracking system based on the unique accession numbers assigned to each specimen by the Oregon Bee Atlas. By using these accession numbers as primary keys, we should be able to join specimen metadata (sex, species IDs, and collection events), morphological characteristics (especially facial patterns), results from genetic sequencing, and photographs. This standardization will streamline future work by uniting our disparate datasets. Additionally, by restructuring old datasets to conform to this new system, we will be able to minimize data loss and redundancy in the Lindh lab’s future efforts.</p>
-<p><em>Using Associated Plants to Find Target Species</em></p>
+</section>
+<section id="targeting-species-with-known-host-plant-associations" class="level2">
+<h2 class="anchored" data-anchor-id="targeting-species-with-known-host-plant-associations">Targeting Species with Known Host Plant Associations</h2>
 <p>Using the <code>lubridate</code> package in R, the bee specimen and associated host plant data were wrangled from the observation coordinates, which were organized into polygons. Now the datasets could be joined, allowing for analysis of overlapping plants &amp; pollinators. Once the data can be compared, a two-way ANOVA test can be administered to assess interaction effect based on the distances between different species of bees and plants.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bees2019 <span class="ot">=</span> <span class="fu">read_tsv</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">kaion</span><span class="sc">\\</span><span class="st">OneDrive</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">DATA 510</span><span class="sc">\\</span><span class="st">OBA2019.txt"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>melissodes19 <span class="ot">=</span> bees2019 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(acceptedScientificName, <span class="st">"Melissodes"</span>))</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>bees2018 <span class="ot">=</span> <span class="fu">read_tsv</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">kaion</span><span class="sc">\\</span><span class="st">OneDrive</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">DATA 510</span><span class="sc">\\</span><span class="st">OBA2018.txt"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>melissodes18 <span class="ot">=</span> bees2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(acceptedScientificName, <span class="st">"Melissodes"</span>))</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>bees <span class="ot">=</span> melissodes19<span class="sc">%&gt;%</span><span class="fu">select</span>(acceptedScientificName, decimalLatitude,decimalLongitude)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bees <span class="ot">=</span> bees<span class="sc">%&gt;%</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plants <span class="ot">=</span> aster <span class="sc">%&gt;%</span><span class="fu">select</span>(scientific_name,lat,lon)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plants <span class="ot">=</span> plants<span class="sc">%&gt;%</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>include<span class="ot">=</span><span class="cn">FALSE</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>bees2019 <span class="ot">=</span> <span class="fu">read_tsv</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">kaion</span><span class="sc">\\</span><span class="st">OneDrive</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">DATA 510</span><span class="sc">\\</span><span class="st">OBA2019.txt"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>melissodes19 <span class="ot">=</span> bees2019 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(acceptedScientificName, <span class="st">"Melissodes"</span>))</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>bees2018 <span class="ot">=</span> <span class="fu">read_tsv</span>(<span class="st">"C:</span><span class="sc">\\</span><span class="st">Users</span><span class="sc">\\</span><span class="st">kaion</span><span class="sc">\\</span><span class="st">OneDrive</span><span class="sc">\\</span><span class="st">Desktop</span><span class="sc">\\</span><span class="st">DATA 510</span><span class="sc">\\</span><span class="st">OBA2018.txt"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>melissodes18 <span class="ot">=</span> bees2018 <span class="sc">%&gt;%</span> <span class="fu">filter</span>(<span class="fu">str_detect</span>(acceptedScientificName, <span class="st">"Melissodes"</span>))</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>bees <span class="ot">=</span> melissodes19<span class="sc">%&gt;%</span><span class="fu">select</span>(acceptedScientificName, decimalLatitude,decimalLongitude)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>bees <span class="ot">=</span> bees<span class="sc">%&gt;%</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"decimalLongitude"</span>, <span class="st">"decimalLatitude"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plants <span class="ot">=</span> aster <span class="sc">%&gt;%</span><span class="fu">select</span>(scientific_name,lat,lon)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plants <span class="ot">=</span> plants<span class="sc">%&gt;%</span><span class="fu">st_as_sf</span>(<span class="at">coords =</span> <span class="fu">c</span>(<span class="st">"lon"</span>, <span class="st">"lat"</span>), <span class="at">crs =</span> <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<ul>
-<li><p><u>Machine Learning (wing geometric morphometrics)</u></p>
-<ul>
-<li><u>using the r package <a href="https://cran.r-project.org/web/packages/StereoMorph/StereoMorph.pdf">StereoMorph</a></u>
-<ul>
-<li><u>package can calculate angles between two points or vectors</u></li>
-<li><u>organized in x,y,z coordinates</u></li>
-</ul></li>
-<li><u>train/test for ability to correctly identify species based on wing vein geometry</u>
-<ul>
-<li><u>using <code>caret</code></u></li>
-<li><u>Random Forests</u></li>
-<li><u>separate by gender</u></li>
-</ul></li>
-</ul></li>
-</ul>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="wing-vein-geometric-morphometrics" class="level2">
+<h2 class="anchored" data-anchor-id="wing-vein-geometric-morphometrics">Wing Vein Geometric Morphometrics</h2>
+<p>We pulled the forewings of over 70 specimens and mounted them on microscope slides to take clear photos of the patterns in the veins. Wing venation is a sort of superficial characteristic that is seemingly not affected by natural selection, so any changes that occur in populations would probably be very gradual. Theoretically, this means you could expect closely related bees to exhibit very similar venation patterns to one another.</p>
+<p>Unfortunately, like nearly every other morphological characteristic we use for identification, sexual dimorphism is a major confounding factor. In other words, a male bee usually looks more like male bees of a different species than it does to female bees of its own species. This principle even applies to the shape of the bee wings and the cells inside them, so we’ll need to divide our image data into male and female subsets. At the end of the process, we can try to reunite them with phylogenetic clustering.</p>
+<p><img src="images/quarto/WingCompare.jpg" class="img-fluid" alt="Wing Comparison"> To analyze the patterns of wing venation, we manually placed landmarks at specific points on each wing. This let us create sets of coordinates which describe the layout of veins and cells. Using the <code>digitizeImages</code> function from the <code>StereoMorph</code> package, we were able to save these landmarks as shapes, which allows us to calculate how the position of each point differs throughout our set of wing images.</p>
+<p>These insects are very small and fragile, especially after sitting for years in room-temperature cardboard boxes. We did unfortunately damage a few specimens in the process of pulling wings. Some were torn, and some got folded over beneath the cover slip. Using the backlog of complete wings, however, we were able to estimate the geometry of any missing points and fill them in.</p>
+<p>Finally, we are able to statistically compare the shapes of the wings. Using a type of statistical shape analysis called a Procrustes fit, we were able to calculate the scaling, transposition, and rotation parameters that results in the optimal superimposition between any two shapes. This creates a normalized series of coordinate data that will highlight the differences between individual bees.</p>
+<p>Using the standardized coordinates, we can perform a PCA to see if any obvious clusters of closely related bees emerge. We can plot the resulting principal components, and compare our results with the preliminary species IDs we already have for each specimen. We can do this with the <code>geomorph</code> package, which contains a new type of object specifically designed for geometric morphometrics. This allows us to handle landmark coordinates, centroid areas, and categorical variables such as those species IDs.</p>
+</section>
+</section>
+<section id="results" class="level1">
+<h1>Results</h1>
 <p><u><em>Host Plants (Asteraceae Family)</em></u></p>
 <p>Interpretation of ANOVA Results</p>
 <div class="cell">
@@ -164,19 +164,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>The goal of the ANOVA model is to test whether the mean distance to the nearest plant differs significantly among Melissodes bee species (<code>acceptedScientificName</code>). The test yielded a statistically significant overall effect (<em>F</em>(10, 744) = 3.375, <em>p</em>= 0.0003), indicating that certain <em>Melissodes</em> species forage at different mean distances from their nearest host plants. While the effect size was modest (η² = 0.043), this suggests that are species-specific foraging behaviors—potentially driven by floral preference or habitat specialization—influence spatial associations with <em>Asteraceae</em>. These findings underscore the importance of targeted collection strategies: by prioritizing areas where aster observations are dense (e.g., via iNaturalist data), researchers can optimize efforts to capture <em>Melissodes</em> bees during their active foraging periods.</p>
 <p>To further assist host-plant based research design, the <em>AsterObs</em> Shiny app was created (available here: <a href="https://kaiona.shinyapps.io/AsterObs/">Asteraceae Observations in Oregon (<em>iNaturalist 2018-2025</em>)</a>. This app addresses a critical bottleneck in native bee research by spatially linking previous Melissodes collection efforts to iNaturalist observations of their Asteraceae host plants. The visualization of Aster family observations is able to be filtered by both year and genus, reducing search time and improving the likelihood of capturing target species of these specialist bees in their native habitats.</p>
 <p>Future statistical findings: relationship between specific species</p>
-<p>Wing Morphometrics</p>
-<ul>
-<li>results of random forest</li>
-</ul>
+<section id="wing-vein-geometric-morphometrics-1" class="level2">
+<h2 class="anchored" data-anchor-id="wing-vein-geometric-morphometrics-1">Wing Vein Geometric Morphometrics</h2>
+<section id="sample-results" class="level3">
+<h3 class="anchored" data-anchor-id="sample-results">Sample Results</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Effect sizes (Z) based on F distributions</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#          Df       SS        MS     Rsq      F      Z Pr(&gt;F)  </span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">#species    5 0.036598 0.0073196 0.12746 1.8991 1.7647  0.041 *</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#Residuals 65 0.250526 0.0038542 0.87254                       </span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co">#Total     70 0.287124                                         </span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">#---</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-validated classification results in frequencies</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co">#     10 23 29 70 72 77</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="co">#  10 27  1  7  4  6  3</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="co">#  23  1  1  0  0  1  0</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="co">#  29  4  0  1  0  0  0</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">#  70  2  0  0  1  0  0</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">#  72  3  0  0  0  7  0</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">#  77  1  0  1  0  0  0</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="co"># cross-validated classification result in %</span></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">#    </span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">#          10      23      29      70      72      77</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">#  10 56.2500  2.0833 14.5833  8.3333 12.5000  6.2500</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="co">#  23 33.3333 33.3333  0.0000  0.0000 33.3333  0.0000</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="co">#  29 80.0000  0.0000 20.0000  0.0000  0.0000  0.0000</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="co">#  70 66.6667  0.0000  0.0000 33.3333  0.0000  0.0000</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="co">#  72 30.0000  0.0000  0.0000  0.0000 70.0000  0.0000</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#  77 50.0000  0.0000 50.0000  0.0000  0.0000  0.0000</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="co"># overall classification accuracy: 52.11268 %</span></span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># Kappa statistic: 0.19667</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 <section id="conclusions" class="level2">
 <h2 class="anchored" data-anchor-id="conclusions">Conclusions</h2>
-<ul>
-<li><u>Data Ethics</u></li>
-<li>This is hard</li>
-<li>More people should use the things we just made</li>
-<li></li>
-</ul>
+<p>If the multiple unrelated and often conflicting identification methods didn’t already make this clear, the diversity of life on Earth is much more complex than the classification systems we impose are fully capable of capturing. We attempted to unify the results of these different techniques on our specimens with a centralized database, and by populating it with our lab’s backlog of data, plus the occasional simplification of old tools we’ve made, we hope to leave the Lindh lab better than we found it.</p>
+<p>While we weren’t able to completely solve the daunting challenge these insects have presented to scientists for over a hundred years, perhaps we made studying them a little easier for one scientist.</p>
+</section>
 </section>
 
 </main>
