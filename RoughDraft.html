@@ -1,8 +1,5 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style class="anchorjs"></style><style>body {transition: opacity ease-in 0.2s; } 
-body[unresolved] {opacity: 0; display: block; overflow: hidden; position: relative; } 
-</style>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.555">
@@ -26,192 +23,33 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="RoughDraft_files/clipboard.min.js"></script>
-<script src="RoughDraft_files/quarto.js"></script>
-<script src="RoughDraft_files/popper.min.js"></script>
-<script src="RoughDraft_files/tippy.umd.min.js"></script>
-<script src="RoughDraft_files/anchor.min.js"></script>
-<link href="RoughDraft_files/tippy.css" rel="stylesheet">
-<link href="RoughDraft_files/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="RoughDraft_files/bootstrap.min.js"></script>
-<link href="RoughDraft_files/bootstrap-icons.css" rel="stylesheet">
-<link href="RoughDraft_files/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
-<script src="RoughDraft_files/htmlwidgets.js"></script>
+<script src="RoughDraft_files/libs/clipboard/clipboard.min.js"></script>
+<script src="RoughDraft_files/libs/quarto-html/quarto.js"></script>
+<script src="RoughDraft_files/libs/quarto-html/popper.min.js"></script>
+<script src="RoughDraft_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="RoughDraft_files/libs/quarto-html/anchor.min.js"></script>
+<link href="RoughDraft_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="RoughDraft_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="RoughDraft_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="RoughDraft_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="RoughDraft_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="dark">
+<script src="RoughDraft_files/libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
 
-<script src="RoughDraft_files/r2d3-render.js"></script>
+<script src="RoughDraft_files/libs/r2d3-render-0.1.0/r2d3-render.js"></script>
 
-<script src="RoughDraft_files/webcomponents.js"></script>
+<script src="RoughDraft_files/libs/webcomponents-2.0.0/webcomponents.js"></script>
 
-<script src="RoughDraft_files/r2d3.js"></script>
+<script src="RoughDraft_files/libs/r2d3-binding-0.2.6/r2d3.js"></script>
 
-<script src="RoughDraft_files/d3.min.js"></script>
-
-
-
-<style>.ansi-display{font-family:monospace;white-space:pre-wrap;--ansiBlack: #000000;--ansiRed: #cd3131;--ansiGreen: #00BC00;--ansiYellow: #949800;--ansiBlue: #0451a5;--ansiMagenta: #bc05bc;--ansiCyan: #0598bc;--ansiWhite: #555555;--ansiBrightBlack: #666666;--ansiBrightRed: #cd3131;--ansiBrightGreen: #14CE14;--ansiBrightYellow: #b5ba00;--ansiBrightBlue: #0451a5;--ansiBrightMagenta: #bc05bc;--ansiBrightCyan: #0598bc;--ansiBrightWhite: #a5a5a5}.dark-mode .ansi-display{--ansiBlack: #000000;--ansiRed: #cd3131;--ansiGreen: #0DBC79;--ansiYellow: #e5e510;--ansiBlue: #2472c8;--ansiMagenta: #bc3fbc;--ansiCyan: #11a8cd;--ansiWhite: #e5e5e5;--ansiBrightBlack: #666666;--ansiBrightRed: #f14c4c;--ansiBrightGreen: #23d18b;--ansiBrightYellow: #f5f543;--ansiBrightBlue: #3b8eea;--ansiBrightMagenta: #d670d6;--ansiBrightCyan: #29b8db;--ansiBrightWhite: #e5e5e5}@keyframes ansi-displaly-run-blink{50%{opacity:0}}.fui-FluentProvider h2{border-bottom:none;padding-bottom:0}</style><script type="text/javascript">//# sourceURL=r2d3-script-300
-var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {
-this.d3 = d3;
-/* R2D3 Source File:  vizjs.js */
-!function(){function t(t){for(;t>o;)t-=o;for(;0>t;)t+=o;return t}
-                function n(t,n,e,r,a,i){if(0>=a||0>=r)return 0;var u=t.concat().sort(d3.ascending),o=r-u.length*n+(i?n:0),s=[],c=0,d=0;return d3.range(u.length).forEach(function(t){d=(o-e*t)/(a-=u[t-1]||0),c+=u[t]*d<=e?1:0,s.push(d)}),s[c]}
-                function e(t,e,r,a,i){var u=a,o=d3.sum(t),s=n(t,e,r,i-a,o,!1),c=t.map(function(t){var n=s*t,a=(r>n?r:n)/2;return u+=2*a+e,{c:u-a,v:n,w:a,value:t,percent:t/(o||1)}});return c}
-                function r(t){function n(t,n){return[t*Math.cos(n),t*Math.sin(n)]}var e=n(t[0],t[2]),r=n(t[0],t[3]),a=n(t[1],t[2]),i=n(t[1],t[3]);return["M",e,"A",t[0],t[0],"0",t[3]-t[2]>s?1:0,"1",r,"L",i,"A",t[1],t[1],"0",t[3]-t[2]>s?1:0,"0",a,"z"].join(" ")}
-                function a(t,n,e,r,a,i){function u(t,n,e){return"A"+t+","+t+" 0 "+ +(e>s)+",1 "+n}function c(t,n){return[t*Math.cos(n),t*Math.sin(n)]}function d(t,n,e,r){e+=n>e?o:0;var a=e-n,i=1-(a>s?o-a:a)/s;i=Math.pow(i,5);var u=(e+n)/2-(e-n>s?s:0);return"Q"+i*r*Math.cos(u)+","+i*r*Math.sin(u)+" "+t}var f=c(t,n),l=c(t,e),g=c(r,a),p=c(r,i);return"M"+f+u(t,l,e-n)+(n==a&&e==i?d(f,n,e,r):d(g,e,a,r)+u(r,p,i-a)+d(f,n,i,t))+"Z"}
-                function i(t,n){ret=[];for(var e=n;e>n-t;e--)ret.push(0>e?e+t:e);return ret}
-                var u={version:"1.1.0"},o=2*Math.PI,s=Math.PI,c=Math.PI/2;u.bP=function(){function t(i){
-                y=i,i.each(function(){var i=d3.select(this),u=t.bars(),o=i.selectAll(".subBars").data(u.subBars).enter().append("g").attr("transform",function(t){return"translate("+t.x+","+t.y+")"}).attr("class","subBars").append("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a);"undefined"!=typeof h&&o.style("fill",function(t){return h(t)});var s=i.selectAll(".edges").data(u.edges).enter().append("path").attr("class","edges").attr("d",function(t){
-                return t.path}).style("fill-opacity",t.edgeOpacity());"undefined"!=typeof h&&s.style("fill",function(t){
-                return h(t)}),i.selectAll(".mainBars").data(u.mainBars).enter().append("g").attr("transform",function(t){
-                return"translate("+t.x+","+t.y+")"}).attr("class","mainBars").append("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a).style("fill-opacity",0).on("mouseover",t.mouseover).on("mouseout",t.mouseout)})}function n(t){
-                return-t.width}function e(t){return-t.height}function r(t){
-                return 2*t.width}function a(t){return 2*t.height}var i,u,o,s,c,d,f,l,g,p,h,y,m,v,A,x,k;return t.data=function(n){return arguments.length?(p=n,t):p},t.fill=function(n){return arguments.length?(h=n,t):h},t.keyPrimary=function(n){return arguments.length?(i=n,t):"undefined"!=typeof i?i:function(t){return t[0]}},t.sortPrimary=function(n){return arguments.length?(A=n,t):"undefined"!=typeof A?A:d3.ascending},t.keySecondary=function(n){return arguments.length?(u=n,t):"undefined"!=typeof u?u:function(t){return t[1]}},t.sortSecondary=function(n){return arguments.length?(x=n,t):"undefined"!=typeof x?x:d3.ascending},t.value=function(n){return arguments.length?(o=n,t):"undefined"!=typeof o?o:function(t){
-                return t[2]}},t.width=function(n){return arguments.length?(s=n,t):"undefined"!=typeof s?s:400},t.height=function(n){return arguments.length?(c=n,t):"undefined"!=typeof c?c:600},t.barSize=function(n){return arguments.length?(f=n,t):"undefined"!=typeof f?f:35},t.min=function(n){return arguments.length?(l=n,t):"undefined"!=typeof l?l:0},t.orient=function(n){return arguments.length?(d=n,t):"undefined"!=typeof d?d:"vertical"},t.pad=function(n){return arguments.length?(g=n,t):"undefined"!=typeof g?g:0},t.duration=function(n){
-                return arguments.length?(v=n,t):"undefined"!=typeof v?v:500},t.edgeOpacity=function(n){return arguments.length?(m=n,t):"undefined"!=typeof m?m:.4},t.edgeMode=function(n){return arguments.length?(k=n,t):"undefined"!=typeof k?k:"curved"},t.bars=function(n){function e(t,e){return"undefined"==typeof n||n.part===e||d[n.part](t)===n.key}function r(){var n=t.min()/2;s.primary.forEach(function(t){t.height<n&&(t.height=n)}),s.secondary.forEach(function(t){t.height<n&&(t.height=n)})}function a(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.nest().key("primary"==n?t.keyPrimary():t.keySecondary()).sortKeys("primary"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data()),i=o(a,t.pad(),t.min(),0,"vertical"==f?t.height():t.width()),u=t.barSize();a.forEach(function(e,r){
-                s[n].push({x:"horizontal"==f?(i[r].s+i[r].e)/2:"primary"==n?u/2:t.width()-u/2,y:"vertical"==f?(i[r].s+i[r].e)/2:"primary"==n?u/2:t.height()-u/2,height:"vertical"==f?(i[r].e-i[r].s)/2:u/2,width:"horizontal"==f?(i[r].e-i[r].s)/2:u/2,part:n,key:e.key,value:e.value,percent:i[r].p})})}function i(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.map(s[n],function(t){return t.key}),i=d3.nest().key("primary"==n?t.keyPrimary():t.keySecondary()).sortKeys("primary"==n?t.sortPrimary():t.sortSecondary()).key("secondary"==n?t.keyPrimary():t.keySecondary()).sortKeys("secondary"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data());i.forEach(function(e){var r=a.get(e.key),i=o(e.values,0,0,"vertical"==f?r.y-r.height:r.x-r.width,"vertical"==f?r.y+r.height:r.x+r.width),u=t.barSize();e.values.forEach(function(a,o){c[n].push({x:"vertical"==f?"primary"==n?u/2:t.width()-u/2:(i[o].s+i[o].e)/2,y:"horizontal"==f?"primary"==n?u/2:t.height()-u/2:(i[o].s+i[o].e)/2,height:("vertical"==f?i[o].e-i[o].s:u)/2,width:("horizontal"==f?i[o].e-i[o].s:u)/2,part:n,primary:"primary"==n?e.key:a.key,secondary:"primary"==n?a.key:e.key,value:a.value,percent:i[o].p*r.percent,index:"primary"==n?e.key+"|"+a.key:a.key+"|"+e.key})})})}function u(){
-                function n(t,n,e,r,i,u,o,s){
-                if("straight"==a)return["M",t,",",n,"L",e,",",r,"L",i,",",u,"L",o,",",s,"z"].join("");var c=(t+e)/2,d=(i+o)/2;return["M",t,",",n,"C",c,",",n," ",c,",",r,",",e,",",r,"L",i,",",u,"C",d,",",u," ",d,",",s,",",o,",",s,"z"].join("")}function e(t,n,e,r,i,u,o,s){
-                if("straight"==a)return["M",t,",",n,"L",e,",",r,"L",i,",",u,"L",o,",",s,"z"].join("");var c=(n+r)/2,d=(u+s)/2;return["M",t,",",n,"C",t,",",c," ",e,",",c,",",e,",",r,"L",i,",",u,"C",i,",",d," ",o,",",d,",",o,",",s,"z"].join("")}var r=d3.map(c.secondary,function(t){return t.index}),a=t.edgeMode();return c.primary.map(function(t){var a=r.get(t.index);return{path:"vertical"===f?n(t.x+t.width,t.y+t.height,a.x-a.width,a.y+a.height,a.x-a.width,a.y-a.height,t.x+t.width,t.y-t.height):e(t.x-t.width,t.y+t.height,a.x-a.width,a.y-a.height,a.x+a.width,a.y-a.height,t.x+t.width,t.y+t.height),primary:t.primary,secondary:t.secondary,value:t.value,percent:t.percent}})}function o(t,n,e,r,a){
-                var i=e/(a-r-2*t.length*n),u=0,o=0,s=d3.sum(t,function(t){return t.value});t.forEach(function(t){
-                t.value<i*s&&(u+=1,o+=t.value)});var c=1e-5>s?0:(a-r-2*t.length*n-u*e)/(s-o),d=r,f=[];return t.forEach(function(t){var r=t.value*c;f.push({s:d+n+(e>r?.5*(e-r):0),e:d+n+(e>r?.5*(e+r):r),p:1e-5>s?0:t.value/s}),d+=2*n+(e>r?e:r)}),f}var s={primary:[],secondary:[]},c={primary:[],secondary:[]},d={primary:t.keyPrimary(),secondary:t.keySecondary()},f=t.orient();return a("primary"),a("secondary"),i("primary"),i("secondary"),r(),{mainBars:s.primary.concat(s.secondary),subBars:c.primary.concat(c.secondary),edges:u()}},t.mouseover=function(i){var u=t.bars(i);y.selectAll(".mainBars").filter(function(t){return t.part===i.part&&t.key===i.key}).select("rect").style("stroke-opacity",1),y.selectAll(".subBars").data(u.subBars).transition().duration(t.duration()).attr("transform",function(t){
-                return"translate("+t.x+","+t.y+")"}).select("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a);var o=y.selectAll(".edges").data(u.edges);o.filter(function(t){return t[i.part]===i.key}).transition().duration(t.duration()).style("fill-opacity",t.edgeOpacity()).attr("d",function(t){return t.path}),o.filter(function(t){
-                return t[i.part]!==i.key}).transition().duration(t.duration()).style("fill-opacity",0).attr("d",function(t){return t.path}),y.selectAll(".mainBars").data(u.mainBars).transition().duration(t.duration()).attr("transform",function(t){return"translate("+t.x+","+t.y+")"}).select("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a)},t.mouseout=function(i){var u=t.bars();y.selectAll(".mainBars").filter(function(t){return t.part===i.part&&t.key===i.key}).select("rect").style("stroke-opacity",0),y.selectAll(".subBars").data(u.subBars).transition().duration(t.duration()).attr("transform",function(t){
-                return"translate("+t.x+","+t.y+")"}).select("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a),y.selectAll(".edges").data(u.edges).transition().duration(t.duration()).style("fill-opacity",t.edgeOpacity()).attr("d",function(t){return t.path}),y.selectAll(".mainBars").data(u.mainBars).transition().duration(t.duration()).attr("transform",function(t){
-                return"translate("+t.x+","+t.y+")"}).select("rect").attr("x",n).attr("y",e).attr("width",r).attr("height",a)},t},u.gg=function(){function t(n){g=n,n.each(function(){var n=d3.select(this),e=t.scale(),r=t.minorTickStart(),a=t.minorTickEnd(),i=t.majorTickStart(),u=t.majorTickEnd(),o=t.ticks(),c=t.majorTicks(),d=t.labelLocation(),f=t.outerRadius();n.append("circle").attr("r",f).style("fill","url(#vizgg3"+p+")").attr("class","face"),n.append("circle").attr("r",t.innerRadius()).style("fill","url(#vizgg2"+p+")").style("filter","url(#vizgg5"+p+")").attr("class","innerFace");var l=n.append("g");l.selectAll("line").data(o).enter().append("line").attr("class",function(t){return c(t)?"majorTicks":"minorTicks"}).attr("x1",function(t){return f*(c(t)?i:r)*Math.cos(e(t))}).attr("y1",function(t){return f*(c(t)?i:r)*Math.sin(e(t))}).attr("x2",function(t){
-                return f*(c(t)?u:a)*Math.cos(e(t))}).attr("y2",function(t){return f*(c(t)?u:a)*Math.sin(e(t))}),n.selectAll("text").data(o.filter(c)).enter().append("text").attr("class","label").attr("x",function(t){
-                return f*d*Math.cos(e(t))}).attr("y",function(t){return f*d*Math.sin(e(t))}).attr("dy",3).text(function(t){return t});var g=t.outerRadius()/b.outerRadius,h=180*t.scale()(t.value())/s+90;n.append("g").attr("transform","translate(1,1)").selectAll(".needleshadow").data([0]).enter().append("g").attr("transform","rotate("+h+")").attr("class","needleshadow").append("path").attr("d",["m 0",-130*g,5*g,175*g,-10*g,"0,z"].join(",")).style("filter","url(#vizgg6"+p+")"),n.selectAll(".needle").data([0]).enter().append("g").attr("transform","rotate("+h+")").attr("class","needle").append("polygon").attr("points",[-.5*g,-130*g,.5*g,-130*g,5*g,45*g,-5*g,45*g].join(",")).style("fill","url(#vizgg4"+p+")")})}var n,e,r,a,i,o,c,d,f,l,g,p,h,y,m,v,A,x,k,b={innerRadius:20,outerRadius:150,angleOffset:.7,startAngle:-1.5*s,endAngle:.5*s,minorTickStart:.9,minorTickEnd:.95,majorTickStart:.82,majorTickEnd:.95,needleColor:"#de2c2c",innerFaceColor:"#999999",faceColor:"#666666",domain:[0,100],duration:500,ease:"cubicInOut",ticks:d3.range(0,101,2),majorTicks:function(t){
-                return t%10===0},labelLocation:.7};return t.scale=function(){return d3.scale.linear().domain(t.domain()).range([b.startAngle+t.angleOffset(),b.endAngle-t.angleOffset()])},t.innerRadius=function(e){return arguments.length?(n=e,t):"undefined"!=typeof n?n:b.innerRadius},t.outerRadius=function(n){return arguments.length?(e=n,t):"undefined"!=typeof e?e:b.outerRadius},t.angleOffset=function(n){return arguments.length?(d=n,t):"undefined"!=typeof d?d:b.angleOffset},t.labelLocation=function(n){return arguments.length?(k=n,t):"undefined"!=typeof k?k:b.labelLocation},t.ticks=function(n){return arguments.length?(h=n,t):"undefined"!=typeof h?h:b.ticks},t.majorTicks=function(n){return arguments.length?(y=n,t):"undefined"!=typeof y?y:b.majorTicks},t.minorTickStart=function(n){return arguments.length?(m=n,t):"undefined"!=typeof m?m:b.minorTickStart},t.minorTickEnd=function(n){
-                return arguments.length?(v=n,t):"undefined"!=typeof v?v:b.minorTickEnd},t.majorTickStart=function(n){return arguments.length?(A=n,t):"undefined"!=typeof A?A:b.majorTickStart},t.majorTickEnd=function(n){return arguments.length?(x=n,t):"undefined"!=typeof x?x:b.majorTickEnd},t.needleColor=function(n){return arguments.length?(r=n,t):"undefined"!=typeof r?r:b.needleColor},t.innerFaceColor=function(n){
-                return arguments.length?(a=n,t):"undefined"!=typeof a?a:b.innerFaceColor},t.faceColor=function(n){return arguments.length?(i=n,t):"undefined"!=typeof i?i:b.faceColor},t.domain=function(n){return arguments.length?(o=n,t):"undefined"!=typeof o?o:b.domain},t.duration=function(n){return arguments.length?(f=n,t):"undefined"!=typeof f?f:b.duration},t.ease=function(n){return arguments.length?(l=n,t):"undefined"!=typeof l?l:b.ease},t.value=function(n){
-                return arguments.length?(c=n,t):"undefined"!=typeof c?c:.5*(b.domain[0]+b.domain[1])},t.defs=function(n,e){var r=n.append("defs");p=e;var a=t.needleColor(),i=t.innerFaceColor(),o=t.faceColor(),s=u.defs(r).lG().id("vizgg1"+e).sel();u.defs(s).stop().offset("0").stopColor(a),u.defs(s).stop().offset("1").stopColor(d3.rgb(a).darker(1));var c=u.defs(r).rG().id("vizgg2"+e).fx("35%").fy("65%").r("65%").spreadMethod("pad").sel();u.defs(c).stop().offset("0").stopColor(i),u.defs(c).stop().offset("1").stopColor(d3.rgb(i).darker(2));var d=u.defs(r).rG().id("vizgg3"+e).fx("35%").fy("65%").r("65%").spreadMethod("pad").sel();u.defs(d).stop().offset("0").stopColor(o),u.defs(d).stop().offset("1").stopColor(d3.rgb(o).darker(2)),u.defs(r).lG().id("vizgg4"+e).gradientUnits("userSpaceOnUse").y1("80").x1("-10").y2("80").x2("10").xlink("#vizgg1"+e);var f=u.defs(r).filter().id("vizgg5"+e).sel();u.defs(f).feFlood().result("flood").floodColor("rgb(0,0,0)").floodOpacity("0.6"),u.defs(f).feComposite().result("composite1").operator("in").in2("SourceGraphic")["in"]("flood"),u.defs(f).feGaussianBlur().result("blur").stdDeviation("2")["in"]("composite1"),u.defs(f).feOffset().result("offset").dy("2").dx("2"),u.defs(f).feComposite().result("composite2").operator("over").in2("offset")["in"]("SourceGraphic");var l=u.defs(r).filter().x("-0.3").y("-0.3").height("1.8").width("1.8").id("vizgg6"+e).sel();u.defs(l).feGaussianBlur().stdDeviation("2")},t.setNeedle=function(n){function e(t,n){
-                return d3.interpolateString("rotate("+t+")","rotate("+n+")")}var r=180*t.scale()(n)/s+90,a=180*t.scale()(t.value())/s+90,i=t.ease();g.selectAll(".needle").data([n]).transition().duration(t.duration()).attrTween("transform",function(t){return e(a,r)}).ease(i),g.selectAll(".needleshadow").data([n]).transition().duration(t.duration()).attrTween("transform",function(t){return e(a,r)}).ease(i).each("end",function(){angle=n}),t.value(n)},t},u.ch=function(){function u(t){function n(t){
-                return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}p=t,k||f(),t.each(function(){var t=d3.select(this),r=t.selectAll(".groups").data(x).enter().append("g").attr("class","groups").on("mouseover",u.mouseover).on("mouseout",u.mouseout),a=r.append("text").attr("class","label"),i=(1+u.labelPadding())*u.outerRadius(),s=u.valueFormat();a.filter(function(t){return"g"==t.type}).attr("x",function(t){
-                return i*Math.cos(d(t))}).attr("y",function(t){return i*Math.sin(d(t))}).text(function(t){return t.source+" ("+s(t.value)+")"}).style("text-anchor",function(t){var n=d(t);return c>n||n>o-c?"start":"end"}).each(function(t){this._current=t}),r.append("path").style("fill",function(t){return y(t.source)}).style("stroke",function(t){
-                return y(t.source)}).attr("d",n).each(function(t){this._current=t}).filter(function(t){return"g"==t.type}),t.append("g").attr("class","chords").selectAll(".chord").data(k).enter().append("g").attr("class","chord").append("path").each(function(t){this._current=t}).attr("d",e).style("fill",function(t){return y(t.target)}).style("opacity",u.chordOpacity()).style("stroke",function(t){return y(t.target)}).style("display",function(t){return t.display?"inline":"none"})})}function s(t){function n(t,n){return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}function i(t){
-                var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return e(n(t))}}function s(t){var e=d3.interpolate(this._current,t);return this._current=e(0),function(t){return n(e(t),t)}}function f(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.cos(d(n(t)))}}function l(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.sin(d(n(t)))}}var g=p.selectAll(".groups").data(t?b:u.groups()),h=(1+u.labelPadding())*u.outerRadius(),y=u.valueFormat();g.select("path").transition().duration(L).attrTween("d",s),g.select(".label").filter(function(t){return"g"==t.type}).transition().duration(L).attrTween("x",f).attrTween("y",l).text(function(t){return t.source+" ("+y(t.value)+")"}).style("text-anchor",function(t){var n=d(t);return c>n||n>o-c?"start":"end"});var m=u.chordOpacity();p.select(".chords").selectAll(".chord").data(t?w:u.chords()).select("path").transition().duration(L).attrTween("d",i).style("opacity",function(t){return t.display?m:0})}function d(n){return t((n.startAngle+n.endAngle)/2)}function f(){
-                m=[],h.forEach(function(t){-1==m.indexOf(E(t))&&m.push(E(t)),-1==m.indexOf(M(t))&&m.push(M(t))}),m=m.sort(T),v={},A={},m.forEach(function(t){v[t]={},A[t]={},m.forEach(function(n){v[t][n]=0,A[t][n]=!1})}),h.forEach(function(t){var n=E(t),e=M(t);v[n][e]+=S(t),A[n][e]=!0}),x=[],m.forEach(function(t,n){x.push({source:t,type:"gs",value:0,skipPad:!0,index:n}),x.push({source:t,type:"g",value:d3.sum(m,function(n){return v[t][n]}),skipPad:!1,index:n})}),g(x,z,R,void 0,P),k=[],x.filter(function(t){return"g"==t.type}).forEach(function(t,n){
-                var r=i(m.length,n),a=e(r.map(function(n){return v[t.source][m[n]]}),0,0,t.startAngle,t.endAngle);r.forEach(function(e,r){var i=a[r];k.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:t.source,target:m[e],type:"c",display:A[t.source][m[e]],index:n,subindex:e,indexsubindex:n+"-"+e})})});var t=d3.map(k,function(t){return t.indexsubindex});k.forEach(function(n){if(n.subindex==n.index)return n.endStartAngle=n.startAngle,void(n.endEndAngle=n.startAngle);var e=t.get(n.subindex+"-"+n.index);n.endStartAngle=e.startAngle,n.endEndAngle=e.startAngle}),F=!1}function l(t){function n(t){return t.endAngle+t.startAngle}var r=x.filter(function(n){return n.source==t&&"g"==n.type})[0];b=[],m.forEach(function(n,e){b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:"gs",value:n==t?v[n][n]:0,skipPad:n==t&&A[n][n]?!1:!0,index:e}),n==t?b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:"g",value:r.value,skipPad:!1,index:e}):b.push({source:n,type:"g",value:v[t][n],skipPad:!1,index:e})}),g(b,z,R,t,P);var a=n(r);x.forEach(function(t,e){
-                var r=b[e],i=n(t)<a;r.startAngle-=i?o:0,r.endAngle-=i?o:0}),w=[],b.filter(function(t){return"g"==t.type}).forEach(function(n,r){var a=i(m.length,r),u=a.map(function(e){var r=m[e];return n.source==t?v[n.source][r]:r==t?v[r][n.source]:0}),o=e(u,0,0,n.startAngle,n.endAngle);a.forEach(function(e,a){var i=o[a];w.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:n.source,target:m[e],type:"c",display:n.source===t,index:r,subindex:e,indexsubindex:r+"-"+e})})});var u=d3.map(w.map(function(t){return{startAngle:t.startAngle,endAngle:t.endAngle,indexsubindex:t.indexsubindex}}),function(t){return t.indexsubindex}),s=d3.map(b.filter(function(t){return"gs"==t.type}),function(t){return t.source});w.forEach(function(n){
-                if(n.subindex==n.index){var e=s.get(n.source);return n.endStartAngle=e.startAngle,void(n.endEndAngle=e.endAngle)}var r=u.get(n.subindex+"-"+n.index);n.endStartAngle=r.startAngle,n.endEndAngle=r.endAngle,n.source!==t&&(n.startAngle=n.endAngle,n.endEndAngle=n.endStartAngle)})}function g(t,e,r,a,i){
-                var u=void 0!==a,o=0;if(u){for(var s=!1;o<t.length;o++)if(t[o].source==a&&"g"==t[o].type){s=!0;break}s||console.log("The fixed source X is not a valid key")}var c=d3.range(t.length);u&&(c=c.slice(o).concat(c.slice(0,o)));var d=t.filter(function(t){return!(u&&t.source===a&&"g"==t.type||t.skipPad)}).map(function(t){return t.value}),f=2*Math.PI-(u?t[o].endAngle-t[o].startAngle+2*e:0),l=u?t[o].endAngle+e:i,g=d3.sum(d),p=n(d,e,r,0>=f?0:f,g,u?!0:!1);c.slice(u?1:0).forEach(function(n){var a=p*t[n].value,i=(r>a?r-a:0)/2;t[n].startAngle=l,t[n].endAngle=l+a,t[n].padAngle=i,t[n].percent=t[n].value/(g||1),l+=a+i+(t[n].skipPad?0:e)})}var p,h,y,m,v,A,x,k,b,w,E=function(t){return t[0]},M=function(t){return t[1]},S=function(t){return t[2]},C=function(t){return t},T=d3.ascending,z=.03,P=0,B=180,O=200,j=.7,G=.02,R=0,L=500,F=!0;return u.data=function(t){return arguments.length?(h=t,F=!0,u):h},u.fill=function(t){return arguments.length?(y=t,u):y},u.duration=function(t){
-                return arguments.length?(L=t,u):L},u.chordOpacity=function(t){return arguments.length?(j=t,u):j},u.innerRadius=function(t){return arguments.length?(B=t,F=!0,u):B},u.outerRadius=function(t){return arguments.length?(O=t,F=!0,u):O},u.source=function(t){return arguments.length?(E=t,F=!0,u):E},u.target=function(t){return arguments.length?(M=t,F=!0,u):M},u.value=function(t){return arguments.length?(S=t,F=!0,u):S},u.padding=function(t){return arguments.length?(z=t,F=!0,u):z},u.labelPadding=function(t){return arguments.length?(G=t,u):G},u.sort=function(t){return arguments.length?(T=t,F=!0,u):T},u.startAngle=function(t){return arguments.length?(P=t,F=!0,u):P},u.chords=function(){
-                return F&&f(),k},u.groups=function(){return F&&f(),x},u.valueFormat=function(t){return arguments.length?(C=t,u):C},u.mouseover=function(t){l(t.source),s(1)},u.mouseout=function(t){s(0)},u},u.defs=function(t){var n={},e=t;return n.sel=function(){return e},n.lG=function(){return e=e.append("linearGradient"),n},n.rG=function(){return e=e.append("radialGradient"),n},n.stop=function(){return e=e.append("stop"),n},n.filter=function(){return e=e.append("filter"),n},n.feFlood=function(){return e=e.append("feFlood"),n},n.feComposite=function(){return e=e.append("feComposite"),n},n.feOffset=function(){return e=e.append("feOffset"),n},n.feGaussianBlur=function(){return e=e.append("feGaussianBlur"),n},n.result=function(t){return e=e.attr("result",t),n},n.floodColor=function(t){return e=e.attr("flood-color",t),n},n.floodOpacity=function(t){
-                return e=e.attr("flood-opacity",t),n},n.stdDeviation=function(t){return e=e.attr("stdDeviation",t),n},n.operator=function(t){return e=e.attr("operator",t),n},n.height=function(t){return e=e.attr("height",t),n},n.width=function(t){return e=e.attr("width",t),n},n["in"]=function(t){return e=e.attr("in",t),n},n.in2=function(t){return e=e.attr("in2",t),n},n.id=function(t){return e=e.attr("id",t),n},n.fx=function(t){return e=e.attr("fx",t),n},n.fy=function(t){return e=e.attr("fy",t),n},n.dx=function(t){return e=e.attr("dx",t),n},n.dy=function(t){
-                return e=e.attr("dy",t),n},n.x1=function(t){return e=e.attr("x1",t),n},n.y1=function(t){return e=e.attr("y1",t),n},n.x2=function(t){return e=e.attr("x2",t),n},n.y2=function(t){return e=e.attr("y2",t),n},n.x=function(t){return e=e.attr("x",t),n},n.y=function(t){return e=e.attr("y",t),n},n.r=function(t){return e=e.attr("r",t),n},n.spreadMethod=function(t){
-                return e=e.attr("spreadMethod",t),n},n.gradientUnits=function(t){return e=e.attr("gradientUnits",t),n},n.xlink=function(t){return e=e.attr("xlink:href",t),n},n.offset=function(t){return e=e.attr("offset",t),n},n.stopColor=function(t){return e=e.attr("stop-color",t),n},n.path=function(){return e=e.append("path"),n},n.d=function(t){return e=e.attr("d",t),n},n},this.viz=u}();
-svg = d3.select(svg.node());
-/* R2D3 Source File:  bipartiteD3Script.js */
-var data=[["lupinus","Achillea",1],
-["microstictus","Arnica",1],
-["robustior","Aster",1],
-["metenuus","Calochortus",2],
-["lupinus","Centaurea",1],
-["microstictus","Centaurea",1],
-["lupinus","Chrysothamnus",1],
-["rivalis","Cirsium",1],
-["lupinus","Clarkia",1],
-["robustior","Coreopsis",3],
-["metenuus","Dipsacus",2],
-["lupinus","Epilobium",4],
-["metenuus","Epilobium",1],
-["microstictus","Epilobium",1],
-["bimatris","Ericameria",11],
-["lupinus","Ericameria",1],
-["microstictus","Ericameria",1],
-["robustior","Ericameria",1],
-["semilupinus","Ericameria",1],
-["microstictus","Erigeron",1],
-["lupinus","Gaillardia",1],
-["lupinus","Grindelia",5],
-["robustior","Hebe",1],
-["lupinus","Helenium",1],
-["microstictus","Helenium",1],
-["robustior","Helenium",1],
-["lupinus","Helianthus",9],
-["robustior","Helianthus",4],
-["robustior","Heliopsis",4],
-["lupinus","Hypochaeris",1],
-["lupinus","Melilotus",1],
-["microstictus","Monardella",1],
-["lupinus","Quercus",4],
-["lupinus","Rudbeckia",2],
-["robustior","Rudbeckia",2],
-["lupinus","Sidalcea",1],
-["lupinus","Solidago",1],
-["microstictus","Solidago",4],
-["microstictus","Spiraea",1]]
+<script src="RoughDraft_files/libs/d3v5-5.9.2/d3.min.js"></script>
 
 
 
- function sort(sortOrder){
-                    return function(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b)) }
-                  }
-var color = {'Unlinked ':'#3366CC','lupinus':'#7FC97F','microstictus':'#BEAED4','robustior':'#FDC086','metenuus':'#FFFF99','rivalis':'#386CB0','bimatris':'#F0027F','semilupinus':'#BF5B17'};
+</head>
 
+<body class="fullcontent">
 
-
-
-var g1 = svg.append("g").attr("transform","translate(231,50)");
-                         var bp1=viz.bP()
-                         .data(data)
-                         .value(d=>d[2])
-                         .min(10)
-                         .pad(1)
-                         .height(400)
-                         .width(200)
-                         .barSize(35)
-                         .fill(d=>color[d.primary])
-.orient("vertical");
-
-g1.call(bp1);g1.append("text")
-                        .attr("x",-50).attr("y",-8)
-                        .style("text-anchor","middle")
-                        .text("Melissodes Species");
-                        g1.append("text")
-                        .attr("x", 250)
-                        .attr("y",-8).style("text-anchor","middle")
-                        .text("Aster Plants");
-                        g1.append("text")
-                        .attr("x",100).attr("y",-25)
-                        .style("text-anchor","middle")
-                        .attr("class","header")
-                        .text("freq");
-
- g1.selectAll(".mainBars")
-                        .on("mouseover",mouseover)
-                        .on("mouseout",mouseout);
-
- g1.selectAll(".mainBars").append("text").attr("class","label")
-                        .attr("x",d=>(d.part=="primary"? -34.4:35.6))
-                        .attr("y",d=>+6)
-                        .text(d=>d.key)
-                        .attr("text-anchor",d=>(d.part=="primary"? "end": "start"));
-
- g1.selectAll(".mainBars").append("text").attr("class","perc")
-                        .attr("x",d=>(d.part=="primary"? -177:198))
-                        .attr("y",d=>+6)
-                        .text(function(d){ return d3.format("0.0%")(d.percent)})
-                        .attr("text-anchor",d=>(d.part=="primary"? "end": "start")); 
-
-function mouseover(d){
-bp1.mouseover(d);
-                            g1.selectAll(".mainBars")
-                            .select(".perc")
-                            .text(function(d){ return d3.format("0.0%")(d.percent)});
-}
-
-                     function mouseout(d){
-bp1.mouseout(d);
-                            g1.selectAll(".mainBars")
-                            .select(".perc")
-                            .text(function(d){ return d3.format("0.0%")(d.percent)});
-}
-
-
-};</script><style data-make-styles-bucket="d" data-priority="0"></style><style id="fui-FluentProviderr0"></style></head>
-
-<body class="fullcontent quarto-dark" data-tabster="{&quot;root&quot;:{}}">
-
-<i tabindex="0" role="none" data-tabster-dummy="" aria-hidden="true" style="position: fixed; height: 1px; width: 1px; opacity: 0.001; z-index: -1; content-visibility: hidden; top: 0px; left: 0px;"></i><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
 
 <main class="content" id="quarto-document-content">
 
@@ -246,317 +84,123 @@ bp1.mouseout(d);
 <p><em>Data Science Capstone Project</em></p>
 <p><em>Willamette University School of Computing &amp; Information Sciences</em></p>
 <section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#introduction" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
-<p>Pollinators play a vital role in maintaining healthy ecosystems and 
-ensuring plant reproduction. However, the phrase “Save the Bees” has 
-shifted the focus of pollinator protection towards European honeybees, 
-which are non-native and often irresponsibly farmed, but the most urgent
- pollinators to research and protect are native bees that have existed 
-in local ecosystems long before anthropocentric intervention and 
-disruption.</p>
-<p>Among these native bees, <em>Melissodes</em> bees (commonly known as 
-long-horned bees) are key specialists in pollinating plants of the Aster
- family, which includes many plants that are native to Oregon like the 
-Common Sunflower (<em>Helianthus annuus</em>) and plants that are endemic to the Pacific Northwest like the Columbia River Daisy (<em>Columbiadoria hallii</em>) &amp; the Puget Sound Gumweed (<em>Grindelia integrifolia)</em>.</p>
-<p>With a strong foundation in <em>Melissodes</em> research under the 
-supervision of Professor Briana Lindh at Willamette University, the 
-curators of this project wanted to use advanced data manipulation tools 
-like interactive visualization and applied machine learning to increase 
-efficiency and accessibility in methodology practices.</p>
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Pollinators play a vital role in maintaining healthy ecosystems and ensuring plant reproduction. However, the phrase “Save the Bees” has shifted the focus of pollinator protection towards European honeybees, which are non-native and often irresponsibly farmed, but the most urgent pollinators to research and protect are native bees that have existed in local ecosystems long before anthropocentric intervention and disruption.</p>
+<p>Among these native bees, <em>Melissodes</em> bees (commonly known as long-horned bees) are key specialists in pollinating plants of the Aster family, which includes many plants that are native to Oregon like the Common Sunflower (<em>Helianthus annuus</em>) and plants that are endemic to the Pacific Northwest like the Columbia River Daisy (<em>Columbiadoria hallii</em>) &amp; the Puget Sound Gumweed (<em>Grindelia integrifolia)</em>.</p>
+<p>With a strong foundation in <em>Melissodes</em> research under the supervision of Professor Briana Lindh at Willamette University, the curators of this project wanted to use advanced data manipulation tools like interactive visualization and applied machine learning to increase efficiency and accessibility in methodology practices.</p>
 </section>
 <section id="background" class="level2">
-<h2 class="anchored" data-anchor-id="background">Background<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#background" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
-<p>There is a deep importance to study species that have co-evolved with
- native plants and ecosystems for thousands of years. However, studying 
-these bees presents challenges, particularly when it comes to correctly 
-identifying species. Traditionally, scientists have relied on 
-morphological identification, which is sorting similar bees by physical 
-features like the color or shape of different anatomy. More recently, 
-genetic (phylogenetic) identification has provided a new way to classify
- species. These two methods work in a feedback loop: physical 
-descriptions help guide genetic research, while DNA analysis can reveal 
-errors or hidden diversity in older classification systems. Despite 
-overall advancements in the field of science, research on <em>Melissodes</em> bees has lagged in some regions. Even though the West Coast (including Oregon) has more <em>Melissodes</em> species than the East Coast, fewer studies have been conducted here, leaving gaps in our knowledge.</p>
-<p>This project seeks to make <em>Melissodes</em> research faster and 
-more accessible by evaluating different identification methods and 
-creating new tools. A major obstacle has been the outdated LaBerge Key 
-to <em>Eumelissodes</em> (1961), the primary guide for identifying these
- bees. To modernize this process, we developed Bee-Search, which is an R
- Shiny app to simplify species identification and provide an a 
-straightforward and accessible user interface. The goal of this project 
-is geared towards expand upon Bee-Search in two main ways, 1) generating
- another R Shiny app to aid specimen collection efforts, as a complement
- and 2) using machine learning to analyze future identification methods.</p>
-<p>As we collect and analyze these data, we are ensuring that specimen 
-collection and genetic research follow best practices for conservation 
-and scientific integrity. By improving these foundational research 
-steps, we hope to support better conservation strategies for Oregon’s 
-native pollinators.</p>
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>There is a deep importance to study species that have co-evolved with native plants and ecosystems for thousands of years. However, studying these bees presents challenges, particularly when it comes to correctly identifying species. Traditionally, scientists have relied on morphological identification, which is sorting similar bees by physical features like the color or shape of different anatomy. More recently, genetic (phylogenetic) identification has provided a new way to classify species. These two methods work in a feedback loop: physical descriptions help guide genetic research, while DNA analysis can reveal errors or hidden diversity in older classification systems. Despite overall advancements in the field of science, research on <em>Melissodes</em> bees has lagged in some regions. Even though the West Coast (including Oregon) has more <em>Melissodes</em> species than the East Coast, fewer studies have been conducted here, leaving gaps in our knowledge.</p>
+<p>This project seeks to make <em>Melissodes</em> research faster and more accessible by evaluating different identification methods and creating new tools. A major obstacle has been the outdated LaBerge Key to <em>Eumelissodes</em> (1961), the primary guide for identifying these bees. To modernize this process, we developed Bee-Search, which is an R Shiny app to simplify species identification and provide an a straightforward and accessible user interface. The goal of this project is geared towards expand upon Bee-Search in two main ways, 1) generating another R Shiny app to aid specimen collection efforts, as a complement and 2) using machine learning to analyze future identification methods.</p>
+<p>As we collect and analyze these data, we are ensuring that specimen collection and genetic research follow best practices for conservation and scientific integrity. By improving these foundational research steps, we hope to support better conservation strategies for Oregon’s native pollinators.</p>
 </section>
 <section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">Methodology<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#methodology" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
-<p>A central objective of this project was data sustainability and the 
-understanding that any data used would need to be accessible in 
-different locations and new methods would need to be understandable to a
- semi-technical audience.</p>
+<h2 class="anchored" data-anchor-id="methodology">Methodology</h2>
+<p>A central objective of this project was data sustainability and the understanding that any data used would need to be accessible in different locations and new methods would need to be understandable to a semi-technical audience.</p>
 <section id="data-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="data-engineering">Data Engineering<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#data-engineering" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h3>
-<p>This project has benefitted tremendously from our lab’s prior 
-affiliation with the Oregon Bee Atlas, a project based at Oregon State 
-University in Corvallis that aims to describe the diversity of all bees 
-across the state. Collection efforts for this project began in earnest 
-in 2018, and our lab has access to all of their records for Melissodes 
-specimens from 2018-2020. This covers about 1700 individual bees, and 
-includes information such as the collector, the time, date, and location
- of the collection event, and the type of plant that bee was gathering 
-pollen or nectar from. Given the aforementioned difficulty of 
-identification, only a small fraction of these bees are identified to 
-the species level.</p>
-<p>Using host plant data from the OBA, we compiled a list of known 
-Melissodes hosts. Then, with the export tool on the community science 
-website iNaturalist, we extracted a data set of nearly 100,000 sightings
- of these plants across the state of Oregon. This contains information 
-such as time and date, latitude and longitude, and whether the plant was
- wild or cultivated. We are also using the iNaturalist API to retrieve 
-new sightings as they are uploaded, which should allow us to gain a 
-solid understanding of the distribution of these plants throughout the 
-state, and in turn, the distribution of the bees that rely on them. 
-Additionally, there are several species, such as <em>M. rivalis</em> and <em>M. clarkiae</em>,
- which rely completely on one type of plant (thistles and clarkias, 
-respectively). While this data could prove particularly useful to target
- specialist pollinators like these, it could also be used to find areas 
-with high densities of relevant flowering plants anywhere in the state. 
-Our OBA survey dataset and our iNaturalist observations are both hosted 
-on a postgres database with Railway.</p>
+<h3 class="anchored" data-anchor-id="data-engineering">Data Engineering</h3>
+<p>This project has benefitted tremendously from our lab’s prior affiliation with the Oregon Bee Atlas, a project based at Oregon State University in Corvallis that aims to describe the diversity of all bees across the state. Collection efforts for this project began in earnest in 2018, and our lab has access to all of their records for Melissodes specimens from 2018-2020. This covers about 1700 individual bees, and includes information such as the collector, the time, date, and location of the collection event, and the type of plant that bee was gathering pollen or nectar from. Given the aforementioned difficulty of identification, only a small fraction of these bees are identified to the species level.</p>
+<p>Using host plant data from the OBA, we compiled a list of known Melissodes hosts. Then, with the export tool on the community science website iNaturalist, we extracted a data set of nearly 100,000 sightings of these plants across the state of Oregon. This contains information such as time and date, latitude and longitude, and whether the plant was wild or cultivated. We are also using the iNaturalist API to retrieve new sightings as they are uploaded, which should allow us to gain a solid understanding of the distribution of these plants throughout the state, and in turn, the distribution of the bees that rely on them. Additionally, there are several species, such as <em>M. rivalis</em> and <em>M. clarkiae</em>, which rely completely on one type of plant (thistles and clarkias, respectively). While this data could prove particularly useful to target specialist pollinators like these, it could also be used to find areas with high densities of relevant flowering plants anywhere in the state. Our OBA survey dataset and our iNaturalist observations are both hosted on a postgres database with Railway.</p>
 </section>
 <section id="data-organization" class="level3">
-<h3 class="anchored" data-anchor-id="data-organization">Data Organization<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#data-organization" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h3>
-<p>The Lindh Lab has done quite a bit of research on Melissodes in prior
- years, and thanks to the Oregon Bee Atlas, we have well over 1,000 
-specimens available for morphological, genetic, and spatial analyses of 
-all kinds. However, the nature of all these disparate inquiries means 
-there are countless different ways to sort our physical specimens, and 
-even the ones that have been processed in some way are prone to being 
-moved around haphazardly. To address all of the chaos, we are creating a
- centralized specimen tracking system based on the unique accession 
-numbers assigned to each specimen by the Oregon Bee Atlas. By using 
-these accession numbers as primary keys, we should be able to join 
-specimen metadata (sex, species IDs, and collection events), 
-morphological characteristics (especially facial patterns), results from
- genetic sequencing, and photographs. This standardization will 
-streamline future work by uniting our disparate data sets. Additionally,
- by restructuring old data sets to conform to this new system, we will 
-be able to minimize data loss and redundancy in the Lindh lab’s future 
-efforts.</p>
+<h3 class="anchored" data-anchor-id="data-organization">Data Organization</h3>
+<p>The Lindh Lab has done quite a bit of research on Melissodes in prior years, and thanks to the Oregon Bee Atlas, we have well over 1,000 specimens available for morphological, genetic, and spatial analyses of all kinds. However, the nature of all these disparate inquiries means there are countless different ways to sort our physical specimens, and even the ones that have been processed in some way are prone to being moved around haphazardly. To address all of the chaos, we are creating a centralized specimen tracking system based on the unique accession numbers assigned to each specimen by the Oregon Bee Atlas. By using these accession numbers as primary keys, we should be able to join specimen metadata (sex, species IDs, and collection events), morphological characteristics (especially facial patterns), results from genetic sequencing, and photographs. This standardization will streamline future work by uniting our disparate data sets. Additionally, by restructuring old data sets to conform to this new system, we will be able to minimize data loss and redundancy in the Lindh lab’s future efforts.</p>
 </section>
 </section>
 <section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#results" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
-<p>Our research focused on aiding the collection and identification of <em>Melissodes</em>
- specimens. The goals were to figure out how we can collect specimens 
-faster and expand on physical trait identification methods while 
-simultaneously organizing existing datasets.</p>
+<h2 class="anchored" data-anchor-id="results">Results</h2>
+<p>Our research focused on aiding the collection and identification of <em>Melissodes</em> specimens. The goals were to figure out how we can collect specimens faster and expand on physical trait identification methods while simultaneously organizing existing datasets.</p>
 <section id="targeting-species-with-known-host-plant-associations" class="level3">
-<h3 class="anchored" data-anchor-id="targeting-species-with-known-host-plant-associations">Targeting Species with Known Host Plant Associations<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#targeting-species-with-known-host-plant-associations" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h3>
-<p><em>Melissodes</em> bees are specialists on Aster Family (sunflowers,
- daises, asters), so flowers are a natural connection to focus our 
-collection perspective upon. Using the <code>lubridate</code> package in
- R, the bee specimen and associated host plant data were wrangled from 
-the observation coordinates, which were organized into polygons. Now the
- datasets could be joined, allowing for analysis of overlapping plants 
-&amp; pollinators.</p>
+<h3 class="anchored" data-anchor-id="targeting-species-with-known-host-plant-associations">Targeting Species with Known Host Plant Associations</h3>
+<p><em>Melissodes</em> bees are specialists on Aster Family (sunflowers, daises, asters), so flowers are a natural connection to focus our collection perspective upon. Using the <code>lubridate</code> package in R, the bee specimen and associated host plant data were wrangled from the observation coordinates, which were organized into polygons. Now the datasets could be joined, allowing for analysis of overlapping plants &amp; pollinators.</p>
 <section id="statistical-analyses-of-bee-plant-relations" class="level4">
-<h4 class="anchored" data-anchor-id="statistical-analyses-of-bee-plant-relations">Statistical Analyses of Bee-Plant Relations<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#statistical-analyses-of-bee-plant-relations" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Once the data could be compared, a two-way ANOVA test can be 
-administered to assess interaction effect based on the distances between
- different species of bees and plants. The goal of the ANOVA model is to
- test whether the mean distance to the nearest plant differs 
-significantly among Melissodes bee species (acceptedScientificName). The
- test yielded a statistically significant overall effect (F(10, 744) = 
-3.375, p= 0.0003), indicating that certain Melissodes species forage at 
-different mean distances from their nearest host plants. While the 
-effect size was modest (η² = 0.043), this suggests that are 
-species-specific foraging behaviors—potentially driven by floral 
-preference or habitat specialization—influence spatial associations with
- Asteraceae. These findings underscore the importance of targeted 
-collection strategies: by prioritizing areas where aster observations 
-are dense (e.g., via iNaturalist data), researchers can optimize efforts
- to capture Melissodes bees during their active foraging periods.</p>
-<p>After conducting the ANOVA, a Pearson’s Chi-squared test was run on the data connecting <em>Melissodes</em>
- species and Aster plants that they were collected on. The null 
-hypothesis was that there is no relationship between bee species and 
-plant genera, and the Chi-squared test returned a p-value of 
-&lt;2.2e-16, which would confirm a strong, statistically significant 
-relationship between <em>Melissodes</em> bees and specific Aster plants as well as rejecting a null hypothesis.</p>
-<p>However, this astonishingly low p-value was off-putting, so we tested
- the contingency table using Cramer’s V, which resulted in 0.328, 
-suggesting a moderate association between <em>Melissodes</em> species 
-and their preference for specific plants in the Aster genera, but other 
-factors may also play a role (e.g.&nbsp;habitat, season, predation). The
- Cramer’s V test also returned a warning that the Chi-squared 
-approximation may be incorrect, which is most likely due to the smaller 
-values within our table. To problem-solve for our small sample sizes, we
- ran a Fisher’s Exact test.</p>
-<p>After running a Fisher’s Exact Test for Count Data (based on 10000 
-replicates), the data returned a simulated p-value of 9.999e-05, which 
-strongly rejects the null hypothesis that there is no association 
-between bee species and plant genera. Therefore, we felt confident in 
-shifting the perspective of <em>Melissodes</em> collection methods towards observed Aster plants.</p>
+<h4 class="anchored" data-anchor-id="statistical-analyses-of-bee-plant-relations">Statistical Analyses of Bee-Plant Relations</h4>
+<p>Once the data could be compared, a two-way ANOVA test can be administered to assess interaction effect based on the distances between different species of bees and plants. The goal of the ANOVA model is to test whether the mean distance to the nearest plant differs significantly among Melissodes bee species (acceptedScientificName). The test yielded a statistically significant overall effect (F(10, 744) = 3.375, p= 0.0003), indicating that certain Melissodes species forage at different mean distances from their nearest host plants. While the effect size was modest (η² = 0.043), this suggests that are species-specific foraging behaviors—potentially driven by floral preference or habitat specialization—influence spatial associations with Asteraceae. These findings underscore the importance of targeted collection strategies: by prioritizing areas where aster observations are dense (e.g., via iNaturalist data), researchers can optimize efforts to capture Melissodes bees during their active foraging periods.</p>
+<p>After conducting the ANOVA, a Pearson’s Chi-squared test was run on the data connecting <em>Melissodes</em> species and Aster plants that they were collected on. The null hypothesis was that there is no relationship between bee species and plant genera, and the Chi-squared test returned a p-value of &lt;2.2e-16, which would confirm a strong, statistically significant relationship between <em>Melissodes</em> bees and specific Aster plants as well as rejecting a null hypothesis.</p>
+<p>However, this astonishingly low p-value was off-putting, so we tested the contingency table using Cramer’s V, which resulted in 0.328, suggesting a moderate association between <em>Melissodes</em> species and their preference for specific plants in the Aster genera, but other factors may also play a role (e.g.&nbsp;habitat, season, predation). The Cramer’s V test also returned a warning that the Chi-squared approximation may be incorrect, which is most likely due to the smaller values within our table. To problem-solve for our small sample sizes, we ran a Fisher’s Exact test.</p>
+<p>After running a Fisher’s Exact Test for Count Data (based on 10000 replicates), the data returned a simulated p-value of 9.999e-05, which strongly rejects the null hypothesis that there is no association between bee species and plant genera. Therefore, we felt confident in shifting the perspective of <em>Melissodes</em> collection methods towards observed Aster plants.</p>
 </section>
 <section id="generating-an-accessible-r-shiny" class="level4">
-<h4 class="anchored" data-anchor-id="generating-an-accessible-r-shiny">Generating an Accessible R Shiny<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#generating-an-accessible-r-shiny" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>To further assist host-plant based research design, the <a href="https://kaiona.shinyapps.io/Collections/">Collections Shiny app</a>
- was created to help users identify plant-pollinator relations on the 
-genus-species levels respectively, as well as using geospatial data to 
-plot <em>Melissodes</em> and Aster observations. This app addresses a 
-critical bottleneck in native bee research by spatially linking previous
- Melissodes collection efforts to iNaturalist observations of their 
-Asteraceae host plants via an accessible, user friendly platform.</p>
-<p>To recover from the frustrations of the previous statistical tests, a
- Sankey diagram was generated to asses any significant relationships 
-between <em>Melissodes</em> specimens that were identified to species and the flowers that they were collected upon.</p>
+<h4 class="anchored" data-anchor-id="generating-an-accessible-r-shiny">Generating an Accessible R Shiny</h4>
+<p>To further assist host-plant based research design, the <a href="https://kaiona.shinyapps.io/Collections/">Collections Shiny app</a> was created to help users identify plant-pollinator relations on the genus-species levels respectively, as well as using geospatial data to plot <em>Melissodes</em> and Aster observations. This app addresses a critical bottleneck in native bee research by spatially linking previous Melissodes collection efforts to iNaturalist observations of their Asteraceae host plants via an accessible, user friendly platform.</p>
+<p>To recover from the frustrations of the previous statistical tests, a Sankey diagram was generated to asses any significant relationships between <em>Melissodes</em> specimens that were identified to species and the flowers that they were collected upon.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="htmlwidget-944747ccbe53e40cabf1" style="width:100%;height:650px;" class="r2d3 html-widget html-widget-static-bound"></div>
-<script type="application/json" data-for="htmlwidget-944747ccbe53e40cabf1">{"x":{"data":null,"type":"logical","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n/* R2D3 Source File:  vizjs.js */\n!function(){function t(t){for(;t>o;)t-=o;for(;0>t;)t+=o;return t}\n                function n(t,n,e,r,a,i){if(0>=a||0>=r)return 0;var u=t.concat().sort(d3.ascending),o=r-u.length*n+(i?n:0),s=[],c=0,d=0;return d3.range(u.length).forEach(function(t){d=(o-e*t)/(a-=u[t-1]||0),c+=u[t]*d<=e?1:0,s.push(d)}),s[c]}\n                function e(t,e,r,a,i){var u=a,o=d3.sum(t),s=n(t,e,r,i-a,o,!1),c=t.map(function(t){var n=s*t,a=(r>n?r:n)/2;return u+=2*a+e,{c:u-a,v:n,w:a,value:t,percent:t/(o||1)}});return c}\n                function r(t){function n(t,n){return[t*Math.cos(n),t*Math.sin(n)]}var e=n(t[0],t[2]),r=n(t[0],t[3]),a=n(t[1],t[2]),i=n(t[1],t[3]);return[\"M\",e,\"A\",t[0],t[0],\"0\",t[3]-t[2]>s?1:0,\"1\",r,\"L\",i,\"A\",t[1],t[1],\"0\",t[3]-t[2]>s?1:0,\"0\",a,\"z\"].join(\" \")}\n                function a(t,n,e,r,a,i){function u(t,n,e){return\"A\"+t+\",\"+t+\" 0 \"+ +(e>s)+\",1 \"+n}function c(t,n){return[t*Math.cos(n),t*Math.sin(n)]}function d(t,n,e,r){e+=n>e?o:0;var a=e-n,i=1-(a>s?o-a:a)/s;i=Math.pow(i,5);var u=(e+n)/2-(e-n>s?s:0);return\"Q\"+i*r*Math.cos(u)+\",\"+i*r*Math.sin(u)+\" \"+t}var f=c(t,n),l=c(t,e),g=c(r,a),p=c(r,i);return\"M\"+f+u(t,l,e-n)+(n==a&&e==i?d(f,n,e,r):d(g,e,a,r)+u(r,p,i-a)+d(f,n,i,t))+\"Z\"}\n                function i(t,n){ret=[];for(var e=n;e>n-t;e--)ret.push(0>e?e+t:e);return ret}\n                var u={version:\"1.1.0\"},o=2*Math.PI,s=Math.PI,c=Math.PI/2;u.bP=function(){function t(i){\n                y=i,i.each(function(){var i=d3.select(this),u=t.bars(),o=i.selectAll(\".subBars\").data(u.subBars).enter().append(\"g\").attr(\"transform\",function(t){return\"translate(\"+t.x+\",\"+t.y+\")\"}).attr(\"class\",\"subBars\").append(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a);\"undefined\"!=typeof h&&o.style(\"fill\",function(t){return h(t)});var s=i.selectAll(\".edges\").data(u.edges).enter().append(\"path\").attr(\"class\",\"edges\").attr(\"d\",function(t){\n                return t.path}).style(\"fill-opacity\",t.edgeOpacity());\"undefined\"!=typeof h&&s.style(\"fill\",function(t){\n                return h(t)}),i.selectAll(\".mainBars\").data(u.mainBars).enter().append(\"g\").attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).attr(\"class\",\"mainBars\").append(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a).style(\"fill-opacity\",0).on(\"mouseover\",t.mouseover).on(\"mouseout\",t.mouseout)})}function n(t){\n                return-t.width}function e(t){return-t.height}function r(t){\n                return 2*t.width}function a(t){return 2*t.height}var i,u,o,s,c,d,f,l,g,p,h,y,m,v,A,x,k;return t.data=function(n){return arguments.length?(p=n,t):p},t.fill=function(n){return arguments.length?(h=n,t):h},t.keyPrimary=function(n){return arguments.length?(i=n,t):\"undefined\"!=typeof i?i:function(t){return t[0]}},t.sortPrimary=function(n){return arguments.length?(A=n,t):\"undefined\"!=typeof A?A:d3.ascending},t.keySecondary=function(n){return arguments.length?(u=n,t):\"undefined\"!=typeof u?u:function(t){return t[1]}},t.sortSecondary=function(n){return arguments.length?(x=n,t):\"undefined\"!=typeof x?x:d3.ascending},t.value=function(n){return arguments.length?(o=n,t):\"undefined\"!=typeof o?o:function(t){\n                return t[2]}},t.width=function(n){return arguments.length?(s=n,t):\"undefined\"!=typeof s?s:400},t.height=function(n){return arguments.length?(c=n,t):\"undefined\"!=typeof c?c:600},t.barSize=function(n){return arguments.length?(f=n,t):\"undefined\"!=typeof f?f:35},t.min=function(n){return arguments.length?(l=n,t):\"undefined\"!=typeof l?l:0},t.orient=function(n){return arguments.length?(d=n,t):\"undefined\"!=typeof d?d:\"vertical\"},t.pad=function(n){return arguments.length?(g=n,t):\"undefined\"!=typeof g?g:0},t.duration=function(n){\n                return arguments.length?(v=n,t):\"undefined\"!=typeof v?v:500},t.edgeOpacity=function(n){return arguments.length?(m=n,t):\"undefined\"!=typeof m?m:.4},t.edgeMode=function(n){return arguments.length?(k=n,t):\"undefined\"!=typeof k?k:\"curved\"},t.bars=function(n){function e(t,e){return\"undefined\"==typeof n||n.part===e||d[n.part](t)===n.key}function r(){var n=t.min()/2;s.primary.forEach(function(t){t.height<n&&(t.height=n)}),s.secondary.forEach(function(t){t.height<n&&(t.height=n)})}function a(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.nest().key(\"primary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"primary\"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data()),i=o(a,t.pad(),t.min(),0,\"vertical\"==f?t.height():t.width()),u=t.barSize();a.forEach(function(e,r){\n                s[n].push({x:\"horizontal\"==f?(i[r].s+i[r].e)/2:\"primary\"==n?u/2:t.width()-u/2,y:\"vertical\"==f?(i[r].s+i[r].e)/2:\"primary\"==n?u/2:t.height()-u/2,height:\"vertical\"==f?(i[r].e-i[r].s)/2:u/2,width:\"horizontal\"==f?(i[r].e-i[r].s)/2:u/2,part:n,key:e.key,value:e.value,percent:i[r].p})})}function i(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.map(s[n],function(t){return t.key}),i=d3.nest().key(\"primary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"primary\"==n?t.sortPrimary():t.sortSecondary()).key(\"secondary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"secondary\"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data());i.forEach(function(e){var r=a.get(e.key),i=o(e.values,0,0,\"vertical\"==f?r.y-r.height:r.x-r.width,\"vertical\"==f?r.y+r.height:r.x+r.width),u=t.barSize();e.values.forEach(function(a,o){c[n].push({x:\"vertical\"==f?\"primary\"==n?u/2:t.width()-u/2:(i[o].s+i[o].e)/2,y:\"horizontal\"==f?\"primary\"==n?u/2:t.height()-u/2:(i[o].s+i[o].e)/2,height:(\"vertical\"==f?i[o].e-i[o].s:u)/2,width:(\"horizontal\"==f?i[o].e-i[o].s:u)/2,part:n,primary:\"primary\"==n?e.key:a.key,secondary:\"primary\"==n?a.key:e.key,value:a.value,percent:i[o].p*r.percent,index:\"primary\"==n?e.key+\"|\"+a.key:a.key+\"|\"+e.key})})})}function u(){\n                function n(t,n,e,r,i,u,o,s){\n                if(\"straight\"==a)return[\"M\",t,\",\",n,\"L\",e,\",\",r,\"L\",i,\",\",u,\"L\",o,\",\",s,\"z\"].join(\"\");var c=(t+e)/2,d=(i+o)/2;return[\"M\",t,\",\",n,\"C\",c,\",\",n,\" \",c,\",\",r,\",\",e,\",\",r,\"L\",i,\",\",u,\"C\",d,\",\",u,\" \",d,\",\",s,\",\",o,\",\",s,\"z\"].join(\"\")}function e(t,n,e,r,i,u,o,s){\n                if(\"straight\"==a)return[\"M\",t,\",\",n,\"L\",e,\",\",r,\"L\",i,\",\",u,\"L\",o,\",\",s,\"z\"].join(\"\");var c=(n+r)/2,d=(u+s)/2;return[\"M\",t,\",\",n,\"C\",t,\",\",c,\" \",e,\",\",c,\",\",e,\",\",r,\"L\",i,\",\",u,\"C\",i,\",\",d,\" \",o,\",\",d,\",\",o,\",\",s,\"z\"].join(\"\")}var r=d3.map(c.secondary,function(t){return t.index}),a=t.edgeMode();return c.primary.map(function(t){var a=r.get(t.index);return{path:\"vertical\"===f?n(t.x+t.width,t.y+t.height,a.x-a.width,a.y+a.height,a.x-a.width,a.y-a.height,t.x+t.width,t.y-t.height):e(t.x-t.width,t.y+t.height,a.x-a.width,a.y-a.height,a.x+a.width,a.y-a.height,t.x+t.width,t.y+t.height),primary:t.primary,secondary:t.secondary,value:t.value,percent:t.percent}})}function o(t,n,e,r,a){\n                var i=e/(a-r-2*t.length*n),u=0,o=0,s=d3.sum(t,function(t){return t.value});t.forEach(function(t){\n                t.value<i*s&&(u+=1,o+=t.value)});var c=1e-5>s?0:(a-r-2*t.length*n-u*e)/(s-o),d=r,f=[];return t.forEach(function(t){var r=t.value*c;f.push({s:d+n+(e>r?.5*(e-r):0),e:d+n+(e>r?.5*(e+r):r),p:1e-5>s?0:t.value/s}),d+=2*n+(e>r?e:r)}),f}var s={primary:[],secondary:[]},c={primary:[],secondary:[]},d={primary:t.keyPrimary(),secondary:t.keySecondary()},f=t.orient();return a(\"primary\"),a(\"secondary\"),i(\"primary\"),i(\"secondary\"),r(),{mainBars:s.primary.concat(s.secondary),subBars:c.primary.concat(c.secondary),edges:u()}},t.mouseover=function(i){var u=t.bars(i);y.selectAll(\".mainBars\").filter(function(t){return t.part===i.part&&t.key===i.key}).select(\"rect\").style(\"stroke-opacity\",1),y.selectAll(\".subBars\").data(u.subBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a);var o=y.selectAll(\".edges\").data(u.edges);o.filter(function(t){return t[i.part]===i.key}).transition().duration(t.duration()).style(\"fill-opacity\",t.edgeOpacity()).attr(\"d\",function(t){return t.path}),o.filter(function(t){\n                return t[i.part]!==i.key}).transition().duration(t.duration()).style(\"fill-opacity\",0).attr(\"d\",function(t){return t.path}),y.selectAll(\".mainBars\").data(u.mainBars).transition().duration(t.duration()).attr(\"transform\",function(t){return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a)},t.mouseout=function(i){var u=t.bars();y.selectAll(\".mainBars\").filter(function(t){return t.part===i.part&&t.key===i.key}).select(\"rect\").style(\"stroke-opacity\",0),y.selectAll(\".subBars\").data(u.subBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a),y.selectAll(\".edges\").data(u.edges).transition().duration(t.duration()).style(\"fill-opacity\",t.edgeOpacity()).attr(\"d\",function(t){return t.path}),y.selectAll(\".mainBars\").data(u.mainBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a)},t},u.gg=function(){function t(n){g=n,n.each(function(){var n=d3.select(this),e=t.scale(),r=t.minorTickStart(),a=t.minorTickEnd(),i=t.majorTickStart(),u=t.majorTickEnd(),o=t.ticks(),c=t.majorTicks(),d=t.labelLocation(),f=t.outerRadius();n.append(\"circle\").attr(\"r\",f).style(\"fill\",\"url(#vizgg3\"+p+\")\").attr(\"class\",\"face\"),n.append(\"circle\").attr(\"r\",t.innerRadius()).style(\"fill\",\"url(#vizgg2\"+p+\")\").style(\"filter\",\"url(#vizgg5\"+p+\")\").attr(\"class\",\"innerFace\");var l=n.append(\"g\");l.selectAll(\"line\").data(o).enter().append(\"line\").attr(\"class\",function(t){return c(t)?\"majorTicks\":\"minorTicks\"}).attr(\"x1\",function(t){return f*(c(t)?i:r)*Math.cos(e(t))}).attr(\"y1\",function(t){return f*(c(t)?i:r)*Math.sin(e(t))}).attr(\"x2\",function(t){\n                return f*(c(t)?u:a)*Math.cos(e(t))}).attr(\"y2\",function(t){return f*(c(t)?u:a)*Math.sin(e(t))}),n.selectAll(\"text\").data(o.filter(c)).enter().append(\"text\").attr(\"class\",\"label\").attr(\"x\",function(t){\n                return f*d*Math.cos(e(t))}).attr(\"y\",function(t){return f*d*Math.sin(e(t))}).attr(\"dy\",3).text(function(t){return t});var g=t.outerRadius()/b.outerRadius,h=180*t.scale()(t.value())/s+90;n.append(\"g\").attr(\"transform\",\"translate(1,1)\").selectAll(\".needleshadow\").data([0]).enter().append(\"g\").attr(\"transform\",\"rotate(\"+h+\")\").attr(\"class\",\"needleshadow\").append(\"path\").attr(\"d\",[\"m 0\",-130*g,5*g,175*g,-10*g,\"0,z\"].join(\",\")).style(\"filter\",\"url(#vizgg6\"+p+\")\"),n.selectAll(\".needle\").data([0]).enter().append(\"g\").attr(\"transform\",\"rotate(\"+h+\")\").attr(\"class\",\"needle\").append(\"polygon\").attr(\"points\",[-.5*g,-130*g,.5*g,-130*g,5*g,45*g,-5*g,45*g].join(\",\")).style(\"fill\",\"url(#vizgg4\"+p+\")\")})}var n,e,r,a,i,o,c,d,f,l,g,p,h,y,m,v,A,x,k,b={innerRadius:20,outerRadius:150,angleOffset:.7,startAngle:-1.5*s,endAngle:.5*s,minorTickStart:.9,minorTickEnd:.95,majorTickStart:.82,majorTickEnd:.95,needleColor:\"#de2c2c\",innerFaceColor:\"#999999\",faceColor:\"#666666\",domain:[0,100],duration:500,ease:\"cubicInOut\",ticks:d3.range(0,101,2),majorTicks:function(t){\n                return t%10===0},labelLocation:.7};return t.scale=function(){return d3.scale.linear().domain(t.domain()).range([b.startAngle+t.angleOffset(),b.endAngle-t.angleOffset()])},t.innerRadius=function(e){return arguments.length?(n=e,t):\"undefined\"!=typeof n?n:b.innerRadius},t.outerRadius=function(n){return arguments.length?(e=n,t):\"undefined\"!=typeof e?e:b.outerRadius},t.angleOffset=function(n){return arguments.length?(d=n,t):\"undefined\"!=typeof d?d:b.angleOffset},t.labelLocation=function(n){return arguments.length?(k=n,t):\"undefined\"!=typeof k?k:b.labelLocation},t.ticks=function(n){return arguments.length?(h=n,t):\"undefined\"!=typeof h?h:b.ticks},t.majorTicks=function(n){return arguments.length?(y=n,t):\"undefined\"!=typeof y?y:b.majorTicks},t.minorTickStart=function(n){return arguments.length?(m=n,t):\"undefined\"!=typeof m?m:b.minorTickStart},t.minorTickEnd=function(n){\n                return arguments.length?(v=n,t):\"undefined\"!=typeof v?v:b.minorTickEnd},t.majorTickStart=function(n){return arguments.length?(A=n,t):\"undefined\"!=typeof A?A:b.majorTickStart},t.majorTickEnd=function(n){return arguments.length?(x=n,t):\"undefined\"!=typeof x?x:b.majorTickEnd},t.needleColor=function(n){return arguments.length?(r=n,t):\"undefined\"!=typeof r?r:b.needleColor},t.innerFaceColor=function(n){\n                return arguments.length?(a=n,t):\"undefined\"!=typeof a?a:b.innerFaceColor},t.faceColor=function(n){return arguments.length?(i=n,t):\"undefined\"!=typeof i?i:b.faceColor},t.domain=function(n){return arguments.length?(o=n,t):\"undefined\"!=typeof o?o:b.domain},t.duration=function(n){return arguments.length?(f=n,t):\"undefined\"!=typeof f?f:b.duration},t.ease=function(n){return arguments.length?(l=n,t):\"undefined\"!=typeof l?l:b.ease},t.value=function(n){\n                return arguments.length?(c=n,t):\"undefined\"!=typeof c?c:.5*(b.domain[0]+b.domain[1])},t.defs=function(n,e){var r=n.append(\"defs\");p=e;var a=t.needleColor(),i=t.innerFaceColor(),o=t.faceColor(),s=u.defs(r).lG().id(\"vizgg1\"+e).sel();u.defs(s).stop().offset(\"0\").stopColor(a),u.defs(s).stop().offset(\"1\").stopColor(d3.rgb(a).darker(1));var c=u.defs(r).rG().id(\"vizgg2\"+e).fx(\"35%\").fy(\"65%\").r(\"65%\").spreadMethod(\"pad\").sel();u.defs(c).stop().offset(\"0\").stopColor(i),u.defs(c).stop().offset(\"1\").stopColor(d3.rgb(i).darker(2));var d=u.defs(r).rG().id(\"vizgg3\"+e).fx(\"35%\").fy(\"65%\").r(\"65%\").spreadMethod(\"pad\").sel();u.defs(d).stop().offset(\"0\").stopColor(o),u.defs(d).stop().offset(\"1\").stopColor(d3.rgb(o).darker(2)),u.defs(r).lG().id(\"vizgg4\"+e).gradientUnits(\"userSpaceOnUse\").y1(\"80\").x1(\"-10\").y2(\"80\").x2(\"10\").xlink(\"#vizgg1\"+e);var f=u.defs(r).filter().id(\"vizgg5\"+e).sel();u.defs(f).feFlood().result(\"flood\").floodColor(\"rgb(0,0,0)\").floodOpacity(\"0.6\"),u.defs(f).feComposite().result(\"composite1\").operator(\"in\").in2(\"SourceGraphic\")[\"in\"](\"flood\"),u.defs(f).feGaussianBlur().result(\"blur\").stdDeviation(\"2\")[\"in\"](\"composite1\"),u.defs(f).feOffset().result(\"offset\").dy(\"2\").dx(\"2\"),u.defs(f).feComposite().result(\"composite2\").operator(\"over\").in2(\"offset\")[\"in\"](\"SourceGraphic\");var l=u.defs(r).filter().x(\"-0.3\").y(\"-0.3\").height(\"1.8\").width(\"1.8\").id(\"vizgg6\"+e).sel();u.defs(l).feGaussianBlur().stdDeviation(\"2\")},t.setNeedle=function(n){function e(t,n){\n                return d3.interpolateString(\"rotate(\"+t+\")\",\"rotate(\"+n+\")\")}var r=180*t.scale()(n)/s+90,a=180*t.scale()(t.value())/s+90,i=t.ease();g.selectAll(\".needle\").data([n]).transition().duration(t.duration()).attrTween(\"transform\",function(t){return e(a,r)}).ease(i),g.selectAll(\".needleshadow\").data([n]).transition().duration(t.duration()).attrTween(\"transform\",function(t){return e(a,r)}).ease(i).each(\"end\",function(){angle=n}),t.value(n)},t},u.ch=function(){function u(t){function n(t){\n                return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}p=t,k||f(),t.each(function(){var t=d3.select(this),r=t.selectAll(\".groups\").data(x).enter().append(\"g\").attr(\"class\",\"groups\").on(\"mouseover\",u.mouseover).on(\"mouseout\",u.mouseout),a=r.append(\"text\").attr(\"class\",\"label\"),i=(1+u.labelPadding())*u.outerRadius(),s=u.valueFormat();a.filter(function(t){return\"g\"==t.type}).attr(\"x\",function(t){\n                return i*Math.cos(d(t))}).attr(\"y\",function(t){return i*Math.sin(d(t))}).text(function(t){return t.source+\" (\"+s(t.value)+\")\"}).style(\"text-anchor\",function(t){var n=d(t);return c>n||n>o-c?\"start\":\"end\"}).each(function(t){this._current=t}),r.append(\"path\").style(\"fill\",function(t){return y(t.source)}).style(\"stroke\",function(t){\n                return y(t.source)}).attr(\"d\",n).each(function(t){this._current=t}).filter(function(t){return\"g\"==t.type}),t.append(\"g\").attr(\"class\",\"chords\").selectAll(\".chord\").data(k).enter().append(\"g\").attr(\"class\",\"chord\").append(\"path\").each(function(t){this._current=t}).attr(\"d\",e).style(\"fill\",function(t){return y(t.target)}).style(\"opacity\",u.chordOpacity()).style(\"stroke\",function(t){return y(t.target)}).style(\"display\",function(t){return t.display?\"inline\":\"none\"})})}function s(t){function n(t,n){return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}function i(t){\n                var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return e(n(t))}}function s(t){var e=d3.interpolate(this._current,t);return this._current=e(0),function(t){return n(e(t),t)}}function f(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.cos(d(n(t)))}}function l(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.sin(d(n(t)))}}var g=p.selectAll(\".groups\").data(t?b:u.groups()),h=(1+u.labelPadding())*u.outerRadius(),y=u.valueFormat();g.select(\"path\").transition().duration(L).attrTween(\"d\",s),g.select(\".label\").filter(function(t){return\"g\"==t.type}).transition().duration(L).attrTween(\"x\",f).attrTween(\"y\",l).text(function(t){return t.source+\" (\"+y(t.value)+\")\"}).style(\"text-anchor\",function(t){var n=d(t);return c>n||n>o-c?\"start\":\"end\"});var m=u.chordOpacity();p.select(\".chords\").selectAll(\".chord\").data(t?w:u.chords()).select(\"path\").transition().duration(L).attrTween(\"d\",i).style(\"opacity\",function(t){return t.display?m:0})}function d(n){return t((n.startAngle+n.endAngle)/2)}function f(){\n                m=[],h.forEach(function(t){-1==m.indexOf(E(t))&&m.push(E(t)),-1==m.indexOf(M(t))&&m.push(M(t))}),m=m.sort(T),v={},A={},m.forEach(function(t){v[t]={},A[t]={},m.forEach(function(n){v[t][n]=0,A[t][n]=!1})}),h.forEach(function(t){var n=E(t),e=M(t);v[n][e]+=S(t),A[n][e]=!0}),x=[],m.forEach(function(t,n){x.push({source:t,type:\"gs\",value:0,skipPad:!0,index:n}),x.push({source:t,type:\"g\",value:d3.sum(m,function(n){return v[t][n]}),skipPad:!1,index:n})}),g(x,z,R,void 0,P),k=[],x.filter(function(t){return\"g\"==t.type}).forEach(function(t,n){\n                var r=i(m.length,n),a=e(r.map(function(n){return v[t.source][m[n]]}),0,0,t.startAngle,t.endAngle);r.forEach(function(e,r){var i=a[r];k.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:t.source,target:m[e],type:\"c\",display:A[t.source][m[e]],index:n,subindex:e,indexsubindex:n+\"-\"+e})})});var t=d3.map(k,function(t){return t.indexsubindex});k.forEach(function(n){if(n.subindex==n.index)return n.endStartAngle=n.startAngle,void(n.endEndAngle=n.startAngle);var e=t.get(n.subindex+\"-\"+n.index);n.endStartAngle=e.startAngle,n.endEndAngle=e.startAngle}),F=!1}function l(t){function n(t){return t.endAngle+t.startAngle}var r=x.filter(function(n){return n.source==t&&\"g\"==n.type})[0];b=[],m.forEach(function(n,e){b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:\"gs\",value:n==t?v[n][n]:0,skipPad:n==t&&A[n][n]?!1:!0,index:e}),n==t?b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:\"g\",value:r.value,skipPad:!1,index:e}):b.push({source:n,type:\"g\",value:v[t][n],skipPad:!1,index:e})}),g(b,z,R,t,P);var a=n(r);x.forEach(function(t,e){\n                var r=b[e],i=n(t)<a;r.startAngle-=i?o:0,r.endAngle-=i?o:0}),w=[],b.filter(function(t){return\"g\"==t.type}).forEach(function(n,r){var a=i(m.length,r),u=a.map(function(e){var r=m[e];return n.source==t?v[n.source][r]:r==t?v[r][n.source]:0}),o=e(u,0,0,n.startAngle,n.endAngle);a.forEach(function(e,a){var i=o[a];w.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:n.source,target:m[e],type:\"c\",display:n.source===t,index:r,subindex:e,indexsubindex:r+\"-\"+e})})});var u=d3.map(w.map(function(t){return{startAngle:t.startAngle,endAngle:t.endAngle,indexsubindex:t.indexsubindex}}),function(t){return t.indexsubindex}),s=d3.map(b.filter(function(t){return\"gs\"==t.type}),function(t){return t.source});w.forEach(function(n){\n                if(n.subindex==n.index){var e=s.get(n.source);return n.endStartAngle=e.startAngle,void(n.endEndAngle=e.endAngle)}var r=u.get(n.subindex+\"-\"+n.index);n.endStartAngle=r.startAngle,n.endEndAngle=r.endAngle,n.source!==t&&(n.startAngle=n.endAngle,n.endEndAngle=n.endStartAngle)})}function g(t,e,r,a,i){\n                var u=void 0!==a,o=0;if(u){for(var s=!1;o<t.length;o++)if(t[o].source==a&&\"g\"==t[o].type){s=!0;break}s||console.log(\"The fixed source X is not a valid key\")}var c=d3.range(t.length);u&&(c=c.slice(o).concat(c.slice(0,o)));var d=t.filter(function(t){return!(u&&t.source===a&&\"g\"==t.type||t.skipPad)}).map(function(t){return t.value}),f=2*Math.PI-(u?t[o].endAngle-t[o].startAngle+2*e:0),l=u?t[o].endAngle+e:i,g=d3.sum(d),p=n(d,e,r,0>=f?0:f,g,u?!0:!1);c.slice(u?1:0).forEach(function(n){var a=p*t[n].value,i=(r>a?r-a:0)/2;t[n].startAngle=l,t[n].endAngle=l+a,t[n].padAngle=i,t[n].percent=t[n].value/(g||1),l+=a+i+(t[n].skipPad?0:e)})}var p,h,y,m,v,A,x,k,b,w,E=function(t){return t[0]},M=function(t){return t[1]},S=function(t){return t[2]},C=function(t){return t},T=d3.ascending,z=.03,P=0,B=180,O=200,j=.7,G=.02,R=0,L=500,F=!0;return u.data=function(t){return arguments.length?(h=t,F=!0,u):h},u.fill=function(t){return arguments.length?(y=t,u):y},u.duration=function(t){\n                return arguments.length?(L=t,u):L},u.chordOpacity=function(t){return arguments.length?(j=t,u):j},u.innerRadius=function(t){return arguments.length?(B=t,F=!0,u):B},u.outerRadius=function(t){return arguments.length?(O=t,F=!0,u):O},u.source=function(t){return arguments.length?(E=t,F=!0,u):E},u.target=function(t){return arguments.length?(M=t,F=!0,u):M},u.value=function(t){return arguments.length?(S=t,F=!0,u):S},u.padding=function(t){return arguments.length?(z=t,F=!0,u):z},u.labelPadding=function(t){return arguments.length?(G=t,u):G},u.sort=function(t){return arguments.length?(T=t,F=!0,u):T},u.startAngle=function(t){return arguments.length?(P=t,F=!0,u):P},u.chords=function(){\n                return F&&f(),k},u.groups=function(){return F&&f(),x},u.valueFormat=function(t){return arguments.length?(C=t,u):C},u.mouseover=function(t){l(t.source),s(1)},u.mouseout=function(t){s(0)},u},u.defs=function(t){var n={},e=t;return n.sel=function(){return e},n.lG=function(){return e=e.append(\"linearGradient\"),n},n.rG=function(){return e=e.append(\"radialGradient\"),n},n.stop=function(){return e=e.append(\"stop\"),n},n.filter=function(){return e=e.append(\"filter\"),n},n.feFlood=function(){return e=e.append(\"feFlood\"),n},n.feComposite=function(){return e=e.append(\"feComposite\"),n},n.feOffset=function(){return e=e.append(\"feOffset\"),n},n.feGaussianBlur=function(){return e=e.append(\"feGaussianBlur\"),n},n.result=function(t){return e=e.attr(\"result\",t),n},n.floodColor=function(t){return e=e.attr(\"flood-color\",t),n},n.floodOpacity=function(t){\n                return e=e.attr(\"flood-opacity\",t),n},n.stdDeviation=function(t){return e=e.attr(\"stdDeviation\",t),n},n.operator=function(t){return e=e.attr(\"operator\",t),n},n.height=function(t){return e=e.attr(\"height\",t),n},n.width=function(t){return e=e.attr(\"width\",t),n},n[\"in\"]=function(t){return e=e.attr(\"in\",t),n},n.in2=function(t){return e=e.attr(\"in2\",t),n},n.id=function(t){return e=e.attr(\"id\",t),n},n.fx=function(t){return e=e.attr(\"fx\",t),n},n.fy=function(t){return e=e.attr(\"fy\",t),n},n.dx=function(t){return e=e.attr(\"dx\",t),n},n.dy=function(t){\n                return e=e.attr(\"dy\",t),n},n.x1=function(t){return e=e.attr(\"x1\",t),n},n.y1=function(t){return e=e.attr(\"y1\",t),n},n.x2=function(t){return e=e.attr(\"x2\",t),n},n.y2=function(t){return e=e.attr(\"y2\",t),n},n.x=function(t){return e=e.attr(\"x\",t),n},n.y=function(t){return e=e.attr(\"y\",t),n},n.r=function(t){return e=e.attr(\"r\",t),n},n.spreadMethod=function(t){\n                return e=e.attr(\"spreadMethod\",t),n},n.gradientUnits=function(t){return e=e.attr(\"gradientUnits\",t),n},n.xlink=function(t){return e=e.attr(\"xlink:href\",t),n},n.offset=function(t){return e=e.attr(\"offset\",t),n},n.stopColor=function(t){return e=e.attr(\"stop-color\",t),n},n.path=function(){return e=e.append(\"path\"),n},n.d=function(t){return e=e.attr(\"d\",t),n},n},this.viz=u}();\nsvg = d3.select(svg.node());\n/* R2D3 Source File:  bipartiteD3Script.js */\nvar data=[[\"lupinus\",\"Achillea\",1],\n[\"microstictus\",\"Arnica\",1],\n[\"robustior\",\"Aster\",1],\n[\"metenuus\",\"Calochortus\",2],\n[\"lupinus\",\"Centaurea\",1],\n[\"microstictus\",\"Centaurea\",1],\n[\"lupinus\",\"Chrysothamnus\",1],\n[\"rivalis\",\"Cirsium\",1],\n[\"lupinus\",\"Clarkia\",1],\n[\"robustior\",\"Coreopsis\",3],\n[\"metenuus\",\"Dipsacus\",2],\n[\"lupinus\",\"Epilobium\",4],\n[\"metenuus\",\"Epilobium\",1],\n[\"microstictus\",\"Epilobium\",1],\n[\"bimatris\",\"Ericameria\",11],\n[\"lupinus\",\"Ericameria\",1],\n[\"microstictus\",\"Ericameria\",1],\n[\"robustior\",\"Ericameria\",1],\n[\"semilupinus\",\"Ericameria\",1],\n[\"microstictus\",\"Erigeron\",1],\n[\"lupinus\",\"Gaillardia\",1],\n[\"lupinus\",\"Grindelia\",5],\n[\"robustior\",\"Hebe\",1],\n[\"lupinus\",\"Helenium\",1],\n[\"microstictus\",\"Helenium\",1],\n[\"robustior\",\"Helenium\",1],\n[\"lupinus\",\"Helianthus\",9],\n[\"robustior\",\"Helianthus\",4],\n[\"robustior\",\"Heliopsis\",4],\n[\"lupinus\",\"Hypochaeris\",1],\n[\"lupinus\",\"Melilotus\",1],\n[\"microstictus\",\"Monardella\",1],\n[\"lupinus\",\"Quercus\",4],\n[\"lupinus\",\"Rudbeckia\",2],\n[\"robustior\",\"Rudbeckia\",2],\n[\"lupinus\",\"Sidalcea\",1],\n[\"lupinus\",\"Solidago\",1],\n[\"microstictus\",\"Solidago\",4],\n[\"microstictus\",\"Spiraea\",1]]\n\n\n\n function sort(sortOrder){\n                    return function(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b)) }\n                  }\nvar color = {'Unlinked ':'#3366CC','lupinus':'#7FC97F','microstictus':'#BEAED4','robustior':'#FDC086','metenuus':'#FFFF99','rivalis':'#386CB0','bimatris':'#F0027F','semilupinus':'#BF5B17'};\n\n\n\n\nvar g1 = svg.append(\"g\").attr(\"transform\",\"translate(231,50)\");\n                         var bp1=viz.bP()\n                         .data(data)\n                         .value(d=>d[2])\n                         .min(10)\n                         .pad(1)\n                         .height(400)\n                         .width(200)\n                         .barSize(35)\n                         .fill(d=>color[d.primary])\n.orient(\"vertical\");\n\ng1.call(bp1);g1.append(\"text\")\n                        .attr(\"x\",-50).attr(\"y\",-8)\n                        .style(\"text-anchor\",\"middle\")\n                        .text(\"Melissodes Species\");\n                        g1.append(\"text\")\n                        .attr(\"x\", 250)\n                        .attr(\"y\",-8).style(\"text-anchor\",\"middle\")\n                        .text(\"Aster Plants\");\n                        g1.append(\"text\")\n                        .attr(\"x\",100).attr(\"y\",-25)\n                        .style(\"text-anchor\",\"middle\")\n                        .attr(\"class\",\"header\")\n                        .text(\"freq\");\n\n g1.selectAll(\".mainBars\")\n                        .on(\"mouseover\",mouseover)\n                        .on(\"mouseout\",mouseout);\n\n g1.selectAll(\".mainBars\").append(\"text\").attr(\"class\",\"label\")\n                        .attr(\"x\",d=>(d.part==\"primary\"? -34.4:35.6))\n                        .attr(\"y\",d=>+6)\n                        .text(d=>d.key)\n                        .attr(\"text-anchor\",d=>(d.part==\"primary\"? \"end\": \"start\"));\n\n g1.selectAll(\".mainBars\").append(\"text\").attr(\"class\",\"perc\")\n                        .attr(\"x\",d=>(d.part==\"primary\"? -177:198))\n                        .attr(\"y\",d=>+6)\n                        .text(function(d){ return d3.format(\"0.0%\")(d.percent)})\n                        .attr(\"text-anchor\",d=>(d.part==\"primary\"? \"end\": \"start\")); \n\nfunction mouseover(d){\nbp1.mouseover(d);\n                            g1.selectAll(\".mainBars\")\n                            .select(\".perc\")\n                            .text(function(d){ return d3.format(\"0.0%\")(d.percent)});\n}\n\n                     function mouseout(d){\nbp1.mouseout(d);\n                            g1.selectAll(\".mainBars\")\n                            .select(\".perc\")\n                            .text(function(d){ return d3.format(\"0.0%\")(d.percent)});\n}\n\n\n};","style":"/* R2D3 Source File:  bipartiteD3Script.css */\n .mainBars{\n    shape-rendering: auto;\n    fill-opacity: 1;\n    stroke-width: 0.5px;\n    stroke: rgb(0, 0, 0);\n    stroke-opacity: 0;\n  }\n    .subBars{\n    shape-rendering:crispEdges;\n    }\n    .edges{\n    stroke:none;\n    fill-opacity:0.3;\n    }\n    .label{\n    color:#000000;\n    }","version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-99e1d62f32f685c075da" style="width:100%;height:650px;" class="r2d3 html-widget"></div>
+<script type="application/json" data-for="htmlwidget-99e1d62f32f685c075da">{"x":{"data":null,"type":"logical","container":"svg","options":null,"script":"var d3Script = function(d3, r2d3, data, svg, width, height, options, theme, console) {\nthis.d3 = d3;\n/* R2D3 Source File:  vizjs.js */\n!function(){function t(t){for(;t>o;)t-=o;for(;0>t;)t+=o;return t}\n                function n(t,n,e,r,a,i){if(0>=a||0>=r)return 0;var u=t.concat().sort(d3.ascending),o=r-u.length*n+(i?n:0),s=[],c=0,d=0;return d3.range(u.length).forEach(function(t){d=(o-e*t)/(a-=u[t-1]||0),c+=u[t]*d<=e?1:0,s.push(d)}),s[c]}\n                function e(t,e,r,a,i){var u=a,o=d3.sum(t),s=n(t,e,r,i-a,o,!1),c=t.map(function(t){var n=s*t,a=(r>n?r:n)/2;return u+=2*a+e,{c:u-a,v:n,w:a,value:t,percent:t/(o||1)}});return c}\n                function r(t){function n(t,n){return[t*Math.cos(n),t*Math.sin(n)]}var e=n(t[0],t[2]),r=n(t[0],t[3]),a=n(t[1],t[2]),i=n(t[1],t[3]);return[\"M\",e,\"A\",t[0],t[0],\"0\",t[3]-t[2]>s?1:0,\"1\",r,\"L\",i,\"A\",t[1],t[1],\"0\",t[3]-t[2]>s?1:0,\"0\",a,\"z\"].join(\" \")}\n                function a(t,n,e,r,a,i){function u(t,n,e){return\"A\"+t+\",\"+t+\" 0 \"+ +(e>s)+\",1 \"+n}function c(t,n){return[t*Math.cos(n),t*Math.sin(n)]}function d(t,n,e,r){e+=n>e?o:0;var a=e-n,i=1-(a>s?o-a:a)/s;i=Math.pow(i,5);var u=(e+n)/2-(e-n>s?s:0);return\"Q\"+i*r*Math.cos(u)+\",\"+i*r*Math.sin(u)+\" \"+t}var f=c(t,n),l=c(t,e),g=c(r,a),p=c(r,i);return\"M\"+f+u(t,l,e-n)+(n==a&&e==i?d(f,n,e,r):d(g,e,a,r)+u(r,p,i-a)+d(f,n,i,t))+\"Z\"}\n                function i(t,n){ret=[];for(var e=n;e>n-t;e--)ret.push(0>e?e+t:e);return ret}\n                var u={version:\"1.1.0\"},o=2*Math.PI,s=Math.PI,c=Math.PI/2;u.bP=function(){function t(i){\n                y=i,i.each(function(){var i=d3.select(this),u=t.bars(),o=i.selectAll(\".subBars\").data(u.subBars).enter().append(\"g\").attr(\"transform\",function(t){return\"translate(\"+t.x+\",\"+t.y+\")\"}).attr(\"class\",\"subBars\").append(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a);\"undefined\"!=typeof h&&o.style(\"fill\",function(t){return h(t)});var s=i.selectAll(\".edges\").data(u.edges).enter().append(\"path\").attr(\"class\",\"edges\").attr(\"d\",function(t){\n                return t.path}).style(\"fill-opacity\",t.edgeOpacity());\"undefined\"!=typeof h&&s.style(\"fill\",function(t){\n                return h(t)}),i.selectAll(\".mainBars\").data(u.mainBars).enter().append(\"g\").attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).attr(\"class\",\"mainBars\").append(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a).style(\"fill-opacity\",0).on(\"mouseover\",t.mouseover).on(\"mouseout\",t.mouseout)})}function n(t){\n                return-t.width}function e(t){return-t.height}function r(t){\n                return 2*t.width}function a(t){return 2*t.height}var i,u,o,s,c,d,f,l,g,p,h,y,m,v,A,x,k;return t.data=function(n){return arguments.length?(p=n,t):p},t.fill=function(n){return arguments.length?(h=n,t):h},t.keyPrimary=function(n){return arguments.length?(i=n,t):\"undefined\"!=typeof i?i:function(t){return t[0]}},t.sortPrimary=function(n){return arguments.length?(A=n,t):\"undefined\"!=typeof A?A:d3.ascending},t.keySecondary=function(n){return arguments.length?(u=n,t):\"undefined\"!=typeof u?u:function(t){return t[1]}},t.sortSecondary=function(n){return arguments.length?(x=n,t):\"undefined\"!=typeof x?x:d3.ascending},t.value=function(n){return arguments.length?(o=n,t):\"undefined\"!=typeof o?o:function(t){\n                return t[2]}},t.width=function(n){return arguments.length?(s=n,t):\"undefined\"!=typeof s?s:400},t.height=function(n){return arguments.length?(c=n,t):\"undefined\"!=typeof c?c:600},t.barSize=function(n){return arguments.length?(f=n,t):\"undefined\"!=typeof f?f:35},t.min=function(n){return arguments.length?(l=n,t):\"undefined\"!=typeof l?l:0},t.orient=function(n){return arguments.length?(d=n,t):\"undefined\"!=typeof d?d:\"vertical\"},t.pad=function(n){return arguments.length?(g=n,t):\"undefined\"!=typeof g?g:0},t.duration=function(n){\n                return arguments.length?(v=n,t):\"undefined\"!=typeof v?v:500},t.edgeOpacity=function(n){return arguments.length?(m=n,t):\"undefined\"!=typeof m?m:.4},t.edgeMode=function(n){return arguments.length?(k=n,t):\"undefined\"!=typeof k?k:\"curved\"},t.bars=function(n){function e(t,e){return\"undefined\"==typeof n||n.part===e||d[n.part](t)===n.key}function r(){var n=t.min()/2;s.primary.forEach(function(t){t.height<n&&(t.height=n)}),s.secondary.forEach(function(t){t.height<n&&(t.height=n)})}function a(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.nest().key(\"primary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"primary\"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data()),i=o(a,t.pad(),t.min(),0,\"vertical\"==f?t.height():t.width()),u=t.barSize();a.forEach(function(e,r){\n                s[n].push({x:\"horizontal\"==f?(i[r].s+i[r].e)/2:\"primary\"==n?u/2:t.width()-u/2,y:\"vertical\"==f?(i[r].s+i[r].e)/2:\"primary\"==n?u/2:t.height()-u/2,height:\"vertical\"==f?(i[r].e-i[r].s)/2:u/2,width:\"horizontal\"==f?(i[r].e-i[r].s)/2:u/2,part:n,key:e.key,value:e.value,percent:i[r].p})})}function i(n){function r(r){return e(r,n)?t.value()(r):0}var a=d3.map(s[n],function(t){return t.key}),i=d3.nest().key(\"primary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"primary\"==n?t.sortPrimary():t.sortSecondary()).key(\"secondary\"==n?t.keyPrimary():t.keySecondary()).sortKeys(\"secondary\"==n?t.sortPrimary():t.sortSecondary()).rollup(function(t){return d3.sum(t,r)}).entries(t.data());i.forEach(function(e){var r=a.get(e.key),i=o(e.values,0,0,\"vertical\"==f?r.y-r.height:r.x-r.width,\"vertical\"==f?r.y+r.height:r.x+r.width),u=t.barSize();e.values.forEach(function(a,o){c[n].push({x:\"vertical\"==f?\"primary\"==n?u/2:t.width()-u/2:(i[o].s+i[o].e)/2,y:\"horizontal\"==f?\"primary\"==n?u/2:t.height()-u/2:(i[o].s+i[o].e)/2,height:(\"vertical\"==f?i[o].e-i[o].s:u)/2,width:(\"horizontal\"==f?i[o].e-i[o].s:u)/2,part:n,primary:\"primary\"==n?e.key:a.key,secondary:\"primary\"==n?a.key:e.key,value:a.value,percent:i[o].p*r.percent,index:\"primary\"==n?e.key+\"|\"+a.key:a.key+\"|\"+e.key})})})}function u(){\n                function n(t,n,e,r,i,u,o,s){\n                if(\"straight\"==a)return[\"M\",t,\",\",n,\"L\",e,\",\",r,\"L\",i,\",\",u,\"L\",o,\",\",s,\"z\"].join(\"\");var c=(t+e)/2,d=(i+o)/2;return[\"M\",t,\",\",n,\"C\",c,\",\",n,\" \",c,\",\",r,\",\",e,\",\",r,\"L\",i,\",\",u,\"C\",d,\",\",u,\" \",d,\",\",s,\",\",o,\",\",s,\"z\"].join(\"\")}function e(t,n,e,r,i,u,o,s){\n                if(\"straight\"==a)return[\"M\",t,\",\",n,\"L\",e,\",\",r,\"L\",i,\",\",u,\"L\",o,\",\",s,\"z\"].join(\"\");var c=(n+r)/2,d=(u+s)/2;return[\"M\",t,\",\",n,\"C\",t,\",\",c,\" \",e,\",\",c,\",\",e,\",\",r,\"L\",i,\",\",u,\"C\",i,\",\",d,\" \",o,\",\",d,\",\",o,\",\",s,\"z\"].join(\"\")}var r=d3.map(c.secondary,function(t){return t.index}),a=t.edgeMode();return c.primary.map(function(t){var a=r.get(t.index);return{path:\"vertical\"===f?n(t.x+t.width,t.y+t.height,a.x-a.width,a.y+a.height,a.x-a.width,a.y-a.height,t.x+t.width,t.y-t.height):e(t.x-t.width,t.y+t.height,a.x-a.width,a.y-a.height,a.x+a.width,a.y-a.height,t.x+t.width,t.y+t.height),primary:t.primary,secondary:t.secondary,value:t.value,percent:t.percent}})}function o(t,n,e,r,a){\n                var i=e/(a-r-2*t.length*n),u=0,o=0,s=d3.sum(t,function(t){return t.value});t.forEach(function(t){\n                t.value<i*s&&(u+=1,o+=t.value)});var c=1e-5>s?0:(a-r-2*t.length*n-u*e)/(s-o),d=r,f=[];return t.forEach(function(t){var r=t.value*c;f.push({s:d+n+(e>r?.5*(e-r):0),e:d+n+(e>r?.5*(e+r):r),p:1e-5>s?0:t.value/s}),d+=2*n+(e>r?e:r)}),f}var s={primary:[],secondary:[]},c={primary:[],secondary:[]},d={primary:t.keyPrimary(),secondary:t.keySecondary()},f=t.orient();return a(\"primary\"),a(\"secondary\"),i(\"primary\"),i(\"secondary\"),r(),{mainBars:s.primary.concat(s.secondary),subBars:c.primary.concat(c.secondary),edges:u()}},t.mouseover=function(i){var u=t.bars(i);y.selectAll(\".mainBars\").filter(function(t){return t.part===i.part&&t.key===i.key}).select(\"rect\").style(\"stroke-opacity\",1),y.selectAll(\".subBars\").data(u.subBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a);var o=y.selectAll(\".edges\").data(u.edges);o.filter(function(t){return t[i.part]===i.key}).transition().duration(t.duration()).style(\"fill-opacity\",t.edgeOpacity()).attr(\"d\",function(t){return t.path}),o.filter(function(t){\n                return t[i.part]!==i.key}).transition().duration(t.duration()).style(\"fill-opacity\",0).attr(\"d\",function(t){return t.path}),y.selectAll(\".mainBars\").data(u.mainBars).transition().duration(t.duration()).attr(\"transform\",function(t){return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a)},t.mouseout=function(i){var u=t.bars();y.selectAll(\".mainBars\").filter(function(t){return t.part===i.part&&t.key===i.key}).select(\"rect\").style(\"stroke-opacity\",0),y.selectAll(\".subBars\").data(u.subBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a),y.selectAll(\".edges\").data(u.edges).transition().duration(t.duration()).style(\"fill-opacity\",t.edgeOpacity()).attr(\"d\",function(t){return t.path}),y.selectAll(\".mainBars\").data(u.mainBars).transition().duration(t.duration()).attr(\"transform\",function(t){\n                return\"translate(\"+t.x+\",\"+t.y+\")\"}).select(\"rect\").attr(\"x\",n).attr(\"y\",e).attr(\"width\",r).attr(\"height\",a)},t},u.gg=function(){function t(n){g=n,n.each(function(){var n=d3.select(this),e=t.scale(),r=t.minorTickStart(),a=t.minorTickEnd(),i=t.majorTickStart(),u=t.majorTickEnd(),o=t.ticks(),c=t.majorTicks(),d=t.labelLocation(),f=t.outerRadius();n.append(\"circle\").attr(\"r\",f).style(\"fill\",\"url(#vizgg3\"+p+\")\").attr(\"class\",\"face\"),n.append(\"circle\").attr(\"r\",t.innerRadius()).style(\"fill\",\"url(#vizgg2\"+p+\")\").style(\"filter\",\"url(#vizgg5\"+p+\")\").attr(\"class\",\"innerFace\");var l=n.append(\"g\");l.selectAll(\"line\").data(o).enter().append(\"line\").attr(\"class\",function(t){return c(t)?\"majorTicks\":\"minorTicks\"}).attr(\"x1\",function(t){return f*(c(t)?i:r)*Math.cos(e(t))}).attr(\"y1\",function(t){return f*(c(t)?i:r)*Math.sin(e(t))}).attr(\"x2\",function(t){\n                return f*(c(t)?u:a)*Math.cos(e(t))}).attr(\"y2\",function(t){return f*(c(t)?u:a)*Math.sin(e(t))}),n.selectAll(\"text\").data(o.filter(c)).enter().append(\"text\").attr(\"class\",\"label\").attr(\"x\",function(t){\n                return f*d*Math.cos(e(t))}).attr(\"y\",function(t){return f*d*Math.sin(e(t))}).attr(\"dy\",3).text(function(t){return t});var g=t.outerRadius()/b.outerRadius,h=180*t.scale()(t.value())/s+90;n.append(\"g\").attr(\"transform\",\"translate(1,1)\").selectAll(\".needleshadow\").data([0]).enter().append(\"g\").attr(\"transform\",\"rotate(\"+h+\")\").attr(\"class\",\"needleshadow\").append(\"path\").attr(\"d\",[\"m 0\",-130*g,5*g,175*g,-10*g,\"0,z\"].join(\",\")).style(\"filter\",\"url(#vizgg6\"+p+\")\"),n.selectAll(\".needle\").data([0]).enter().append(\"g\").attr(\"transform\",\"rotate(\"+h+\")\").attr(\"class\",\"needle\").append(\"polygon\").attr(\"points\",[-.5*g,-130*g,.5*g,-130*g,5*g,45*g,-5*g,45*g].join(\",\")).style(\"fill\",\"url(#vizgg4\"+p+\")\")})}var n,e,r,a,i,o,c,d,f,l,g,p,h,y,m,v,A,x,k,b={innerRadius:20,outerRadius:150,angleOffset:.7,startAngle:-1.5*s,endAngle:.5*s,minorTickStart:.9,minorTickEnd:.95,majorTickStart:.82,majorTickEnd:.95,needleColor:\"#de2c2c\",innerFaceColor:\"#999999\",faceColor:\"#666666\",domain:[0,100],duration:500,ease:\"cubicInOut\",ticks:d3.range(0,101,2),majorTicks:function(t){\n                return t%10===0},labelLocation:.7};return t.scale=function(){return d3.scale.linear().domain(t.domain()).range([b.startAngle+t.angleOffset(),b.endAngle-t.angleOffset()])},t.innerRadius=function(e){return arguments.length?(n=e,t):\"undefined\"!=typeof n?n:b.innerRadius},t.outerRadius=function(n){return arguments.length?(e=n,t):\"undefined\"!=typeof e?e:b.outerRadius},t.angleOffset=function(n){return arguments.length?(d=n,t):\"undefined\"!=typeof d?d:b.angleOffset},t.labelLocation=function(n){return arguments.length?(k=n,t):\"undefined\"!=typeof k?k:b.labelLocation},t.ticks=function(n){return arguments.length?(h=n,t):\"undefined\"!=typeof h?h:b.ticks},t.majorTicks=function(n){return arguments.length?(y=n,t):\"undefined\"!=typeof y?y:b.majorTicks},t.minorTickStart=function(n){return arguments.length?(m=n,t):\"undefined\"!=typeof m?m:b.minorTickStart},t.minorTickEnd=function(n){\n                return arguments.length?(v=n,t):\"undefined\"!=typeof v?v:b.minorTickEnd},t.majorTickStart=function(n){return arguments.length?(A=n,t):\"undefined\"!=typeof A?A:b.majorTickStart},t.majorTickEnd=function(n){return arguments.length?(x=n,t):\"undefined\"!=typeof x?x:b.majorTickEnd},t.needleColor=function(n){return arguments.length?(r=n,t):\"undefined\"!=typeof r?r:b.needleColor},t.innerFaceColor=function(n){\n                return arguments.length?(a=n,t):\"undefined\"!=typeof a?a:b.innerFaceColor},t.faceColor=function(n){return arguments.length?(i=n,t):\"undefined\"!=typeof i?i:b.faceColor},t.domain=function(n){return arguments.length?(o=n,t):\"undefined\"!=typeof o?o:b.domain},t.duration=function(n){return arguments.length?(f=n,t):\"undefined\"!=typeof f?f:b.duration},t.ease=function(n){return arguments.length?(l=n,t):\"undefined\"!=typeof l?l:b.ease},t.value=function(n){\n                return arguments.length?(c=n,t):\"undefined\"!=typeof c?c:.5*(b.domain[0]+b.domain[1])},t.defs=function(n,e){var r=n.append(\"defs\");p=e;var a=t.needleColor(),i=t.innerFaceColor(),o=t.faceColor(),s=u.defs(r).lG().id(\"vizgg1\"+e).sel();u.defs(s).stop().offset(\"0\").stopColor(a),u.defs(s).stop().offset(\"1\").stopColor(d3.rgb(a).darker(1));var c=u.defs(r).rG().id(\"vizgg2\"+e).fx(\"35%\").fy(\"65%\").r(\"65%\").spreadMethod(\"pad\").sel();u.defs(c).stop().offset(\"0\").stopColor(i),u.defs(c).stop().offset(\"1\").stopColor(d3.rgb(i).darker(2));var d=u.defs(r).rG().id(\"vizgg3\"+e).fx(\"35%\").fy(\"65%\").r(\"65%\").spreadMethod(\"pad\").sel();u.defs(d).stop().offset(\"0\").stopColor(o),u.defs(d).stop().offset(\"1\").stopColor(d3.rgb(o).darker(2)),u.defs(r).lG().id(\"vizgg4\"+e).gradientUnits(\"userSpaceOnUse\").y1(\"80\").x1(\"-10\").y2(\"80\").x2(\"10\").xlink(\"#vizgg1\"+e);var f=u.defs(r).filter().id(\"vizgg5\"+e).sel();u.defs(f).feFlood().result(\"flood\").floodColor(\"rgb(0,0,0)\").floodOpacity(\"0.6\"),u.defs(f).feComposite().result(\"composite1\").operator(\"in\").in2(\"SourceGraphic\")[\"in\"](\"flood\"),u.defs(f).feGaussianBlur().result(\"blur\").stdDeviation(\"2\")[\"in\"](\"composite1\"),u.defs(f).feOffset().result(\"offset\").dy(\"2\").dx(\"2\"),u.defs(f).feComposite().result(\"composite2\").operator(\"over\").in2(\"offset\")[\"in\"](\"SourceGraphic\");var l=u.defs(r).filter().x(\"-0.3\").y(\"-0.3\").height(\"1.8\").width(\"1.8\").id(\"vizgg6\"+e).sel();u.defs(l).feGaussianBlur().stdDeviation(\"2\")},t.setNeedle=function(n){function e(t,n){\n                return d3.interpolateString(\"rotate(\"+t+\")\",\"rotate(\"+n+\")\")}var r=180*t.scale()(n)/s+90,a=180*t.scale()(t.value())/s+90,i=t.ease();g.selectAll(\".needle\").data([n]).transition().duration(t.duration()).attrTween(\"transform\",function(t){return e(a,r)}).ease(i),g.selectAll(\".needleshadow\").data([n]).transition().duration(t.duration()).attrTween(\"transform\",function(t){return e(a,r)}).ease(i).each(\"end\",function(){angle=n}),t.value(n)},t},u.ch=function(){function u(t){function n(t){\n                return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}p=t,k||f(),t.each(function(){var t=d3.select(this),r=t.selectAll(\".groups\").data(x).enter().append(\"g\").attr(\"class\",\"groups\").on(\"mouseover\",u.mouseover).on(\"mouseout\",u.mouseout),a=r.append(\"text\").attr(\"class\",\"label\"),i=(1+u.labelPadding())*u.outerRadius(),s=u.valueFormat();a.filter(function(t){return\"g\"==t.type}).attr(\"x\",function(t){\n                return i*Math.cos(d(t))}).attr(\"y\",function(t){return i*Math.sin(d(t))}).text(function(t){return t.source+\" (\"+s(t.value)+\")\"}).style(\"text-anchor\",function(t){var n=d(t);return c>n||n>o-c?\"start\":\"end\"}).each(function(t){this._current=t}),r.append(\"path\").style(\"fill\",function(t){return y(t.source)}).style(\"stroke\",function(t){\n                return y(t.source)}).attr(\"d\",n).each(function(t){this._current=t}).filter(function(t){return\"g\"==t.type}),t.append(\"g\").attr(\"class\",\"chords\").selectAll(\".chord\").data(k).enter().append(\"g\").attr(\"class\",\"chord\").append(\"path\").each(function(t){this._current=t}).attr(\"d\",e).style(\"fill\",function(t){return y(t.target)}).style(\"opacity\",u.chordOpacity()).style(\"stroke\",function(t){return y(t.target)}).style(\"display\",function(t){return t.display?\"inline\":\"none\"})})}function s(t){function n(t,n){return r([B,O,t.startAngle,t.endAngle])}function e(t){return a(B,t.startAngle,t.endAngle,B,t.endStartAngle,t.endEndAngle)}function i(t){\n                var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return e(n(t))}}function s(t){var e=d3.interpolate(this._current,t);return this._current=e(0),function(t){return n(e(t),t)}}function f(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.cos(d(n(t)))}}function l(t){var n=d3.interpolate(this._current,t);return this._current=n(0),function(t){return h*Math.sin(d(n(t)))}}var g=p.selectAll(\".groups\").data(t?b:u.groups()),h=(1+u.labelPadding())*u.outerRadius(),y=u.valueFormat();g.select(\"path\").transition().duration(L).attrTween(\"d\",s),g.select(\".label\").filter(function(t){return\"g\"==t.type}).transition().duration(L).attrTween(\"x\",f).attrTween(\"y\",l).text(function(t){return t.source+\" (\"+y(t.value)+\")\"}).style(\"text-anchor\",function(t){var n=d(t);return c>n||n>o-c?\"start\":\"end\"});var m=u.chordOpacity();p.select(\".chords\").selectAll(\".chord\").data(t?w:u.chords()).select(\"path\").transition().duration(L).attrTween(\"d\",i).style(\"opacity\",function(t){return t.display?m:0})}function d(n){return t((n.startAngle+n.endAngle)/2)}function f(){\n                m=[],h.forEach(function(t){-1==m.indexOf(E(t))&&m.push(E(t)),-1==m.indexOf(M(t))&&m.push(M(t))}),m=m.sort(T),v={},A={},m.forEach(function(t){v[t]={},A[t]={},m.forEach(function(n){v[t][n]=0,A[t][n]=!1})}),h.forEach(function(t){var n=E(t),e=M(t);v[n][e]+=S(t),A[n][e]=!0}),x=[],m.forEach(function(t,n){x.push({source:t,type:\"gs\",value:0,skipPad:!0,index:n}),x.push({source:t,type:\"g\",value:d3.sum(m,function(n){return v[t][n]}),skipPad:!1,index:n})}),g(x,z,R,void 0,P),k=[],x.filter(function(t){return\"g\"==t.type}).forEach(function(t,n){\n                var r=i(m.length,n),a=e(r.map(function(n){return v[t.source][m[n]]}),0,0,t.startAngle,t.endAngle);r.forEach(function(e,r){var i=a[r];k.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:t.source,target:m[e],type:\"c\",display:A[t.source][m[e]],index:n,subindex:e,indexsubindex:n+\"-\"+e})})});var t=d3.map(k,function(t){return t.indexsubindex});k.forEach(function(n){if(n.subindex==n.index)return n.endStartAngle=n.startAngle,void(n.endEndAngle=n.startAngle);var e=t.get(n.subindex+\"-\"+n.index);n.endStartAngle=e.startAngle,n.endEndAngle=e.startAngle}),F=!1}function l(t){function n(t){return t.endAngle+t.startAngle}var r=x.filter(function(n){return n.source==t&&\"g\"==n.type})[0];b=[],m.forEach(function(n,e){b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:\"gs\",value:n==t?v[n][n]:0,skipPad:n==t&&A[n][n]?!1:!0,index:e}),n==t?b.push({source:n,startAngle:r.startAngle,endAngle:r.endAngle,padAngle:r.padAngle,percent:r.percent,type:\"g\",value:r.value,skipPad:!1,index:e}):b.push({source:n,type:\"g\",value:v[t][n],skipPad:!1,index:e})}),g(b,z,R,t,P);var a=n(r);x.forEach(function(t,e){\n                var r=b[e],i=n(t)<a;r.startAngle-=i?o:0,r.endAngle-=i?o:0}),w=[],b.filter(function(t){return\"g\"==t.type}).forEach(function(n,r){var a=i(m.length,r),u=a.map(function(e){var r=m[e];return n.source==t?v[n.source][r]:r==t?v[r][n.source]:0}),o=e(u,0,0,n.startAngle,n.endAngle);a.forEach(function(e,a){var i=o[a];w.push({startAngle:i.c-i.v/2,endAngle:i.c+i.v/2,value:i.value,source:n.source,target:m[e],type:\"c\",display:n.source===t,index:r,subindex:e,indexsubindex:r+\"-\"+e})})});var u=d3.map(w.map(function(t){return{startAngle:t.startAngle,endAngle:t.endAngle,indexsubindex:t.indexsubindex}}),function(t){return t.indexsubindex}),s=d3.map(b.filter(function(t){return\"gs\"==t.type}),function(t){return t.source});w.forEach(function(n){\n                if(n.subindex==n.index){var e=s.get(n.source);return n.endStartAngle=e.startAngle,void(n.endEndAngle=e.endAngle)}var r=u.get(n.subindex+\"-\"+n.index);n.endStartAngle=r.startAngle,n.endEndAngle=r.endAngle,n.source!==t&&(n.startAngle=n.endAngle,n.endEndAngle=n.endStartAngle)})}function g(t,e,r,a,i){\n                var u=void 0!==a,o=0;if(u){for(var s=!1;o<t.length;o++)if(t[o].source==a&&\"g\"==t[o].type){s=!0;break}s||console.log(\"The fixed source X is not a valid key\")}var c=d3.range(t.length);u&&(c=c.slice(o).concat(c.slice(0,o)));var d=t.filter(function(t){return!(u&&t.source===a&&\"g\"==t.type||t.skipPad)}).map(function(t){return t.value}),f=2*Math.PI-(u?t[o].endAngle-t[o].startAngle+2*e:0),l=u?t[o].endAngle+e:i,g=d3.sum(d),p=n(d,e,r,0>=f?0:f,g,u?!0:!1);c.slice(u?1:0).forEach(function(n){var a=p*t[n].value,i=(r>a?r-a:0)/2;t[n].startAngle=l,t[n].endAngle=l+a,t[n].padAngle=i,t[n].percent=t[n].value/(g||1),l+=a+i+(t[n].skipPad?0:e)})}var p,h,y,m,v,A,x,k,b,w,E=function(t){return t[0]},M=function(t){return t[1]},S=function(t){return t[2]},C=function(t){return t},T=d3.ascending,z=.03,P=0,B=180,O=200,j=.7,G=.02,R=0,L=500,F=!0;return u.data=function(t){return arguments.length?(h=t,F=!0,u):h},u.fill=function(t){return arguments.length?(y=t,u):y},u.duration=function(t){\n                return arguments.length?(L=t,u):L},u.chordOpacity=function(t){return arguments.length?(j=t,u):j},u.innerRadius=function(t){return arguments.length?(B=t,F=!0,u):B},u.outerRadius=function(t){return arguments.length?(O=t,F=!0,u):O},u.source=function(t){return arguments.length?(E=t,F=!0,u):E},u.target=function(t){return arguments.length?(M=t,F=!0,u):M},u.value=function(t){return arguments.length?(S=t,F=!0,u):S},u.padding=function(t){return arguments.length?(z=t,F=!0,u):z},u.labelPadding=function(t){return arguments.length?(G=t,u):G},u.sort=function(t){return arguments.length?(T=t,F=!0,u):T},u.startAngle=function(t){return arguments.length?(P=t,F=!0,u):P},u.chords=function(){\n                return F&&f(),k},u.groups=function(){return F&&f(),x},u.valueFormat=function(t){return arguments.length?(C=t,u):C},u.mouseover=function(t){l(t.source),s(1)},u.mouseout=function(t){s(0)},u},u.defs=function(t){var n={},e=t;return n.sel=function(){return e},n.lG=function(){return e=e.append(\"linearGradient\"),n},n.rG=function(){return e=e.append(\"radialGradient\"),n},n.stop=function(){return e=e.append(\"stop\"),n},n.filter=function(){return e=e.append(\"filter\"),n},n.feFlood=function(){return e=e.append(\"feFlood\"),n},n.feComposite=function(){return e=e.append(\"feComposite\"),n},n.feOffset=function(){return e=e.append(\"feOffset\"),n},n.feGaussianBlur=function(){return e=e.append(\"feGaussianBlur\"),n},n.result=function(t){return e=e.attr(\"result\",t),n},n.floodColor=function(t){return e=e.attr(\"flood-color\",t),n},n.floodOpacity=function(t){\n                return e=e.attr(\"flood-opacity\",t),n},n.stdDeviation=function(t){return e=e.attr(\"stdDeviation\",t),n},n.operator=function(t){return e=e.attr(\"operator\",t),n},n.height=function(t){return e=e.attr(\"height\",t),n},n.width=function(t){return e=e.attr(\"width\",t),n},n[\"in\"]=function(t){return e=e.attr(\"in\",t),n},n.in2=function(t){return e=e.attr(\"in2\",t),n},n.id=function(t){return e=e.attr(\"id\",t),n},n.fx=function(t){return e=e.attr(\"fx\",t),n},n.fy=function(t){return e=e.attr(\"fy\",t),n},n.dx=function(t){return e=e.attr(\"dx\",t),n},n.dy=function(t){\n                return e=e.attr(\"dy\",t),n},n.x1=function(t){return e=e.attr(\"x1\",t),n},n.y1=function(t){return e=e.attr(\"y1\",t),n},n.x2=function(t){return e=e.attr(\"x2\",t),n},n.y2=function(t){return e=e.attr(\"y2\",t),n},n.x=function(t){return e=e.attr(\"x\",t),n},n.y=function(t){return e=e.attr(\"y\",t),n},n.r=function(t){return e=e.attr(\"r\",t),n},n.spreadMethod=function(t){\n                return e=e.attr(\"spreadMethod\",t),n},n.gradientUnits=function(t){return e=e.attr(\"gradientUnits\",t),n},n.xlink=function(t){return e=e.attr(\"xlink:href\",t),n},n.offset=function(t){return e=e.attr(\"offset\",t),n},n.stopColor=function(t){return e=e.attr(\"stop-color\",t),n},n.path=function(){return e=e.append(\"path\"),n},n.d=function(t){return e=e.attr(\"d\",t),n},n},this.viz=u}();\nsvg = d3.select(svg.node());\n/* R2D3 Source File:  bipartiteD3Script.js */\nvar data=[[\"lupinus\",\"Achillea\",1],\n[\"microstictus\",\"Arnica\",1],\n[\"robustior\",\"Aster\",1],\n[\"metenuus\",\"Calochortus\",2],\n[\"lupinus\",\"Centaurea\",1],\n[\"microstictus\",\"Centaurea\",1],\n[\"lupinus\",\"Chrysothamnus\",1],\n[\"rivalis\",\"Cirsium\",1],\n[\"lupinus\",\"Clarkia\",1],\n[\"robustior\",\"Coreopsis\",3],\n[\"metenuus\",\"Dipsacus\",2],\n[\"lupinus\",\"Epilobium\",4],\n[\"metenuus\",\"Epilobium\",1],\n[\"microstictus\",\"Epilobium\",1],\n[\"bimatris\",\"Ericameria\",11],\n[\"lupinus\",\"Ericameria\",1],\n[\"microstictus\",\"Ericameria\",1],\n[\"robustior\",\"Ericameria\",1],\n[\"semilupinus\",\"Ericameria\",1],\n[\"microstictus\",\"Erigeron\",1],\n[\"lupinus\",\"Gaillardia\",1],\n[\"lupinus\",\"Grindelia\",5],\n[\"robustior\",\"Hebe\",1],\n[\"lupinus\",\"Helenium\",1],\n[\"microstictus\",\"Helenium\",1],\n[\"robustior\",\"Helenium\",1],\n[\"lupinus\",\"Helianthus\",9],\n[\"robustior\",\"Helianthus\",4],\n[\"robustior\",\"Heliopsis\",4],\n[\"lupinus\",\"Hypochaeris\",1],\n[\"lupinus\",\"Melilotus\",1],\n[\"microstictus\",\"Monardella\",1],\n[\"lupinus\",\"Quercus\",4],\n[\"lupinus\",\"Rudbeckia\",2],\n[\"robustior\",\"Rudbeckia\",2],\n[\"lupinus\",\"Sidalcea\",1],\n[\"lupinus\",\"Solidago\",1],\n[\"microstictus\",\"Solidago\",4],\n[\"microstictus\",\"Spiraea\",1]]\n\n\n\n function sort(sortOrder){\n                    return function(a,b){ return d3.ascending(sortOrder.indexOf(a),sortOrder.indexOf(b)) }\n                  }\nvar color = {'Unlinked ':'#3366CC','lupinus':'#7FC97F','microstictus':'#BEAED4','robustior':'#FDC086','metenuus':'#FFFF99','rivalis':'#386CB0','bimatris':'#F0027F','semilupinus':'#BF5B17'};\n\n\n\n\nvar g1 = svg.append(\"g\").attr(\"transform\",\"translate(231,50)\");\n                         var bp1=viz.bP()\n                         .data(data)\n                         .value(d=>d[2])\n                         .min(10)\n                         .pad(1)\n                         .height(400)\n                         .width(200)\n                         .barSize(35)\n                         .fill(d=>color[d.primary])\n.orient(\"vertical\");\n\ng1.call(bp1);g1.append(\"text\")\n                        .attr(\"x\",-50).attr(\"y\",-8)\n                        .style(\"text-anchor\",\"middle\")\n                        .text(\"Melissodes Species\");\n                        g1.append(\"text\")\n                        .attr(\"x\", 250)\n                        .attr(\"y\",-8).style(\"text-anchor\",\"middle\")\n                        .text(\"Aster Plants\");\n                        g1.append(\"text\")\n                        .attr(\"x\",100).attr(\"y\",-25)\n                        .style(\"text-anchor\",\"middle\")\n                        .attr(\"class\",\"header\")\n                        .text(\"freq\");\n\n g1.selectAll(\".mainBars\")\n                        .on(\"mouseover\",mouseover)\n                        .on(\"mouseout\",mouseout);\n\n g1.selectAll(\".mainBars\").append(\"text\").attr(\"class\",\"label\")\n                        .attr(\"x\",d=>(d.part==\"primary\"? -34.4:35.6))\n                        .attr(\"y\",d=>+6)\n                        .text(d=>d.key)\n                        .attr(\"text-anchor\",d=>(d.part==\"primary\"? \"end\": \"start\"));\n\n g1.selectAll(\".mainBars\").append(\"text\").attr(\"class\",\"perc\")\n                        .attr(\"x\",d=>(d.part==\"primary\"? -177:198))\n                        .attr(\"y\",d=>+6)\n                        .text(function(d){ return d3.format(\"0.0%\")(d.percent)})\n                        .attr(\"text-anchor\",d=>(d.part==\"primary\"? \"end\": \"start\")); \n\nfunction mouseover(d){\nbp1.mouseover(d);\n                            g1.selectAll(\".mainBars\")\n                            .select(\".perc\")\n                            .text(function(d){ return d3.format(\"0.0%\")(d.percent)});\n}\n\n                     function mouseout(d){\nbp1.mouseout(d);\n                            g1.selectAll(\".mainBars\")\n                            .select(\".perc\")\n                            .text(function(d){ return d3.format(\"0.0%\")(d.percent)});\n}\n\n\n};","style":"/* R2D3 Source File:  bipartiteD3Script.css */\n .mainBars{\n    shape-rendering: auto;\n    fill-opacity: 1;\n    stroke-width: 0.5px;\n    stroke: rgb(0, 0, 0);\n    stroke-opacity: 0;\n  }\n    .subBars{\n    shape-rendering:crispEdges;\n    }\n    .edges{\n    stroke:none;\n    fill-opacity:0.3;\n    }\n    .label{\n    color:#000000;\n    }","version":5,"theme":{"default":{"background":"#FFFFFF","foreground":"#000000"},"runtime":null},"useShadow":true},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
-<p>Fig. 1) Sankey diagram showing the quantities of <em>Melissodes</em> 
-specimens collected by the Oregon Bee Atlas based on the bee’s species 
-in relation to the Aster plant that it was collected from.</p>
-<p>Below the Sankey diagram, the Collections Shiny Dashboard contains 
-two other levels with maps to Aster plant observations from iNaturalist 
-and <em>Melissodes</em> collection sites from the Oregon Bee Atlas. The 
-visualization of Aster family observations is able to be filtered by 
-both year and genus, reducing search time and improving the likelihood 
-of capturing target species of these specialist bees in their native 
-habitats. In case there is a target species that lacks information about
- which genus it prefers in the Aster family, the map of collected <em>Melissodes</em>&nbsp;</p>
+<p>Fig. 1) Sankey diagram showing the quantities of <em>Melissodes</em> specimens collected by the Oregon Bee Atlas based on the bee’s species in relation to the Aster plant that it was collected from.</p>
+<p>Below the Sankey diagram, the Collections Shiny Dashboard contains two other levels with maps to Aster plant observations from iNaturalist and <em>Melissodes</em> collection sites from the Oregon Bee Atlas. The visualization of Aster family observations is able to be filtered by both year and genus, reducing search time and improving the likelihood of capturing target species of these specialist bees in their native habitats. In case there is a target species that lacks information about which genus it prefers in the Aster family, the map of collected <em>Melissodes</em>&nbsp;</p>
 </section>
 </section>
 <section id="identification-by-wing-morphology" class="level3">
-<h3 class="anchored" data-anchor-id="identification-by-wing-morphology">Identification by Wing Morphology<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#identification-by-wing-morphology" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h3>
+<h3 class="anchored" data-anchor-id="identification-by-wing-morphology">Identification by Wing Morphology</h3>
 <section id="why-study-wing-veins" class="level4">
-<h4 class="anchored" data-anchor-id="why-study-wing-veins">Why Study Wing Veins?<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#why-study-wing-veins" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Wing venation is an extremely useful characteristic when identifying 
-bees at the family and genus level, and it’s usually one of the first 
-features a scientist examines. Because wing development is closely tied 
-to flight mechanics, mutations affecting the venation are rarely 
-neutral, and most often disadvantageous. As a result, the structure of 
-the wing evolves very slowly, and is considered “evolutionarily 
-conserved.” Closely related bees tend to have similar vein structure, 
-and several groups have distinctive features that makes them 
-identifiable at a glance.</p>
+<h4 class="anchored" data-anchor-id="why-study-wing-veins">Why Study Wing Veins?</h4>
+<p>Wing venation is an extremely useful characteristic when identifying bees at the family and genus level, and it’s usually one of the first features a scientist examines. Because wing development is closely tied to flight mechanics, mutations affecting the venation are rarely neutral, and most often disadvantageous. As a result, the structure of the wing evolves very slowly, and is considered “evolutionarily conserved.” Closely related bees tend to have similar vein structure, and several groups have distinctive features that makes them identifiable at a glance.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/wingdiagnostics.png" class="img-fluid figure-img"></p>
+<p><img src="images/quarto/wingdiagnostics.png" class="img-fluid figure-img"></p>
 <figcaption>Fig 2.) Characteristics of Selected Bee Families</figcaption>
 </figure>
 </div>
-<p>Following this principle, it stands to reason that smaller, more 
-subtle differences may be present in distinct groups within a single 
-genus of bees. We hypothesize that grouping bees by their wing 
-morphology will reveal insights into their evolutionary relationships 
-with one another. In collaboration with Jeremy Anderson and Justin Roch 
-from the University of Massachusetts - Amherst, we have developed a 
-framework to attempt to quantify the geometric variation in <em>Melissodes</em> wing veins.</p>
+<p>Following this principle, it stands to reason that smaller, more subtle differences may be present in distinct groups within a single genus of bees. We hypothesize that grouping bees by their wing morphology will reveal insights into their evolutionary relationships with one another. In collaboration with Jeremy Anderson and Justin Roch from the University of Massachusetts - Amherst, we have developed a framework to attempt to quantify the geometric variation in <em>Melissodes</em> wing veins.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/landmarksexample.png" class="img-fluid figure-img"></p>
+<p><img src="images/quarto/landmarksexample.png" class="img-fluid figure-img"></p>
 <figcaption>Fig 3.) Landmarks selected for analysis</figcaption>
 </figure>
 </div>
-<p>This map shows the 19 landmarks we placed on each wing scan. What these points represent for <em>Melissodes</em>
- specifically, we cannot say, but we followed this map to ensure the 
-shape files we send back to Justin can meaningfully contribute to their 
-much larger collection of wing scans.</p>
+<p>This map shows the 19 landmarks we placed on each wing scan. What these points represent for <em>Melissodes</em> specifically, we cannot say, but we followed this map to ensure the shape files we send back to Justin can meaningfully contribute to their much larger collection of wing scans.</p>
 </section>
 <section id="methodology-1" class="level4">
-<h4 class="anchored" data-anchor-id="methodology-1">Methodology<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#methodology-1" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>To prepare our database of wing images, we selected a few 
-representatives from each morphogroup of our bees that our lab has 
-sequenced in the past. We pulled the right forewing from each specimen 
-and placed it on a microscope slide labeled with the accession number. 
-Then, to minimize variation from curvature, we pressed each wing flat 
-beneath a cover slip, with clear nail polish on the corners to fix it in
- place.</p>
+<h4 class="anchored" data-anchor-id="methodology-1">Methodology</h4>
+<p>To prepare our database of wing images, we selected a few representatives from each morphogroup of our bees that our lab has sequenced in the past. We pulled the right forewing from each specimen and placed it on a microscope slide labeled with the accession number. Then, to minimize variation from curvature, we pressed each wing flat beneath a cover slip, with clear nail polish on the corners to fix it in place.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/wingprep.jpg" class="img-fluid figure-img"></p>
+<p><img src="images/quarto/wingprep.jpg" class="img-fluid figure-img"></p>
 <figcaption>Fig 4.) Lab Time!</figcaption>
 </figure>
 </div>
-<p>We placed our slides on the microscope and used the backlight to 
-maximize contrast and minimize glare. We captured an image of each wing 
-and named the file according to that specimen’s accession number.</p>
+<p>We placed our slides on the microscope and used the backlight to maximize contrast and minimize glare. We captured an image of each wing and named the file according to that specimen’s accession number.</p>
 </section>
 <section id="geometric-morphometrics" class="level4">
-<h4 class="anchored" data-anchor-id="geometric-morphometrics">Geometric Morphometrics<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#geometric-morphometrics" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Wing vein analysis is an emerging field in the study of insect 
-taxonomy, and quantitative analysis of the differences in shapes is 
-growing in popularity. This type of analysis is called geometric 
-morphometrics, and a few R packages to facilitate its study have been 
-developed. We will use one called <code>StereoMorph</code> to place landmarks on our collection of bee wing scans and extract mathematical representations of the structures of each wing.</p>
+<h4 class="anchored" data-anchor-id="geometric-morphometrics">Geometric Morphometrics</h4>
+<p>Wing vein analysis is an emerging field in the study of insect taxonomy, and quantitative analysis of the differences in shapes is growing in popularity. This type of analysis is called geometric morphometrics, and a few R packages to facilitate its study have been developed. We will use one called <code>StereoMorph</code> to place landmarks on our collection of bee wing scans and extract mathematical representations of the structures of each wing.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/stereomorph.png" class="img-fluid figure-img"></p>
+<p><img src="images/quarto/stereomorph.png" class="img-fluid figure-img"></p>
 <figcaption>Fig 5.) The StereoMorph Client we used to Landmark our wing scans.</figcaption>
 </figure>
 </div>
-<p>These insects are very small and fragile, especially after sitting 
-for years in room-temperature cardboard boxes. We did unfortunately 
-damage a few specimens in the process of pulling wings. Some were torn, 
-and some got folded over beneath the cover slip. Using the backlog of 
-complete wings, however, we were able to estimate the geometry of any 
-missing points and fill them in.</p>
-<p>Finally, we are able to statistically compare the shapes of the 
-wings. Using a type of statistical shape analysis called a Procrustes 
-fit, we were able to calculate the scaling, transposition, and rotation 
-parameters that results in the optimal superimposition between any two 
-shapes. This creates a normalized series of coordinate data that will 
-highlight the differences between individual bees.</p>
-<p>Using the standardized coordinates, we can perform a PCA to see if 
-any obvious clusters of closely related bees emerge. We can plot the 
-resulting principal components, and compare our results with the 
-preliminary species IDs we already have for each specimen. This allows 
-us to handle landmark coordinates and categorical variables such as 
-those species IDs.</p>
+<p>These insects are very small and fragile, especially after sitting for years in room-temperature cardboard boxes. We did unfortunately damage a few specimens in the process of pulling wings. Some were torn, and some got folded over beneath the cover slip. Using the backlog of complete wings, however, we were able to estimate the geometry of any missing points and fill them in.</p>
+<p>Finally, we are able to statistically compare the shapes of the wings. Using a type of statistical shape analysis called a Procrustes fit, we were able to calculate the scaling, transposition, and rotation parameters that results in the optimal superimposition between any two shapes. This creates a normalized series of coordinate data that will highlight the differences between individual bees.</p>
+<p>Using the standardized coordinates, we can perform a PCA to see if any obvious clusters of closely related bees emerge. We can plot the resulting principal components, and compare our results with the preliminary species IDs we already have for each specimen. This allows us to handle landmark coordinates and categorical variables such as those species IDs.</p>
 </section>
 <section id="considerations" class="level4">
-<h4 class="anchored" data-anchor-id="considerations">Considerations<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#considerations" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Like other morphologic traits used for identifying these bees, sexual
- dimorphism is a major confounding factor. Essentially, it means that 
-male bees from two different species will resemble one another more 
-closely than they resemble a female of the same species. This principle 
-even applies to the shapes in the wings, as seen below.</p>
+<h4 class="anchored" data-anchor-id="considerations">Considerations</h4>
+<p>Like other morphologic traits used for identifying these bees, sexual dimorphism is a major confounding factor. Essentially, it means that male bees from two different species will resemble one another more closely than they resemble a female of the same species. This principle even applies to the shapes in the wings, as seen below.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/WingCompare.jpg" class="img-fluid figure-img"></p>
+<p><img src="images/quarto/WingCompare.jpg" class="img-fluid figure-img"></p>
 <figcaption>Fig 6.) Sexual Dimorphism in wings of two <em>Melissodes</em> Species</figcaption>
 </figure>
 </div>
 <p>This means that without considering genetic relatedness, we will need to separate our dataset by sex.</p>
 </section>
 <section id="attempting-naive-classification-based-on-morphology" class="level4">
-<h4 class="anchored" data-anchor-id="attempting-naive-classification-based-on-morphology">Attempting Naive Classification Based on Morphology<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#attempting-naive-classification-based-on-morphology" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>The majority of specimens that went into our collection of wing 
-images have already been sequenced, but in order to test the validity of
- the landmarking process, we will see if any coherent clusters emerge 
-just by analyzing the geometry of the wing structure. Each specimen has 
-previously been assigned a “group” based on other characteristics. The 
-majority of species have been identified based on morphology, such as 
-facial patterning or the presence of a “flap” in a specific place on the
- underside of an abdomen. However, for the confusing 
-agilis/subagilis/trinodis species complex, this information is combined 
-with clusters extracted from prior phylogenetic groups.</p>
+<h4 class="anchored" data-anchor-id="attempting-naive-classification-based-on-morphology">Attempting Naive Classification Based on Morphology</h4>
+<p>The majority of specimens that went into our collection of wing images have already been sequenced, but in order to test the validity of the landmarking process, we will see if any coherent clusters emerge just by analyzing the geometry of the wing structure. Each specimen has previously been assigned a “group” based on other characteristics. The majority of species have been identified based on morphology, such as facial patterning or the presence of a “flap” in a specific place on the underside of an abdomen. However, for the confusing agilis/subagilis/trinodis species complex, this information is combined with clusters extracted from prior phylogenetic groups.</p>
 </section>
 <section id="variation-of-normalized-male-landmarks" class="level4">
-<h4 class="anchored" data-anchor-id="variation-of-normalized-male-landmarks">Variation of normalized male landmarks<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#variation-of-normalized-male-landmarks" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
+<h4 class="anchored" data-anchor-id="variation-of-normalized-male-landmarks">Variation of normalized male landmarks</h4>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig 7.) The variability of landmark placements in all of our male specimens. The black dot represents the mean placement.</figcaption>
 </figure>
 </div>
@@ -570,7 +214,7 @@ with clusters extracted from prior phylogenetic groups.</p>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig. 8.1) Initial PCA based on male wing coordinates.</figcaption>
 </figure>
 </div>
@@ -578,7 +222,7 @@ with clusters extracted from prior phylogenetic groups.</p>
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-6-2.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig. 8.2) Female wing PCA</figcaption>
 </figure>
 </div>
@@ -587,13 +231,13 @@ with clusters extracted from prior phylogenetic groups.</p>
 </div>
 </section>
 <section id="validating-assumptions-can-pca-separate-melissodes-from-other-bees" class="level4">
-<h4 class="anchored" data-anchor-id="validating-assumptions-can-pca-separate-melissodes-from-other-bees">Validating Assumptions (Can PCA separate <em>Melissodes</em> from other Bees?)<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#validating-assumptions-can-pca-separate-melissodes-from-other-bees" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
+<h4 class="anchored" data-anchor-id="validating-assumptions-can-pca-separate-melissodes-from-other-bees">Validating Assumptions (Can PCA separate <em>Melissodes</em> from other Bees?)</h4>
 <p>3 male and 3 female bumblebee (Genus <em>Bombus</em>) wings were landmarked and added to the model to test how capable it is of distinguishing differences in morphology.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig 9.) Bumblebee wings are correctly flagged as outliers.</figcaption>
 </figure>
 </div>
@@ -621,7 +265,7 @@ with clusters extracted from prior phylogenetic groups.</p>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig 10.) Bumblebees are successfully and clearly differentiated in the PCA.</figcaption>
 </figure>
 </div>
@@ -629,36 +273,16 @@ with clusters extracted from prior phylogenetic groups.</p>
 </div>
 </section>
 <section id="integrating-genetic-information" class="level4">
-<h4 class="anchored" data-anchor-id="integrating-genetic-information">Integrating Genetic Information<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#integrating-genetic-information" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>One possible confounding factor is the use of genetic information to 
-determine our groupings in the agilis/trinodis species complex. This is 
-where we get the color nicknames for certain groups. While most other 
-bees have been grouped purely according to morphology, we constructed 
-several groups called “agilis”, based almost solely on genetic data. 
-From here, we will attempt to define new species partitions based on 
-sequence data that applies equally to all of our specimens.</p>
+<h4 class="anchored" data-anchor-id="integrating-genetic-information">Integrating Genetic Information</h4>
+<p>One possible confounding factor is the use of genetic information to determine our groupings in the agilis/trinodis species complex. This is where we get the color nicknames for certain groups. While most other bees have been grouped purely according to morphology, we constructed several groups called “agilis”, based almost solely on genetic data. From here, we will attempt to define new species partitions based on sequence data that applies equally to all of our specimens.</p>
 <section id="asap" class="level5">
-<h5 class="anchored" data-anchor-id="asap">ASAP<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#asap" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h5>
-<p>To accomplish this grouping, we will employ a method from biotools 
-called ASAP (Assemble Species by Automatic Partitioning). Published in 
-2020 by Nicolas Puillandre et al., this program uses hierarchical 
-clustering of pairwise genetic distance to identify partitions of 
-putative species that are statistically supported. ASAP ranks these 
-partitions by sequence divergence to find groups that minimize 
-within-group distance and maximize between-group distance.</p>
-<p>For this analysis, we used a GUI implementation called ASAPy <a href="https://github.com/iTaxoTools/ASAPy">(available on GitHub)</a>,
- to validate or contradict our pre-existing species groups. 
-Additionally, we will combine our old PCAs with a new technique called 
-Canonical Variate Analysis (CVA), so we will drop species groups with 
-fewer than 2 observations of the same sex.</p>
+<h5 class="anchored" data-anchor-id="asap">ASAP</h5>
+<p>To accomplish this grouping, we will employ a method from biotools called ASAP (Assemble Species by Automatic Partitioning). Published in 2020 by Nicolas Puillandre et al., this program uses hierarchical clustering of pairwise genetic distance to identify partitions of putative species that are statistically supported. ASAP ranks these partitions by sequence divergence to find groups that minimize within-group distance and maximize between-group distance.</p>
+<p>For this analysis, we used a GUI implementation called ASAPy <a href="https://github.com/iTaxoTools/ASAPy">(available on GitHub)</a>, to validate or contradict our pre-existing species groups. Additionally, we will combine our old PCAs with a new technique called Canonical Variate Analysis (CVA), so we will drop species groups with fewer than 2 observations of the same sex.</p>
 </section>
 <section id="asap-categorization" class="level5">
-<h5 class="anchored" data-anchor-id="asap-categorization">ASAP Categorization<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#asap-categorization" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h5>
-<p>From our 67 specimens with genetic information, ASAPy found one 
-failed sequence that did not group with any others. After removing this 
-individual, we were left with 66 individuals from approximately 18 
-different species, the majority of which grouped nicely according to the
- labels they started out with.</p>
+<h5 class="anchored" data-anchor-id="asap-categorization">ASAP Categorization</h5>
+<p>From our 67 specimens with genetic information, ASAPy found one failed sequence that did not group with any others. After removing this individual, we were left with 66 individuals from approximately 18 different species, the majority of which grouped nicely according to the labels they started out with.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 13%">
@@ -768,12 +392,12 @@ different species, the majority of which grouped nicely according to the
 </section>
 </section>
 <section id="pca-with-genetic-information" class="level4">
-<h4 class="anchored" data-anchor-id="pca-with-genetic-information">PCA with Genetic Information<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#pca-with-genetic-information" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
+<h4 class="anchored" data-anchor-id="pca-with-genetic-information">PCA with Genetic Information</h4>
 <div class="cell">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="RoughDraft_files/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672" title="" style=""></p>
+<p><img src="RoughDraft_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
 <figcaption>Fig 11.) PCA after grouping based on genetic information.</figcaption>
 </figure>
 </div>
@@ -781,7 +405,7 @@ different species, the majority of which grouped nicely according to the
 </div>
 </section>
 <section id="results-of-wing-tests" class="level4">
-<h4 class="anchored" data-anchor-id="results-of-wing-tests">Results of Wing tests<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#results-of-wing-tests" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
+<h4 class="anchored" data-anchor-id="results-of-wing-tests">Results of Wing tests</h4>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>singular Covariance matrix: General inverse is used. Threshold for zero eigenvalue is 1e-10 </code></pre>
@@ -814,103 +438,38 @@ different species, the majority of which grouped nicely according to the
  Kappa statistic: 0.39535</code></pre>
 </div>
 </div>
-<p>Canonical Variant Classification Accuracy for Male Bees. A 
-classification accuracy of around 50% is actually pretty amazing, 
-considering the limited data available. A random 1/6 classification 
-would result in about 16.7% accuracy, so this is very promising. The low
- kappa of 0.39 could potentially be improved with a larger sample size. 
-The CVA for female bees was around 37.9%, with 8 possible groups, and a 
-kappa of 0.276. Still a great improvement over random guessing! For both
- groups, the classifier showed the strongest accuracy with <em>Melissodes communis</em> samples, which checks out with our biological understanding! <em>M. communis</em>
- is grouped into a different subgenus than our other specimens, 
-supporting our hypothesis that more distantly related bees will be 
-easier to differentiate than close relatives.</p>
+<p>Canonical Variant Classification Accuracy for Male Bees. A classification accuracy of around 50% is actually pretty amazing, considering the limited data available. A random 1/6 classification would result in about 16.7% accuracy, so this is very promising. The low kappa of 0.39 could potentially be improved with a larger sample size. The CVA for female bees was around 37.9%, with 8 possible groups, and a kappa of 0.276. Still a great improvement over random guessing! For both groups, the classifier showed the strongest accuracy with <em>Melissodes communis</em> samples, which checks out with our biological understanding! <em>M. communis</em> is grouped into a different subgenus than our other specimens, supporting our hypothesis that more distantly related bees will be easier to differentiate than close relatives.</p>
 </section>
 <section id="results-addendum" class="level4">
-<h4 class="anchored" data-anchor-id="results-addendum">Results Addendum<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#results-addendum" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Obviously, a major limitation for our model was the tiny sample size 
-of genetically sequenced specimens. Each species group was lucky to have
- three representatives. I attempted to overcome this limitation by 
-implementing two methods of bootstrapping. One, nicknamed “jitter 
-clones,” added random noise to the placement of each landmark prior to 
-the Procrustes fit, simulating digitization error or minor morphological
- variation. The second, nicknamed “synthetic chimeras,” randomly 
-selected their post-procrustes offsets from the pool of bees in the same
- species group. While both of these approaches produced PCA 
-vizualizations with extremely well-defined clustering, the CVA analysis 
-performed on models with any combination of these techniques showed 
-extremely high degrees of overfit, often resulting in a classification 
-accuracy over 99%, even on datasets with over 1,00 specimens. 
-Unfortunately, without more sophisticated techniques to simulate natural
- variation, there appears to be no good way to artificially increase the
- sample size of these datasets.</p>
-<p>DNA sequencing is expensive, sensitive to contamination, and 
-time-consuming. The sequences we get back often have ambiguous 
-nucleotides that demand manual cleanup, or have been heavily degraded 
-near the beginning or end. Given the paradoxical mix of uniformity and 
-diversity these bees seem to exhibit, a wide breadth of data is 
-necessary to capture each specimen’s unique charm. That being said, the 
-Lindh lab’s limited collection of sequence data provided a surprisingly 
-promising start to categorization, and hopefully in the future these 
-associations can be strengthened by adding more replicates of familiar 
-species and more diversity of new ones.</p>
+<h4 class="anchored" data-anchor-id="results-addendum">Results Addendum</h4>
+<p>Obviously, a major limitation for our model was the tiny sample size of genetically sequenced specimens. Each species group was lucky to have three representatives. I attempted to overcome this limitation by implementing two methods of bootstrapping. One, nicknamed “jitter clones,” added random noise to the placement of each landmark prior to the Procrustes fit, simulating digitization error or minor morphological variation. The second, nicknamed “synthetic chimeras,” randomly selected their post-procrustes offsets from the pool of bees in the same species group. While both of these approaches produced PCA vizualizations with extremely well-defined clustering, the CVA analysis performed on models with any combination of these techniques showed extremely high degrees of overfit, often resulting in a classification accuracy over 99%, even on datasets with over 1,00 specimens. Unfortunately, without more sophisticated techniques to simulate natural variation, there appears to be no good way to artificially increase the sample size of these datasets.</p>
+<p>DNA sequencing is expensive, sensitive to contamination, and time-consuming. The sequences we get back often have ambiguous nucleotides that demand manual cleanup, or have been heavily degraded near the beginning or end. Given the paradoxical mix of uniformity and diversity these bees seem to exhibit, a wide breadth of data is necessary to capture each specimen’s unique charm. That being said, the Lindh lab’s limited collection of sequence data provided a surprisingly promising start to categorization, and hopefully in the future these associations can be strengthened by adding more replicates of familiar species and more diversity of new ones.</p>
 </section>
 </section>
 </section>
 <section id="discussion" class="level2">
-<h2 class="anchored" data-anchor-id="discussion">Discussion<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#discussion" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
-<p>While the iceberg of <em>Melissodes</em> research still remains at 
-large, this project has carved out a significant chunk that acted as a 
-barrier to undergraduate research, and ideally will provide a good 
-framework for future scientists to easily plug in new data they gather.</p>
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
+<p>While the iceberg of <em>Melissodes</em> research still remains at large, this project has carved out a significant chunk that acted as a barrier to undergraduate research, and ideally will provide a good framework for future scientists to easily plug in new data they gather.</p>
 <section id="beedb-bee-database" class="level4">
-<h4 class="anchored" data-anchor-id="beedb-bee-database">BEEDB (Bee Database)<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#beedb-bee-database" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>To continue the spirit of data sustainability and organization, we 
-created a Bee Database for the Lindh Lab that focuses on organization, 
-variable consistency, and user accessibility. Data sources were compiled
- across cloud storage, local storage, and external databases. The 
-unpublished data from our lab was cleaned to fit the tidiest format 
-possible, especially considering variable consistency and joinability 
-across tables. This format and the normalized data will hopefully 
-encourage future biologists to continue working on this project.</p>
+<h4 class="anchored" data-anchor-id="beedb-bee-database">BEEDB (Bee Database)</h4>
+<p>To continue the spirit of data sustainability and organization, we created a Bee Database for the Lindh Lab that focuses on organization, variable consistency, and user accessibility. Data sources were compiled across cloud storage, local storage, and external databases. The unpublished data from our lab was cleaned to fit the tidiest format possible, especially considering variable consistency and joinability across tables. This format and the normalized data will hopefully encourage future biologists to continue working on this project.</p>
 </section>
 <section id="data-ethics" class="level4">
-<h4 class="anchored" data-anchor-id="data-ethics">Data Ethics<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#data-ethics" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>When considering the ethical implications of this project, it is 
-important to focus on possible misuse of data. We intend for this data 
-to be used for ecological conservation and academic research, and it 
-could raise ethical concerns if it were used for flora harvesting or 
-apiary expansion because our work focuses on native plants and bees.</p>
+<h4 class="anchored" data-anchor-id="data-ethics">Data Ethics</h4>
+<p>When considering the ethical implications of this project, it is important to focus on possible misuse of data. We intend for this data to be used for ecological conservation and academic research, and it could raise ethical concerns if it were used for flora harvesting or apiary expansion because our work focuses on native plants and bees.</p>
 </section>
 <section id="conclusion" class="level4">
-<h4 class="anchored" data-anchor-id="conclusion">Conclusion<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#conclusion" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h4>
-<p>Overall, the problems that we set out to solve are still in 
-existence, but the next researcher that steps up to the task will have 
-an easier time than we did because of the generation of these tools. The
- Collections Shiny can be used to assess best future collection sites 
-and currently observed relationships between <em>Melissodes</em> bees and Aster plants. We were also able to show that identification of <em>Melissodes</em> specimens by wing vein morphology is a promising method for future analyses of larger data sets, with more specimens.</p>
-<p>If the multiple unrelated and often conflicting identification 
-methods didn’t already make this clear, the diversity of life on Earth 
-is much more complex than the classification systems we impose are fully
- capable of capturing. We attempted to unify the results of these 
-different techniques on our specimens with a centralized database, and 
-by populating it with our lab’s backlog of data, plus the occasional 
-simplification of old tools we’ve made, we hope to leave the Lindh lab 
-better than we found it.</p>
-<p>While we weren’t able to completely solve the daunting challenge 
-these insects have presented to scientists for over a hundred years, 
-perhaps we made studying them a little easier for one scientist.</p>
+<h4 class="anchored" data-anchor-id="conclusion">Conclusion</h4>
+<p>Overall, the problems that we set out to solve are still in existence, but the next researcher that steps up to the task will have an easier time than we did because of the generation of these tools. The Collections Shiny can be used to assess best future collection sites and currently observed relationships between <em>Melissodes</em> bees and Aster plants. We were also able to show that identification of <em>Melissodes</em> specimens by wing vein morphology is a promising method for future analyses of larger data sets, with more specimens.</p>
+<p>If the multiple unrelated and often conflicting identification methods didn’t already make this clear, the diversity of life on Earth is much more complex than the classification systems we impose are fully capable of capturing. We attempted to unify the results of these different techniques on our specimens with a centralized database, and by populating it with our lab’s backlog of data, plus the occasional simplification of old tools we’ve made, we hope to leave the Lindh lab better than we found it.</p>
+<p>While we weren’t able to completely solve the daunting challenge these insects have presented to scientists for over a hundred years, perhaps we made studying them a little easier for one scientist.</p>
 </section>
 </section>
 <section id="works-referenced" class="level2">
-<h2 class="anchored" data-anchor-id="works-referenced">Works Referenced<a class="anchorjs-link " aria-label="Anchor" data-anchorjs-icon="" href="#works-referenced" style="font: 1em / 1 anchorjs-icons; margin-left: 0.1875em; padding-right: 0.1875em; padding-left: 0.1875em;"></a></h2>
+<h2 class="anchored" data-anchor-id="works-referenced">Works Referenced</h2>
 <p>Goodall, C. (1991). PROCRUSTES methods in the statistical analysis of Shape. <em>Journal of the Royal Statistical Society Series B: Statistical Methodology</em>, 53(2), 285–321. https://doi.org/10.1111/j.2517-6161.1991.tb01825.x</p>
-<p>Lindh, B. C., Jolliff, A., Coleman, S., Skelton, M., Mack, O., &amp; 
-Hansen, M. (2023). Bee community differences among urban and rural sites
- in Oregon’s Willamette Valley. <em>Northwest Science</em>, 96(3–4). https://doi.org/10.3955/046.096.0307</p>
-<p>Wright, K. W., Miller, K. B., &amp; Song, H. (2020). A molecular 
-phylogeny of the long-horned bees in the genus Melissodes latreille 
-(Hymenoptera: Apidae: Eucerinae). <em>Insect Systematics &amp; Evolution, 52</em>(4), 428–443. https://doi.org/10.1163/1876312x-bja10015</p>
+<p>Lindh, B. C., Jolliff, A., Coleman, S., Skelton, M., Mack, O., &amp; Hansen, M. (2023). Bee community differences among urban and rural sites in Oregon’s Willamette Valley. <em>Northwest Science</em>, 96(3–4). https://doi.org/10.3955/046.096.0307</p>
+<p>Wright, K. W., Miller, K. B., &amp; Song, H. (2020). A molecular phylogeny of the long-horned bees in the genus Melissodes latreille (Hymenoptera: Apidae: Eucerinae). <em>Insect Systematics &amp; Evolution, 52</em>(4), 428–443. https://doi.org/10.1163/1876312x-bja10015</p>
 </section>
 </section>
 
@@ -1330,19 +889,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-
-<script>window.backupDefine = window.define; window.define = undefined;</script>
-<script type="text/javascript" src="RoughDraft_files/quarto-preview.js"></script>
-<script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
-<script type="text/javascript">
-  const options = {
-    origin: "",
-    search: "",
-    inputFile: "C:\Users\lucas\OneDrive\Documents\RTstrob.github.io\RoughDraft.qmd",
-    isPresentation: false
-  }
-  document.addEventListener("DOMContentLoaded", function () {
-    window.QuartoPreview.init(options);
-  });
-</script>
-<div><div dir="ltr" class="fui-FluentProvider fui-FluentProviderr0 ___jdtuxv0 f19n0e5 fxugw4r f1o700av fk6fouc fkhj508 figsok6 f1i3iumi"></div></div><i tabindex="0" role="none" data-tabster-dummy="" aria-hidden="true" style="position: fixed; height: 1px; width: 1px; opacity: 0.001; z-index: -1; content-visibility: hidden; top: 0px; left: 0px;"></i></body></html>
+</body></html>

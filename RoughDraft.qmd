@@ -4,6 +4,9 @@ authors: "Kaiona Apio & Ryan Strobel"
 format: html
 theme: solar
 editor: visual
+output:
+  html_document:
+    self_contained: true
 ---
 
 # Streamlining Research of a ‘Nightmare Taxon’: Creating a framework to improve collection and identification of Oregon’s native *Melissodes* bees.
