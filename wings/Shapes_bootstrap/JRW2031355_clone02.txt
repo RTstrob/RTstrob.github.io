@@ -1,0 +1,25 @@
+<shapes type=list>
+	<scaling type=logical names=FALSE length=1 as.numeric=FALSE >NA</scaling>
+	<landmarks.pixel type=matrix rownames=TRUE colnames=FALSE nrow=19 ncol=2 as.numeric=TRUE >
+1	1653	1575
+2	1632	1483
+3	1670	1428
+4	1821	1197
+5	1821	1119
+6	1971	1024
+7	2089	1047
+8	2200	1022
+9	2315	956
+10	2565	731
+11	2454	1065
+12	2428	1091
+13	2192	1135
+14	2143	1163
+15	2056	1144
+16	1977	1342
+17	2092	1427
+18	2112	1512
+19	2397	1247
+	</landmarks.pixel>
+</shapes>
+

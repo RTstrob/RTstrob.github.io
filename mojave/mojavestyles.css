@@ -21,7 +21,7 @@ main {
     background: white;
 	width: 8.5in;
 	min-height: 11in;
-	box-shadow: -.1in -.1in .5in rgb(70, 70, 70), .1in .1in .5in rgb(16, 16, 16);
+	box-shadow: -.1in -.1in .5in rgb(70, 70, 70), .1in .1in .5in rgb(47, 45, 45);
     display: flex;
     flex-direction: column;	
 }
